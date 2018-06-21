@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="450dp"
+    android:layout_height="600dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/appbck">
+
+
+    <TextView
+        android:id="@+id/TEXT_stu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/TEXT"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/SYL_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+
+        android:background="@drawable/abc"
+        android:onClick="SYL"
+        android:text="@string/SYL"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+    <Button
+        android:id="@+id/COURSE_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/abc"
+        android:text="@string/COURSE"
+        android:textColor="@color/colorPrimaryDark"
+        android:onClick="CRSE"/>
+
+
+    <TextView
+        android:id="@+id/textView1_stu"
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/abc"
+        android:gravity="center"
+        android:text="CALENDAR"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+
+    <Button
+        android:id="@+id/EASYSOL_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/abc"
+        android:onClick="easy"
+        android:text="@string/EASYSOL"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:id="@+id/lastppr_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/abc"
+        android:onClick="lstppr"
+        android:text="LAST YEAR PAPERS"
+        android:textColor="@color/colorPrimaryDark" />
+</LinearLayout>

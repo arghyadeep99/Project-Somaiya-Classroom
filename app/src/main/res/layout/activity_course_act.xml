@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/appbck"
+    >
+    <TextView
+        android:id="@+id/TEXT_stu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/dwnld2"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="20sp" />
+    <CheckBox
+        android:id="@+id/PPT_stu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFFF"
+        android:text="@string/PPT"
+        android:buttonTint="#FFFF"
+        />
+
+    <CheckBox
+        android:id="@+id/Pracs_stu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/Pracs"
+        android:textColor="#FFFF"
+        android:buttonTint="#FFFF"/>
+
+    <CheckBox
+        android:id="@+id/Tutorial_stu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/Tuts"
+        android:textColor="#FFFF"
+        android:buttonTint="#FFFF"/>
+
+    <CheckBox
+        android:id="@+id/Quiz_stu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/Quiz"
+        android:textColor="#FFFF"
+        android:buttonTint="#FFFF"/>
+
+    <Button
+        android:id="@+id/DWNLD1_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+
+        android:text="@string/DWNLD"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/abc"/>
+</LinearLayout>

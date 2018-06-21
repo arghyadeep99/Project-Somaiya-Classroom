@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Somaiya Classroom</string>
+    <string name="title_activity_login">Sign In/Sign Up</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."</string>
+    <string name="forpass">Forgot Password?</string>
+    <string name="SYL">SYlLABUS</string>
+    <string name="TEXT">Welcome To Student Portal</string>
+    <string name="COURSE">COURSE MATERIAL</string>
+    <string name="CALENDAR">CALENDAR</string>
+    <string name="EASYSOL">EASY SOLUTION</string>
+    <string name="TEXT2">PLEASE PAY TO ACCESS</string>
+    <string name="TEXT3">CLICK HERE TO DOWNLOAD SYLLABUS</string>
+    <string name="TEXT4">CONTENTS</string>
+    <string name="DWNLD">DOWNLOAD</string>
+    <string name="a">Problem Definition and Algorithms</string>
+    <string name="b">Operators and Expressions</string>
+    <string name="c">Control Structures</string>
+    <string name="d">Functions</string>
+    <string name="e">Arrays and Strings</string>
+    <string name="f">Pointers and Files</string>
+    <string name="pay1">NET BANKING</string>
+    <string name="pay2">CARD PAYMENT</string>
+    <string name="termtest">TERM TEST PAPERS</string>
+    <string name="ese">END SEM PAPERS</string>
+    <string name="PRESS">PRESS TO DOWNLOAD</string>
+    <string name="dwnld2">SELECT TO DOWNLOAD</string>
+    <string name="PPT">PowerPoints</string>
+    <string name="Pracs">Practicals</string>
+    <string name="Quiz">Quiz</string>
+    <string name="Tuts">Tutorials</string>
+    <string name="lst">LAST YR PAPERS</string>
+
+</resources>

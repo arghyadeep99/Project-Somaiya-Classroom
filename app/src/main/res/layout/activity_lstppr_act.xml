@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/appbck"
+    >
+    <TextView
+        android:id="@+id/TEXT_stu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="@string/PRESS"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        />
+    <Button
+        android:id="@+id/ppr1_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+
+        android:text="@string/termtest"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/abc"/>
+
+    <Button
+        android:id="@+id/ppr2_stu"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+
+        android:text="@string/ese"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/abc"/>
+
+</LinearLayout>
