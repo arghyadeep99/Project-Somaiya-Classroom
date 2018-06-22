@@ -2,10 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:layout_gravity="center"
-=======
->>>>>>> dfd06b289241d6685041beb674fd6b8a86cb76d4
     android:orientation="vertical"
     android:background="@drawable/appbck">
 
