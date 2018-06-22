@@ -2,7 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:layout_gravity="center"
+=======
+>>>>>>> dfd06b289241d6685041beb674fd6b8a86cb76d4
     android:orientation="vertical"
     android:background="@drawable/appbck">
 
@@ -25,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
     <RadioButton
+<<<<<<< HEAD
     android:id="@+id/radioButton_stu"
     android:layout_width="200dp"
     android:layout_height="wrap_content"
@@ -44,3 +48,14 @@
     android:buttonTint="#FFFF"/>
     </RadioGroup>
 </LinearLayout>
+=======
+        android:id="@+id/radioButton2_stu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffff"
+        android:text="@string/pay2"
+        android:buttonTint="#FFFF"/>
+</LinearLayout>
+>>>>>>> dfd06b289241d6685041beb674fd6b8a86cb76d4
