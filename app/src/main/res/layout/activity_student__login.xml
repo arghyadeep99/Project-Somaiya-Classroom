@@ -54,7 +54,7 @@
         app:fontFamily="@font/roboto_slab"/>
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView1_stu"
         android:layout_width="170dp"
         android:layout_height="45dp"
@@ -63,14 +63,32 @@
         android:background="@drawable/button_shape"
         android:gravity="center"
         android:text="Add Event"
+        android:onClick="openCalender"
         android:padding="4dp"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textColorLink="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:inputType="text"
-        app:fontFamily="@font/roboto_slab"/>
-
+        app:fontFamily="@font/roboto_slab"/> -->
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:id="@+id/textView1_stu"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="Add Event"
+        android:onClick="openCalender"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        app:fontFamily="@font/roboto_slab"
+        />
 
     <Button
         android:id="@+id/EASYSOL_stu"
