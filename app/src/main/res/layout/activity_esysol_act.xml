@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="400dp"
-    android:layout_height="600dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:background="@drawable/appbck">
@@ -20,23 +20,27 @@
         android:textColor="#FFFF"
         android:textSize="20sp" />
 
-    <RadioButton
-        android:id="@+id/radioButton_stu"
-        android:layout_width="200dp"
+    <RadioGroup
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:textColor="#FFFF"
-        android:text="@string/pay1"
-        android:buttonTint="#FFFF"/>
-
+        android:layout_gravity="center">
     <RadioButton
-        android:id="@+id/radioButton2_stu"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="#ffff"
-        android:text="@string/pay2"
-        android:buttonTint="#FFFF"/>
+    android:id="@+id/radioButton_stu"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textColor="#FFFF"
+    android:text="@string/pay1"
+    android:buttonTint="#FFFF"/>
+    <RadioButton
+    android:id="@+id/radioButton2_stu"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp"
+    android:textColor="#ffff"
+    android:text="@string/pay2"
+    android:buttonTint="#FFFF"/>
+    </RadioGroup>
 </LinearLayout>

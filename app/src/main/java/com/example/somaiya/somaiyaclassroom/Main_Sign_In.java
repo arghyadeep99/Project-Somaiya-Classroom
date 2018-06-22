@@ -2,6 +2,7 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.drawable.GradientDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,12 +17,10 @@ public class Main_Sign_In extends AppCompatActivity {
     private TextView counter_info;
     private Button forgot_pass;
     private int count=3;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__sign__in);
-
         username=(EditText) findViewById(R.id.email_id_tch);
         password=(EditText) findViewById(R.id.pass_tch);
         counter_info= (TextView) findViewById(R.id.count_inv);

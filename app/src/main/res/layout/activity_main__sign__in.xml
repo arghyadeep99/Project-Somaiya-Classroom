@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main_Sign_In"
-    android:background="@drawable/gv_grad">
+    android:background="@drawable/gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             android:drawableLeft="@drawable/ic_round_person_24px"
             android:drawableStart="@drawable/ic_round_person_24px"
             android:drawablePadding="5dp"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:visibility="visible" />
 
         <EditText
