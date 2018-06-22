@@ -21,7 +21,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_student__login);
         HyperLink = (TextView)findViewById(R.id.textView1_stu);
 
-        Text = Html.fromHtml("<a href='https://www.google.com/calendar'>CALENDAR</a>");
+        Text = Html.fromHtml("<a href='https://www.google.com/calendar'>Add Event</a>");
 
         HyperLink.setMovementMethod(LinkMovementMethod.getInstance());
         HyperLink.setText(Text);

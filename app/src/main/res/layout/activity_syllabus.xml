@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Syllabus">
+    tools:context=".Syllabus"
+    android:background="@drawable/gradient_color">
 
     <TextView
         android:id="@+id/editText"
@@ -13,57 +14,69 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:text="SYLLABUS FOR FCP"
+        android:text="Content"
         android:textAlignment="center"
         android:textSize="25sp"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
         android:textStyle="bold"/>
 
     <TableLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:textColor="#202020">
 
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
 
         <TableRow>
             <TextView
                 android:layout_column="1"
                 android:text="Chapter 1."
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
 
             <TextView
-                android:text="Problem Definition, Algorithms and "
-                android:gravity="right"
-                android:padding="3dip" />
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip" />
-            <TextView
-                android:text="Overview of C"
+                android:text="Introduction to C"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
         <TableRow>
             <TextView
                 android:layout_column="1"
-                android:text="Chapter 1."
-                android:padding="3dip" />
+                android:padding="3dip"
+                />
             <TextView
-                android:text="Operators and Expressions "
+                android:text=""
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 2."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="Basic Operators"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
         <TableRow>
@@ -71,18 +84,22 @@
                 android:layout_column="1"
                 android:padding="3dip" />
         </TableRow>
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
+
         <TableRow>
             <TextView
                 android:layout_column="1"
                 android:text="Chapter 3."
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Control Structures "
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
         <TableRow>
@@ -90,18 +107,22 @@
                 android:layout_column="1"
                 android:padding="3dip" />
         </TableRow>
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
+
         <TableRow>
             <TextView
                 android:layout_column="1"
                 android:text="Chapter 4."
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
             <TextView
-                android:text="Arrays, Structures And Unions "
+                android:text="Arrays and Structures"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
         <TableRow>
@@ -110,18 +131,22 @@
                 android:padding="3dip" />
 
         </TableRow>
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
+
         <TableRow>
             <TextView
                 android:layout_column="1"
                 android:text="Chapter 5."
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="User Defined Functions"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
         <TableRow>
@@ -130,18 +155,22 @@
                 android:padding="3dip" />
 
         </TableRow>
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
+
         <TableRow>
             <TextView
                 android:layout_column="1"
                 android:text="Chapter 6."
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Pointers and Files"
                 android:gravity="left"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
         <TableRow>
@@ -149,9 +178,7 @@
                 android:layout_column="1"
                 android:padding="3dip" />
         </TableRow>
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
+
     </TableLayout>
 
     <Button
@@ -160,5 +187,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Upload Detailed Syllabus" />
+        android:text="    Upload Detailed Syllabus   "
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        android:textColor="#ffff"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"/>
 </LinearLayout>

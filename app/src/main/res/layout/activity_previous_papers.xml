@@ -5,32 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_color">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Press button to Upload"
+        android:layout_marginTop="60dp"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
         android:textStyle="bold"
+        android:text="Press button to Upload"
         android:textSize="25sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="180dp"
+        android:background="@drawable/button_shape"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="90dp"
-        android:text="Upload Term Test Papers"
-        />
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:text="  Upload Term Test Papers  " />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="180dp"
+        android:background="@drawable/button_shape"
+        android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Upload End Sem Papers" />
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:text="  Upload End Test Papers  "/>
 </LinearLayout>

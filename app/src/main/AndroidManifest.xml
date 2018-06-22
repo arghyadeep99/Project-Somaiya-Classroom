@@ -37,6 +37,10 @@
         <activity android:name=".esysol_act" />
         <activity android:name=".lstppr_act" />
         <activity android:name=".course_act"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

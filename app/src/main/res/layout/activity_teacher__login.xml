@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal|center"
     android:orientation="vertical"
-    android:background="@drawable/login_bg2"
+    android:background="@drawable/gradient_color"
     tools:context=".Teacher_Login_Activity">
 
     <TextView
@@ -15,66 +15,74 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:text="Welcome to Teacher Login"
+        android:layout_marginTop="0dp"
+        android:text="Welcome to Professor portal"
         android:layout_marginBottom="40dp"
-        android:textColor="#ffffff"
-        android:textSize="30dp"
-        app:fontFamily="cursive"
-        android:textStyle="bold"
-        tools:fontFamily="cursive" />
+        android:textColor="#404040"
+        android:textSize="23sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/syllabus"
-        style="@android:style/Widget.Holo.Light.Button.Inset"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="    Syllabus    "
-        android:background="@drawable/button_rounder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
+        android:layout_marginTop="10dp"
+        android:text="Syllabus"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        android:textColor="#ffff"
+        app:fontFamily="@font/roboto_slab"/>
 
     <Button
         android:id="@+id/courseContent"
-        style="@android:style/Widget.Holo.Light.Button.Inset"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="    Course Content    "
-        android:background="@drawable/button_rounder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
+        android:inputType="text"
+        android:text="Course Material"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
+        android:background="@drawable/button_shape" />
 
     <Button
         android:id="@+id/addEvent"
-        style="@android:style/Widget.Holo.Light.Button.Inset"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="    Add Event    "
-        android:background="@drawable/button_rounder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
-    <Button
-        android:id="@+id/prevYears"
-        style="@android:style/Widget.Holo.Light.Button.Inset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="    Previous Year Questions    "
-        android:background="@drawable/button_rounder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
+        android:text="Add Event"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
+        android:background="@drawable/button_shape" />
 
     <Button
         android:id="@+id/easySol"
-        style="@android:style/Widget.Holo.Light.Button.Inset"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="    Easy Solutions    "
-        android:background="@drawable/button_rounder"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
+        android:text="Easy Solutions"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"/>
+
+    <Button
+        android:id="@+id/prevYears"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Last Year Papers"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab" />
+
+
 
 </LinearLayout>

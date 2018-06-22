@@ -2,21 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/appbck"
-    >
+    android:background="@drawable/gradient_color">
     <TextView
         android:id="@+id/TEXT_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:text="@string/PRESS"
+        android:text="Press to Download"
         android:gravity="center"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="20sp"
-        android:layout_marginTop="40dp"
+        android:textColor="#404040"
+        android:textSize="25sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
         />
     <Button
         android:id="@+id/ppr1_stu"
@@ -24,10 +26,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-
-        android:text="@string/termtest"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/abc"/>
+        app:fontFamily="@font/roboto_slab"
+        android:text="Term Test Papers"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:textColor="#ffff"
+        android:background="@drawable/button_shape"/>
 
     <Button
         android:id="@+id/ppr2_stu"
@@ -35,9 +39,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-
-        android:text="@string/ese"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/abc"/>
+        app:fontFamily="@font/roboto_slab"
+        android:text="End Sem Papers"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:textColor="#ffff"
+        android:background="@drawable/button_shape"/>
 
 </LinearLayout>
