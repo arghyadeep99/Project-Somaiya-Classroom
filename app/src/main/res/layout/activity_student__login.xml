@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/button_shape"
         android:gravity="center"
-        android:text="Add Event"
+        android:text="View Events"
         android:onClick="openCalender"
         android:padding="4dp"
         android:textAlignment="center"
