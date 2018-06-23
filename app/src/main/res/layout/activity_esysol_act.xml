@@ -33,10 +33,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:textColor="#ffff"
+        android:textColor="#404040"
         android:text="Net Banking"
         android:textSize="18sp"
-        android:background="@drawable/button_shape"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/roboto_slab"/>
     <RadioButton
         android:id="@+id/radioButton2_stu"
@@ -44,10 +44,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:textColor="#ffff"
+        android:textColor="#404040"
         android:text="Card Payment"
         android:textSize="18sp"
-        android:background="@drawable/button_shape"
+        android:background="@android:color/transparent"
         android:fontFamily="@font/roboto_slab"/>
     </RadioGroup>
+
+    <Button
+        android:id="@+id/proceed_to_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:text="   Proceed to Payment   "
+        android:inputType="text"
+        android:textSize="17sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textColor="#ffff" />
 </LinearLayout>
