@@ -31,7 +31,7 @@
 
         <EditText
             android:id="@+id/email_id_tch"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
@@ -47,7 +47,7 @@
 
         <EditText
             android:id="@+id/pass_tch"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_gravity="center"
@@ -100,6 +100,7 @@
             android:fontFamily="@font/roboto_slab"/>
 
         <CheckBox
+            android:id="@+id/increase_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

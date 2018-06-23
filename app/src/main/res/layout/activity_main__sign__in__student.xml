@@ -30,10 +30,10 @@
 
         <EditText
             android:id="@+id/email_id_tch"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="70dp"
             android:background="@android:color/background_light"
             android:ems="10"
             android:hint="Username"
@@ -46,10 +46,10 @@
 
         <EditText
             android:id="@+id/pass_tch"
-            android:layout_width="wrap_content"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="70dp"
             android:background="@android:color/background_light"
             android:ems="10"
             android:hint="Password"
@@ -98,6 +98,7 @@
             app:fontFamily="@font/roboto_slab"/>
 
         <CheckBox
+            android:id="@+id/increase_size_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
