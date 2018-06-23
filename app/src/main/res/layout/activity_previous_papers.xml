@@ -46,5 +46,5 @@
         app:fontFamily="@font/roboto_slab"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
-        android:text="  Upload End Test Papers  "/>
+        android:text="  Upload End Sem Papers  "/>
 </LinearLayout>
