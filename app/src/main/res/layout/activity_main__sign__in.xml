@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="587dp"
+        android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:orientation="vertical"
@@ -99,15 +99,6 @@
             android:textSize="20sp"
             android:fontFamily="@font/roboto_slab"/>
 
-        <CheckBox
-            android:id="@+id/increase_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Increase display size by 25%"
-            android:textColor="#404040"
-            android:textSize="18sp"
-            app:fontFamily="@font/roboto_slab"/>
 
 
     </LinearLayout>
