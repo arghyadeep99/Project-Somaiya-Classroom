@@ -40,6 +40,7 @@
         android:textSize="15sp"
         android:textColor="#ffff"
         android:inputType="text"
+        android:layout_marginTop="5dp"
         app:fontFamily="@font/roboto_slab"
         android:text="Upload" />
 
@@ -60,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:text="Upload"
         android:textSize="15sp"
         android:textColor="#ffff"
@@ -85,6 +87,7 @@
         android:layout_gravity="center"
         android:textSize="15sp"
         android:textColor="#ffff"
+        android:layout_marginTop="5dp"
         android:inputType="text"
         android:background="@drawable/button_shape"
         app:fontFamily="@font/roboto_slab"
@@ -109,6 +112,7 @@
         android:layout_gravity="center"
         android:textSize="15sp"
         android:textColor="#ffff"
+        android:layout_marginTop="5dp"
         android:inputType="text"
         android:background="@drawable/button_shape"
         app:fontFamily="@font/roboto_slab"
@@ -133,6 +137,7 @@
         android:textSize="15sp"
         android:textColor="#ffff"
         android:inputType="text"
+        android:layout_marginTop="5dp"
         android:background="@drawable/button_shape"
         app:fontFamily="@font/roboto_slab"
         android:text="Upload" />
@@ -156,6 +161,7 @@
         android:textSize="15sp"
         android:textColor="#ffff"
         android:inputType="text"
+        android:layout_marginTop="5dp"
         android:background="@drawable/button_shape"
         app:fontFamily="@font/roboto_slab"
         android:text="Upload" />
