@@ -20,57 +20,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
             android:layout_marginBottom="50dp"
+            android:layout_marginTop="100dp"
             android:text="Sign In"
             android:textColor="#404040"
             android:textSize="40dp"
-            app:fontFamily="@font/roboto_slab"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto_slab" />
 
         <EditText
             android:id="@+id/email_id_tch"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:background="@android:color/background_light"
+            android:drawableLeft="@drawable/ic_round_person_24px"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_round_person_24px"
             android:ems="10"
             android:hint="Username"
-            android:drawableLeft="@drawable/ic_round_person_24px"
-            android:drawableStart="@drawable/ic_round_person_24px"
-            android:drawablePadding="5dp"
             android:inputType="textPersonName"
             android:visibility="visible"
-            app:fontFamily="@font/roboto_slab"/>
+            app:fontFamily="@font/roboto_slab" />
 
         <EditText
             android:id="@+id/pass_tch"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
             android:background="@android:color/background_light"
+            android:drawableLeft="@drawable/ic_round_https_24px"
+            android:drawablePadding="5dp"
+            android:drawableStart="@drawable/ic_round_https_24px"
             android:ems="10"
             android:hint="Password"
-            android:drawableLeft="@drawable/ic_round_https_24px"
-            android:drawableStart="@drawable/ic_round_https_24px"
-            android:drawablePadding="5dp"
             android:inputType="textPassword"
-            app:fontFamily="@font/roboto_slab"/>
+            app:fontFamily="@font/roboto_slab" />
 
         <Button
             android:id="@+id/log_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/button_shape"
-            android:text="Log In"
             android:inputType="text"
+            android:text="Log In"
+            android:textColor="#ffff"
             android:textSize="17sp"
-            app:fontFamily="@font/roboto_slab"
-            android:textColor="#ffff" />
+            app:fontFamily="@font/roboto_slab" />
+
         <TextView
             android:id="@+id/count_inv"
             android:layout_width="wrap_content"
@@ -78,10 +79,10 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:text=""
-            android:textSize="17.5sp"
             android:textAlignment="center"
             android:textColor="#404040"
-            app:fontFamily="@font/roboto_slab"/>
+            android:textSize="17.5sp"
+            app:fontFamily="@font/roboto_slab" />
 
         <Button
             android:id="@+id/forgot_password"
@@ -90,24 +91,37 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15sp"
             android:background="@android:color/transparent"
-            android:text="Forgot Password?"
             android:inputType="text"
+            android:text="Forgot Password?"
             android:textAlignment="center"
             android:textColor="#404040"
             android:textSize="20sp"
-            app:fontFamily="@font/roboto_slab"/>
+            app:fontFamily="@font/roboto_slab" />
 
-        <android.widget.Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="17sp"
-            android:switchPadding="5dp"
-            android:textColor="#404040"
-            app:fontFamily="@font/roboto_slab"
-            android:text="Increase Size by 25%" />
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="5dp">
 
+            <android.widget.Switch
+                android:id="@+id/switch1"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:switchPadding="5dp"
+                android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="272dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Increase Size by 25%"
+                android:textColor="#404040"
+                android:textSize="18sp"
+                app:fontFamily="@font/roboto_slab" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
