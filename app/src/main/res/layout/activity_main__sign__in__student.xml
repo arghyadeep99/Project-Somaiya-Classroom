@@ -33,7 +33,7 @@
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
             android:ems="10"
             android:hint="Username"
@@ -49,7 +49,7 @@
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="70dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
             android:ems="10"
             android:hint="Password"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="150dp"
+            android:layout_gravity="center"
             android:background="@drawable/button_shape"
             android:text="Log In"
             android:inputType="text"
@@ -97,12 +97,13 @@
             android:textSize="20sp"
             app:fontFamily="@font/roboto_slab"/>
 
-        <Switch
+        <android.widget.Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="17sp"
+            android:switchPadding="5dp"
             android:textColor="#404040"
             app:fontFamily="@font/roboto_slab"
             android:text="Increase Size by 25%" />

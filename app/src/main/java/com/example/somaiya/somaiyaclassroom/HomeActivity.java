@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         tch_button = (Button) findViewById(R.id.tch_btn);
-        std_button= (Button) findViewById(R.id.stu_btn);
+        std_button = (Button) findViewById(R.id.stu_btn);
         std_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

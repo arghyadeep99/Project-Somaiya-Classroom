@@ -20,7 +20,7 @@ public class Main_Sign_In_Student extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main__sign__in);
+        setContentView(R.layout.activity_main__sign__in__student);
 
         username=(EditText) findViewById(R.id.email_id_tch);
         password=(EditText) findViewById(R.id.pass_tch);
