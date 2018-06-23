@@ -2,23 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/appbck"
-    >
+    android:background="@drawable/gradient_color">
 
     <TextView
         android:id="@+id/TEXT1_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:text="@string/TEXT4"
+        android:text="Content:"
         android:gravity="center"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="20sp"
-        android:layout_marginTop="40dp"
-        />
+        android:textColor="#404040"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="60dp" />
 
 
     <CheckBox
@@ -28,7 +29,9 @@
         android:layout_gravity="left"
         android:layout_marginTop="40dp"
         android:text="@string/a"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -39,7 +42,9 @@
         android:layout_gravity="left"
         android:text="@string/b"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -50,7 +55,9 @@
         android:text="@string/c"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -61,7 +68,9 @@
         android:layout_gravity="left"
         android:text="@string/e"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -72,7 +81,9 @@
         android:text="@string/d"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -83,7 +94,9 @@
         android:text="@string/f"
         android:layout_gravity="left"
         android:layout_marginTop="10dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"
         android:layout_marginLeft="20dp"/>
 
@@ -93,9 +106,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-
-        android:text="@string/DWNLD"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/abc"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
         />
 </LinearLayout>

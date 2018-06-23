@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemes.android.com/tools"
 
     xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context=".HomeActivity"
-    android:background="@drawable/strong_bliss">
+    android:background="@drawable/gradient_color">
 
     <Button
         android:id="@+id/stu_btn"
@@ -21,9 +21,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="206dp"
-        android:text="  I AM A STUDENT  "
-        android:background="@drawable/button_rounder"
+        android:background="@drawable/button_shape"
+        android:includeFontPadding="true"
+        app:fontFamily="@font/roboto_slab"
+        android:text="  I am a Student  "
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:textColor="#ffff"
         android:visibility="visible" />
 
     <Button
@@ -34,8 +37,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="175dp"
-        android:text="  I AM A PROFESSOR  "
-        android:background="@drawable/button_rounder"
+        android:text="  I am a Professor  "
+        android:background="@drawable/button_shape"
         android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:textColor="#ffff"
+        app:fontFamily="@font/roboto_slab" />
 </RelativeLayout>

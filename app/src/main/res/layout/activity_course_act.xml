@@ -3,27 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/appbck"
+    android:background="@drawable/gradient_color"
     >
     <TextView
         android:id="@+id/TEXT_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="@string/dwnld2"
+        android:text="Select to Download:"
         android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="20sp" />
+        android:textColor="#404040"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_slab"/>
     <CheckBox
         android:id="@+id/PPT_stu"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_slab"
         android:text="@string/PPT"
         android:buttonTint="#FFFF"
         />
@@ -35,7 +39,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/Pracs"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"/>
 
     <CheckBox
@@ -45,7 +51,9 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/Tuts"
-        android:textColor="#FFFF"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"/>
 
     <CheckBox
@@ -54,8 +62,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="@string/Quiz"
-        android:textColor="#FFFF"
+        android:text="Quizzes"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_slab"
         android:buttonTint="#FFFF"/>
 
     <Button
@@ -64,8 +74,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
-
-        android:text="@string/DWNLD"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/abc"/>
+        android:inputType="text"
+        android:text="Download"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto_slab"
+        android:background="@drawable/button_shape"/>
 </LinearLayout>

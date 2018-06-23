@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/appbck">
+    android:background="@drawable/gradient_color">
 
 
     <TextView
@@ -12,13 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:padding="4dp"
         android:text="@string/TEXT"
         android:textAlignment="center"
-        android:textColor="#ffff"
-        android:textSize="20sp" />
+        android:textColor="#404040"
+        android:textSize="25sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold"/>
 
 
     <Button
@@ -27,11 +30,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-
-        android:background="@drawable/abc"
+        app:fontFamily="@font/roboto_slab"
+        android:background="@drawable/button_shape"
         android:onClick="SYL"
-        android:text="@string/SYL"
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="Syllabus"
+        android:inputType="text"
+        android:textSize="18sp"
+        android:textColor="#ffff" />
 
 
     <Button
@@ -40,26 +45,50 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/abc"
-        android:text="@string/COURSE"
-        android:textColor="@color/colorPrimaryDark"
-        android:onClick="CRSE"/>
+        android:background="@drawable/button_shape"
+        android:text="Course Material"
+        android:textColor="#ffff"
+        android:onClick="CRSE"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"/>
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView1_stu"
         android:layout_width="170dp"
         android:layout_height="45dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/abc"
+        android:background="@drawable/button_shape"
         android:gravity="center"
-        android:text="CALENDAR"
+        android:text="Add Event"
+        android:onClick="openCalender"
         android:padding="4dp"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
-
+        android:textSize="18sp"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"/> -->
+    <Button
+        android:layout_width="170dp"
+        android:layout_height="45dp"
+        android:id="@+id/textView1_stu"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:gravity="center"
+        android:text="Add Event"
+        android:onClick="openCalender"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:inputType="text"
+        android:textColorLink="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        app:fontFamily="@font/roboto_slab"
+        />
 
     <Button
         android:id="@+id/EASYSOL_stu"
@@ -67,10 +96,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/abc"
+        android:background="@drawable/button_shape"
         android:onClick="easy"
-        android:text="@string/EASYSOL"
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="Easy Solutions"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"/>
 
     <Button
         android:id="@+id/lastppr_stu"
@@ -78,8 +110,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@drawable/abc"
+        android:background="@drawable/button_shape"
         android:onClick="lstppr"
-        android:text="LAST YEAR PAPERS"
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="Last Year Papers"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        android:inputType="text"
+        app:fontFamily="@font/roboto_slab"/>
 </LinearLayout>

@@ -2,9 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/appbck">
+    android:background="@drawable/gradient_color">
 
 
     <TextView
@@ -12,35 +13,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="@string/TEXT2"
+        android:text="Please Pay to Access:"
         android:textAlignment="center"
-        android:textColor="#FFFF"
-        android:textSize="20sp" />
+        android:textColor="#404040"
+        android:textSize="25sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
     <RadioButton
-    android:id="@+id/radioButton_stu"
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="40dp"
-    android:textColor="#FFFF"
-    android:text="@string/pay1"
-    android:buttonTint="#FFFF"/>
+        android:id="@+id/radioButton_stu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:textColor="#404040"
+        android:text="Net Banking"
+        android:textSize="18sp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/roboto_slab"/>
     <RadioButton
-    android:id="@+id/radioButton2_stu"
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="20dp"
-    android:textColor="#ffff"
-    android:text="@string/pay2"
-    android:buttonTint="#FFFF"/>
+        android:id="@+id/radioButton2_stu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#404040"
+        android:text="Card Payment"
+        android:textSize="18sp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/roboto_slab"/>
     </RadioGroup>
+
+    <Button
+        android:id="@+id/proceed_to_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/button_shape"
+        android:text="   Proceed to Payment   "
+        android:inputType="text"
+        android:textSize="17sp"
+        app:fontFamily="@font/roboto_slab"
+        android:textColor="#ffff" />
 </LinearLayout>
