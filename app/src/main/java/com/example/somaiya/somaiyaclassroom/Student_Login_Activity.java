@@ -34,11 +34,11 @@ public class Student_Login_Activity extends AppCompatActivity {
         add_event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCalender(v);
+                openCalendar(v);
             }
         });
         }
-    public void openCalender(View v) {
+    public void openCalendar(View v) {
         Uri uri = Uri.parse("https://www.google.com/calendar");
         Intent i = new Intent(Intent.ACTION_VIEW,uri);
         startActivity(i);
