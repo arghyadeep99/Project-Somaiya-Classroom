@@ -2,82 +2,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/gradient_color"
-    >
+    android:background="@drawable/gradient_color">
     <TextView
         android:id="@+id/TEXT_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Select to Download:"
+        android:text="Download Course Material"
         android:textAlignment="center"
         android:textColor="#404040"
         android:textSize="25sp"
         android:textStyle="bold"
         android:fontFamily="@font/roboto_slab"/>
-    <CheckBox
-        android:id="@+id/PPT_stu"
-        android:layout_width="150dp"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
+        android:text="Chapter 1. Overview of C"
         android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/PPT"
-        android:buttonTint="#FFFF"
-        />
-
-    <CheckBox
-        android:id="@+id/Pracs_stu"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/Pracs"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"/>
-
-    <CheckBox
-        android:id="@+id/Tutorial_stu"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/Tuts"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"/>
-
-    <CheckBox
-        android:id="@+id/Quiz_stu"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Quizzes"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        android:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"/>
+        android:layout_gravity="center"/>
 
     <Button
-        android:id="@+id/DWNLD1_stu"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/button11"
+        android:background="@drawable/button_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:inputType="text"
-        android:text="Download"
+        android:textSize="15sp"
         android:textColor="#ffff"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download" />
+
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Chapter 2. Operators"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:fontFamily="@font/roboto_slab"
-        android:background="@drawable/button_shape"/>
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:text="Download"
+        android:textSize="15sp"
+        android:textColor="#ffff"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        app:fontFamily="@font/roboto_slab"/>
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Chapter 3. Control Structures"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:textColor="#ffff"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download" />
+
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Chapter 4. Arrays and Structures"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button44"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:textColor="#ffff"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Chapter 5. User-defined Functions"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button55"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:textColor="#ffff"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_shape"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download" />
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Chapter 6. Pointers and Files"
+        android:textColor="#404040"
+        app:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:textColor="#ffff"
+        android:inputType="text"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_shape"
+        app:fontFamily="@font/roboto_slab"
+        android:text="Download" />
 </LinearLayout>

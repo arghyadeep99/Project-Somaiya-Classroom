@@ -97,15 +97,15 @@
             android:textSize="20sp"
             app:fontFamily="@font/roboto_slab"/>
 
-        <CheckBox
-            android:id="@+id/increase_size_2"
+        <Switch
+            android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="Increase display size by 25%"
-            android:textColor="#404040"
+            android:layout_gravity="center"
             android:textSize="17sp"
-            app:fontFamily="@font/roboto_slab"/>
+            android:textColor="#404040"
+            app:fontFamily="@font/roboto_slab"
+            android:text="Increase Size by 25%" />
 
 
     </LinearLayout>
