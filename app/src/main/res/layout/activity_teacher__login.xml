@@ -16,7 +16,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="0dp"
-        android:text="Welcome to Professor portal"
+        android:text="Welcome to Professor Portal"
         android:layout_marginBottom="40dp"
         android:textColor="#404040"
         android:textSize="23sp"

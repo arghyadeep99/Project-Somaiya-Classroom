@@ -92,7 +92,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="15sp"
             android:background="@android:color/transparent"
-            android:text="Forgot Password?"
+            android:text="@string/forpass"
             android:inputType="text"
             android:textAlignment="center"
             android:textColor="#404040"
