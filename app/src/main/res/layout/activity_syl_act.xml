@@ -19,93 +19,176 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="@font/roboto_slab"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="30dp" />
 
 
-    <CheckBox
-        android:id="@+id/checkBox_stu"
-        android:layout_width="wrap_content"
+
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginTop="40dp"
-        android:text="@string/a"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:textColor="#202020">
 
-    <CheckBox
-        android:id="@+id/checkBox1_stu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/b"
-        android:layout_marginTop="10dp"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
 
-    <CheckBox
-        android:id="@+id/checkBox2_stu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/c"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 1."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
 
-    <CheckBox
-        android:id="@+id/checkBox3_stu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/e"
-        android:layout_marginTop="10dp"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
+            <TextView
+                android:text="Introduction to C"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
 
-    <CheckBox
-        android:id="@+id/checkBox4_stu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/d"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                />
+            <TextView
+                android:text=""
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
 
-    <CheckBox
-        android:id="@+id/checkBox5_stu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/f"
-        android:layout_gravity="left"
-        android:layout_marginTop="10dp"
-        android:textColor="#404040"
-        android:textSize="18sp"
-        app:fontFamily="@font/roboto_slab"
-        android:buttonTint="#FFFF"
-        android:layout_marginLeft="20dp"/>
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 2."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="Basic Operators"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 3."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="Control Structures "
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 4."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="Arrays and Structures"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 5."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="User Defined Functions"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:text="Chapter 6."
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+            <TextView
+                android:text="Pointers and Files"
+                android:gravity="left"
+                android:padding="3dip"
+                android:textSize="18sp"
+                android:textColor="#404040"
+                app:fontFamily="@font/roboto_slab"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip" />
+        </TableRow>
+
+    </TableLayout>
 
     <Button
         android:id="@+id/DWNLD_stu"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:textColor="#ffff"
         android:textSize="18sp"
         app:fontFamily="@font/roboto_slab"
