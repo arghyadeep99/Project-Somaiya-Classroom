@@ -3,7 +3,6 @@ package com.example.somaiya.somaiyaclassroom;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Paint;
-import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,46 +10,54 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Main_Sign_In_Student extends AppCompatActivity implements View.OnClickListener{
-    private Button SignUp;
+import org.w3c.dom.Text;
+
+public class AlreadyRegisteredLoginProf extends AppCompatActivity implements View.OnClickListener{
+    private Button SignIn;
     private EditText email;
     private EditText password;
-    private TextView SignIn;
+    private Button forgot_pass;
+    private TextView SignUp;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main__sign__in__student);
-        progressDialog= new ProgressDialog(this);
-        firebaseAuth=FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()!=null){
-            finish();
-            startActivity(new Intent(this,Student_Login_Activity.class));
-        }
+        setContentView(R.layout.activity_already_registered_login_prof);
         email=(EditText) findViewById(R.id.email_id_tch);
         password=(EditText) findViewById(R.id.pass_tch);
-        SignUp= (Button) findViewById(R.id.register);
-        SignIn=(TextView)findViewById(R.id.signin);
-        SignIn.setPaintFlags(SignIn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        SignUp= (TextView) findViewById(R.id.signup);
+        forgot_pass=(Button) findViewById(R.id.forgot_password);
+        forgot_pass.setPaintFlags(forgot_pass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        SignUp.setPaintFlags(SignUp.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        SignIn=(Button) findViewById(R.id.sign_in);
+        progressDialog=new ProgressDialog(this);
 
+        firebaseAuth=FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser()!=null){
+            finish();
+            startActivity(new Intent(getApplicationContext(), Teacher_Login_Activity.class));
+        }
+        forgot_pass.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                For_Pass_Act();
+            }
+        });
         SignUp.setOnClickListener(this);
         SignIn.setOnClickListener(this);
     }
-    private void registerUser(){
+    private void UserLogin(){
         String mail_id=email.getText().toString().trim();
         String pass=password.getText().toString().trim();
         if(TextUtils.isEmpty(mail_id)){
@@ -64,52 +71,38 @@ public class Main_Sign_In_Student extends AppCompatActivity implements View.OnCl
             return;
         }
         //If validation is fine, show progress dialogue.
-        progressDialog.setMessage("Registering User....");
+        progressDialog.setMessage("Logging In....");
         progressDialog.show();
 
-        firebaseAuth.createUserWithEmailAndPassword(mail_id,pass)
+        firebaseAuth.signInWithEmailAndPassword(mail_id,pass)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
-                            //User registered successfully and logged in
+                            //start next activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), Student_Login_Activity.class));
+                            startActivity(new Intent(getApplicationContext(), Teacher_Login_Activity.class));
                         }
                         else{
-                            Toast.makeText(Main_Sign_In_Student.this,"Registration Unsuccessful. Please try again.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(AlreadyRegisteredLoginProf.this, "Invalid Username or Password. Try Again.",Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-
     }
+
     @Override
-    public void onClick(View v){
-        if(v==SignUp)
-        {
-            registerUser();
+    public void onClick(View view) {
+        if(view==SignIn){
+            UserLogin();
         }
-        if(v==SignIn)
-        {
-            Intent stu_intent= new Intent(Main_Sign_In_Student.this,AlreadyRegisteredLoginStudent.class);
-            startActivity(stu_intent);
+        if(view==SignUp){
+            finish();
+            startActivity(new Intent(this,Main_Sign_In.class));
         }
     }
-
-    /**private void validate(String user, String pass) {
-     if((user.equals("admin")) && (pass.equals("admin")))
-     {
-     Intent tch_intent= new Intent(Main_Sign_In.this,Teacher_Login_Activity.class);
-     startActivity(tch_intent);
-     }
-     else {
-     count--;
-     counter_info.setText("Wrong E-mail or Password!");
-     if(count==0) {
-     login.setEnabled(false);
-     counter_info.setText("You have entered wrong email or password 3 consecutive times. Restart the app and try again.");
-     }
-     }
-     }**/
+    private void For_Pass_Act(){
+        Intent forget_intent= new Intent(this,Forgot_Password_Activity.class);
+        startActivity(forget_intent);
+    }
 }
