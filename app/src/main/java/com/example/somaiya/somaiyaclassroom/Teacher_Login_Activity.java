@@ -7,12 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Teacher_Login_Activity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+public class Teacher_Login_Activity extends AppCompatActivity{
     private Button mCourse;
     private Button mSyllabus;
     private Button mPrevYears;
     private Button mEasySol;
     private Button add_event;
+    private Button Logout;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +26,14 @@ public class Teacher_Login_Activity extends AppCompatActivity {
         mSyllabus = (Button) findViewById(R.id.syllabus);
         mPrevYears = (Button) findViewById(R.id.prevYears);
         mEasySol = (Button) findViewById(R.id.easySol);
+        Logout = (Button) findViewById(R.id.logout);
+        firebaseAuth=FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser()==null){
+            finish();
+            startActivity(new Intent(this, AlreadyRegisteredLoginProf.class));
+        }
+
         mCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +65,12 @@ public class Teacher_Login_Activity extends AppCompatActivity {
                 openCalendar(v);
             }
         });
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogOut();
+            }
+        });
     }
     public void openCalendar(View v) {
         Uri uri = Uri.parse("https://www.google.com/calendar");
@@ -73,5 +92,10 @@ public class Teacher_Login_Activity extends AppCompatActivity {
     public void openActivityeasySol() {
         Intent main_intent = new Intent(Teacher_Login_Activity.this,Easysolution.class);
         startActivity(main_intent);
+    }
+    public void LogOut() {
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this,AlreadyRegisteredLoginProf.class));
     }
 }
