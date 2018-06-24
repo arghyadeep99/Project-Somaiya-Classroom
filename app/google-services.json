@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "939373135683",
+    "firebase_url": "https://somaiya-classroom.firebaseio.com",
+    "project_id": "somaiya-classroom",
+    "storage_bucket": "somaiya-classroom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:939373135683:android:4e4ac99a714548ed",
+        "android_client_info": {
+          "package_name": "com.example.somaiya.somaiyaclassroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "939373135683-17b7edkpnua8vaj9a03rq600kgl2hgp6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.somaiya.somaiyaclassroom",
+            "certificate_hash": "8a5ae33e2e52c2d42df9584764fd5118abe4bcca"
+          }
+        },
+        {
+          "client_id": "939373135683-6iee2sjktaqc5ll5shbt0h6lrpdjri1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcISWJ_KolQN0YEq_GTCQH4Lbry2wldcM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "939373135683-6iee2sjktaqc5ll5shbt0h6lrpdjri1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
