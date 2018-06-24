@@ -67,7 +67,7 @@
         android:background="@drawable/button_shape"
         android:gravity="center"
         android:text="Add Event"
-        android:onClick="openCalender"
+        android:onClick="openCalendar"
         android:padding="4dp"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -100,7 +100,17 @@
         android:textColor="#ffff"
         android:textSize="18sp"
         app:fontFamily="@font/roboto_slab" />
-
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Logout"
+        android:background="@drawable/button_shape"
+        android:inputType="text"
+        android:textColor="#ffff"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab" />
 
 
 </LinearLayout>
