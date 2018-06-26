@@ -42,8 +42,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".AlreadyRegisteredLoginProf" />
-        <activity android:name=".AlreadyRegisteredLoginStudent"/>
+        <activity android:name=".Magnify"></activity>
     </application>
 
 </manifest>

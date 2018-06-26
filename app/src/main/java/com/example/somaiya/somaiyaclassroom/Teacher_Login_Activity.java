@@ -2,22 +2,29 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Teacher_Login_Activity extends AppCompatActivity{
+public class Teacher_Login_Activity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
     private Button mCourse;
     private Button mSyllabus;
     private Button mPrevYears;
     private Button mEasySol;
     private Button add_event;
     private Button Logout;
-    private FirebaseAuth firebaseAuth;
+    private GoogleApiClient googleApiClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +34,9 @@ public class Teacher_Login_Activity extends AppCompatActivity{
         mPrevYears = (Button) findViewById(R.id.prevYears);
         mEasySol = (Button) findViewById(R.id.easySol);
         Logout = (Button) findViewById(R.id.logout);
-        firebaseAuth=FirebaseAuth.getInstance();
-
-        if(firebaseAuth.getCurrentUser()==null){
-            finish();
-            startActivity(new Intent(this, AlreadyRegisteredLoginProf.class));
-        }
+        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
+        googleApiClient= new GoogleApiClient.Builder(this).enableAutoManage(this, this).addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions).build();
 
         mCourse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +98,20 @@ public class Teacher_Login_Activity extends AppCompatActivity{
         startActivity(main_intent);
     }
     public void LogOut() {
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(this,AlreadyRegisteredLoginProf.class));
+        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+            @Override
+            public void onResult(@NonNull Status status) {
+                MainSignIn();
+            }
+        });
+    }
+    public void MainSignIn(){
+        finish();
+        startActivity(new Intent(this, Main_Sign_In.class));
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }
