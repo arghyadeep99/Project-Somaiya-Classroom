@@ -8,20 +8,21 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class Main_Sign_In extends AppCompatActivity implements View.OnClickListener{
     private Button SignUp;
@@ -30,7 +31,7 @@ public class Main_Sign_In extends AppCompatActivity implements View.OnClickListe
     private TextView SignIn;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
-
+    private static final String TAG = "Main_Sign_In";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,8 +78,28 @@ public class Main_Sign_In extends AppCompatActivity implements View.OnClickListe
                         finish();
                         startActivity(new Intent(getApplicationContext(), Teacher_Login_Activity.class));
                 }
-                else{
-                    Toast.makeText(Main_Sign_In.this,"Registration Unsuccessful. Please try again.",Toast.LENGTH_LONG).show();
+                else if (!task.isSuccessful()) {
+                    try {
+                        throw task.getException();
+                    }
+                    // if user enters wrong email.
+                    catch (FirebaseAuthWeakPasswordException weakPassword) {
+                        //Log.d(TAG, "onComplete: weak_password");
+
+                        Toast.makeText(Main_Sign_In.this, "Weak Password. Enter a strong Password.", Toast.LENGTH_LONG).show();
+                    }
+                    // if user enters wrong password.
+                    catch (FirebaseAuthInvalidCredentialsException malformedEmail) {
+                        //Log.d(TAG, "onComplete: malformed_email");
+                        Toast.makeText(Main_Sign_In.this, "Invalid E-mail. Please try again.", Toast.LENGTH_LONG).show();
+                    } catch (FirebaseAuthUserCollisionException existEmail) {
+                        //Log.d(TAG, "onComplete: exist_email");
+
+                        Toast.makeText(Main_Sign_In.this, "Email ID already exists. Please try signing in.", Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        //Log.d(TAG, "onComplete: " + e.getMessage());
+                        Toast.makeText(Main_Sign_In.this, "Registration Unsuccessful. Please try again.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
