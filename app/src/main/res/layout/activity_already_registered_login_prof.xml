@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_Sign_In"
+    tools:context=".AlreadyRegisteredLoginProf"
     android:background="@drawable/gradient_color">
 
     <LinearLayout
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="50dp"
-            android:text="Sign Up"
+            android:text="Sign In"
             android:layout_gravity="center"
             android:textColor="#404040"
             android:textSize="40dp"
@@ -49,7 +49,7 @@
             android:id="@+id/pass_tch"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="20dp"
             android:layout_gravity="center"
             android:background="@android:color/background_light"
             android:ems="10"
@@ -60,32 +60,46 @@
             android:inputType="textPassword"
             app:fontFamily="@font/roboto_slab" />
 
-
         <Button
-            android:id="@+id/register"
+            android:id="@+id/sign_in"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:background="@drawable/button_shape"
-            android:text="Register"
+            android:text="Sign In"
             android:textColor="#ffff"
             android:inputType="text"
             android:textSize="17sp"
             app:fontFamily="@font/roboto_slab"/>
         <TextView
-            android:id="@+id/signin"
+            android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp"
-            android:text="Already Registered? Sign In here"
+            android:text="Not yet Registered? Sign Up here"
             android:textSize="15sp"
             android:textAlignment="center"
             android:textColor="#404040"
             app:fontFamily="@font/roboto_slab"/>
+
+
+        <Button
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15sp"
+            android:background="@android:color/transparent"
+            android:text="@string/forpass"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="#404040"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_slab"/>
+
 
 
     </LinearLayout>
