@@ -32,11 +32,11 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void openActivityMainSignIn2() {
-        Intent main_intent = new Intent(HomeActivity.this,Main_Sign_In.class);
+        Intent main_intent = new Intent(HomeActivity.this,Teacher_Login_Activity.class);
         startActivity(main_intent);
     }
     public void openActivityMainSignIn1() {
-        Intent main_intent = new Intent(HomeActivity.this,Main_Sign_In_Student.class);
+        Intent main_intent = new Intent(HomeActivity.this,Student_Login_Activity.class);
         startActivity(main_intent);
     }
 }
