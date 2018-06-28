@@ -9,6 +9,7 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity {
     private Button tch_button;
     private Button std_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,24 +20,14 @@ public class HomeActivity extends AppCompatActivity {
         std_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityMainSignIn1();
+                startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
             }
         });
         tch_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityMainSignIn2();
+                startActivity(new Intent(HomeActivity.this, Main_Sign_In.class));
             }
         });
-    }
-
-
-    public void openActivityMainSignIn2() {
-        Intent main_intent = new Intent(HomeActivity.this,Teacher_Login_Activity.class);
-        startActivity(main_intent);
-    }
-    public void openActivityMainSignIn1() {
-        Intent main_intent = new Intent(HomeActivity.this,Student_Login_Activity.class);
-        startActivity(main_intent);
     }
 }
