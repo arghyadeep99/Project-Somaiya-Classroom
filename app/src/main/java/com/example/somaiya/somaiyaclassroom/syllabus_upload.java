@@ -84,7 +84,7 @@ public class syllabus_upload extends AppCompatActivity {
                     public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
 
 
-                        String url = taskSnapshot.getDownloadUrl().toString();
+                        String url = taskSnapshot.getStorage().getDownloadUrl().toString();
                         DatabaseReference reference=database.getReference();
 
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
