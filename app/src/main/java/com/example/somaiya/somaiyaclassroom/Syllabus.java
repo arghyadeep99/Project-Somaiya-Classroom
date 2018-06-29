@@ -16,7 +16,7 @@ public class Syllabus extends AppCompatActivity {
     }
 
     public void open_upload(View view){
-        Intent upload = new Intent(Syllabus.this, syllabus_upload.class);
+        Intent upload = new Intent(Syllabus.this, UploadFile.class);
         startActivity(upload);
     }
 }
