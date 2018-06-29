@@ -26,7 +26,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class syllabus_upload extends AppCompatActivity {
+public class UploadFile extends AppCompatActivity {
     Button selectFile, upload;
     TextView notification;
     Uri pdfUri;
@@ -37,7 +37,7 @@ public class syllabus_upload extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_syllabus_upload);
+        setContentView(R.layout.activity_upload_file);
 
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -50,10 +50,10 @@ public class syllabus_upload extends AppCompatActivity {
         selectFile.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                if(ContextCompat.checkSelfPermission(syllabus_upload.this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
+                if(ContextCompat.checkSelfPermission(UploadFile.this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
                     selectPdf();
                 else
-                    ActivityCompat.requestPermissions(syllabus_upload.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
+                    ActivityCompat.requestPermissions(UploadFile.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
             }
         });
 
@@ -63,7 +63,7 @@ public class syllabus_upload extends AppCompatActivity {
                 if (pdfUri!=null)
                     uploadFile(pdfUri);
                 else
-                    Toast.makeText(syllabus_upload.this, "Select a File", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UploadFile.this, "Select a File", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -92,9 +92,9 @@ public class syllabus_upload extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
 
                                 if (task.isSuccessful())
-                                    Toast.makeText(syllabus_upload.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
-                                    Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
 
                             }
                         });
@@ -106,13 +106,18 @@ public class syllabus_upload extends AppCompatActivity {
                     @Override
                     public  void onFailure(@NonNull Exception e){
 
-                        Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
                     }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                 int currentProgress= (int)( 100*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
                 progressDialog.setProgress(currentProgress);
+                if(currentProgress==100)
+                {
+                    progressDialog.cancel();
+                    Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -125,7 +130,7 @@ public class syllabus_upload extends AppCompatActivity {
             selectPdf();
         }
         else
-            Toast.makeText(syllabus_upload.this, "please provide permission..", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UploadFile.this, "Please provide required permission(s).", Toast.LENGTH_SHORT).show();
     }
 
     private void selectPdf(){
@@ -143,8 +148,7 @@ public class syllabus_upload extends AppCompatActivity {
             notification.setText("A file is selected: "+ data.getData().getLastPathSegment());
         }
         else{
-            Toast.makeText(syllabus_upload.this, "Please select a file", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UploadFile.this, "Please select a file", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
