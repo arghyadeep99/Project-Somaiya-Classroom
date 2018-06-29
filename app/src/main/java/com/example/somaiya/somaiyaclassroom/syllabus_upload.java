@@ -84,7 +84,7 @@ public class syllabus_upload extends AppCompatActivity {
                     public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
 
 
-                        String url = taskSnapshot.getDownloadUrl().toString();
+                        String url = taskSnapshot.getStorage().getDownloadUrl().toString();
                         DatabaseReference reference=database.getReference();
 
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -94,7 +94,7 @@ public class syllabus_upload extends AppCompatActivity {
                                 if (task.isSuccessful())
                                     Toast.makeText(syllabus_upload.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
-                                        Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
 
                             }
                         });
