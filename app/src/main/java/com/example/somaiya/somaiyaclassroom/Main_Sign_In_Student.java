@@ -128,6 +128,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
+                            Toast.makeText(Main_Sign_In_Student.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             openStudActivity(user);
                         } else {
