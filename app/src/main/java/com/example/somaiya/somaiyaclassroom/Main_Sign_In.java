@@ -113,7 +113,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            Toast.makeText(Main_Sign_In.this,"Logging In...",Toast.LENGTH_LONG).show();
+                            Toast.makeText(Main_Sign_In.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             openProfActivity(user);
                         } else {
