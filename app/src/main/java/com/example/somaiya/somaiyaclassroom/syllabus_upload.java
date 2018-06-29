@@ -94,7 +94,7 @@ public class syllabus_upload extends AppCompatActivity {
                                 if (task.isSuccessful())
                                     Toast.makeText(syllabus_upload.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
-                                        Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(syllabus_upload.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
 
                             }
                         });
