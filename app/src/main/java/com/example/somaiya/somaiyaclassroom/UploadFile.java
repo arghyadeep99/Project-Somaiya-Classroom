@@ -26,19 +26,24 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.net.URL;
+
 public class UploadFile extends AppCompatActivity {
     Button selectFile, upload;
     TextView notification;
     Uri pdfUri;
     ProgressDialog progressDialog;
-
     FirebaseStorage storage;
     FirebaseDatabase database;
+    StorageReference pathToUpload;
+    int buttonTracker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_file);
-
+        Bundle bundle = getIntent().getExtras();
+        buttonTracker = bundle.getInt("buttonTracker",1);
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
 
@@ -77,8 +82,25 @@ public class UploadFile extends AppCompatActivity {
 
         final String fileName = System.currentTimeMillis()+"";
         StorageReference storageReference=storage.getReference();
+        switch (buttonTracker){
+            case 1:
+                pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
+                break;
+            case 2:
+                pathToUpload=storageReference.child("Course Materials").child(fileName);
+                break;
+            case 4:
+                pathToUpload=storageReference.child("Easy Solutions").child(fileName);
+                break;
+            case 5:
+                pathToUpload=storageReference.child("Previous Years UT Papers").child(fileName);
+                break;
+            case 6:
+                pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileName);
+                break;
 
-        storageReference.child("Uploads").child(fileName).putFile(pdfUri)
+        }
+        pathToUpload.putFile(pdfUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
                     @Override
                     public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
@@ -90,12 +112,12 @@ public class UploadFile extends AppCompatActivity {
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-
+/*
                                 if (task.isSuccessful())
                                     Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
                                     Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
-
+*/
                             }
                         });
 

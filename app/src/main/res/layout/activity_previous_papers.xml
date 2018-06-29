@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".PreviousPapers"
     android:background="@drawable/gradient_color">
 
     <TextView
@@ -32,6 +32,7 @@
         app:fontFamily="@font/roboto_slab"
         android:textStyle="bold"
         android:layout_marginTop="70dp"
+        android:onClick="open_upload"
         android:text="  Upload Term Test Papers  " />
 
     <Button
@@ -46,5 +47,6 @@
         app:fontFamily="@font/roboto_slab"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
+        android:onClick="open_upload2"
         android:text="  Upload End Sem Papers  "/>
 </LinearLayout>
