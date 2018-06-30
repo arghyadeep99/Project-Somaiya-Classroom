@@ -128,7 +128,7 @@ public class UploadFile extends AppCompatActivity {
                     @Override
                     public  void onFailure(@NonNull Exception e){
 
-                        Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadFile.this, "File not uploaded. Please try again.", Toast.LENGTH_SHORT).show();
                     }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
