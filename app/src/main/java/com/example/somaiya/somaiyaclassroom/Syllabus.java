@@ -17,6 +17,7 @@ public class Syllabus extends AppCompatActivity {
 
     public void open_upload(View view){
         Intent upload = new Intent(Syllabus.this, UploadFile.class);
+        upload.putExtra("buttonTracker",1);
         startActivity(upload);
     }
 }

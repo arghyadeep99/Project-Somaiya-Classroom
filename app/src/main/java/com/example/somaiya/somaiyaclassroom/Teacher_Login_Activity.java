@@ -2,6 +2,7 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -92,7 +93,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
 
     public void openActivitycourseMaterial() {
         Intent main_intent = new Intent(Teacher_Login_Activity.this, courseMaterial.class);
-        startActivity(main_intent);
+        this.startActivity(main_intent);
     }
 
     public void openActivitySyllabus() {

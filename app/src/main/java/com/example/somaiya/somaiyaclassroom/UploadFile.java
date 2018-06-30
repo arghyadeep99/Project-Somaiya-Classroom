@@ -26,19 +26,25 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.net.URL;
+
 public class UploadFile extends AppCompatActivity {
     Button selectFile, upload;
     TextView notification;
     Uri pdfUri;
     ProgressDialog progressDialog;
-
     FirebaseStorage storage;
     FirebaseDatabase database;
+    StorageReference pathToUpload;
+    int buttonTracker;
+    String name,fileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_file);
-
+        Bundle bundle = getIntent().getExtras();
+        buttonTracker = bundle.getInt("buttonTracker",1);
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
 
@@ -75,10 +81,30 @@ public class UploadFile extends AppCompatActivity {
         progressDialog.setProgress(0);
         progressDialog.show();
 
-        final String fileName = System.currentTimeMillis()+"";
+        //final String fileName = System.currentTimeMillis()+"";
+        fileName = name.substring(name.lastIndexOf("/")+1);
+        fileName = fileName.substring(0,fileName.lastIndexOf("."));
+        fileName=encodeName(fileName);
         StorageReference storageReference=storage.getReference();
+        switch (buttonTracker){
+            case 1:
+                pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
+                break;
+            case 2:
+                pathToUpload=storageReference.child("Course Materials").child(fileName);
+                break;
+            case 4:
+                pathToUpload=storageReference.child("Easy Solutions").child(fileName);
+                break;
+            case 5:
+                pathToUpload=storageReference.child("Previous Years UT Papers").child(fileName);
+                break;
+            case 6:
+                pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileName);
+                break;
 
-        storageReference.child("Uploads").child(fileName).putFile(pdfUri)
+        }
+        pathToUpload.putFile(pdfUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
                     @Override
                     public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
@@ -90,12 +116,12 @@ public class UploadFile extends AppCompatActivity {
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-
+/*
                                 if (task.isSuccessful())
                                     Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
                                     Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
-
+*/
                             }
                         });
 
@@ -106,7 +132,7 @@ public class UploadFile extends AppCompatActivity {
                     @Override
                     public  void onFailure(@NonNull Exception e){
 
-                        Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadFile.this, "File not uploaded. Please try again.", Toast.LENGTH_SHORT).show();
                     }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -146,9 +172,33 @@ public class UploadFile extends AppCompatActivity {
         if(requestCode==86 && resultCode==RESULT_OK && data!=null){
             pdfUri = data.getData();
             notification.setText("A file is selected: "+ data.getData().getLastPathSegment());
+            name = data.getData().getLastPathSegment();
         }
         else{
             Toast.makeText(UploadFile.this, "Please select a file", Toast.LENGTH_SHORT).show();
         }
+    }
+    public String encodeName(String name)
+    {
+        String num = "0x";
+        int length = name.length();
+        for(int i=0; i<length;i++)
+        {
+            num += Integer.toHexString(name.codePointAt(i));
+        }
+        return num;
+    }
+    public String decodeName(String num)
+    {
+        String ans = "";
+        String s;
+        num = num.substring(2,num.length());
+        int length = num.length();
+        for(int i=0; i<length;)
+        {
+            s = num.substring(i,i+=2);
+            ans += (char)Integer.parseInt(s,16);
+        }
+        return ans;
     }
 }
