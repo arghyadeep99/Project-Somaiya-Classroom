@@ -31,5 +31,6 @@
         app:fontFamily="@font/roboto_slab"
         android:textColor="#ffff"
         android:textSize="18sp"
+        android:onClick="open_upload"
         android:text="Upload" />
 </LinearLayout>
