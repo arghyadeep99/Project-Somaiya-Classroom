@@ -82,8 +82,9 @@ public class UploadFile extends AppCompatActivity {
         progressDialog.show();
 
         //final String fileName = System.currentTimeMillis()+"";
-        fileName = name.substring(name.lastIndexOf("/")+1);
-        fileName = fileName.substring(0,fileName.lastIndexOf("."));
+        if(name.indexOf('/')!=-1)
+            fileName = name.substring(name.lastIndexOf("/")+1);
+        //fileName = fileName.substring(0,fileName.lastIndexOf("."));
         fileName=encodeName(fileName);
         StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
