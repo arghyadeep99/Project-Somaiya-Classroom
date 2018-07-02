@@ -88,6 +88,7 @@ public class UploadFile extends AppCompatActivity {
         //if(fileName.indexOf('.')!=-1)
           //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
         fileName=encodeName(getFileName(pdfUri));
+
         StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
             case 1:
