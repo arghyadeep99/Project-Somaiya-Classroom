@@ -4,7 +4,9 @@ import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
+import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -80,11 +82,12 @@ public class UploadFile extends AppCompatActivity {
         progressDialog.setTitle("Uploading File...");
         progressDialog.setProgress(0);
         progressDialog.show();
-
         //final String fileName = System.currentTimeMillis()+"";
-        fileName = name.substring(name.lastIndexOf("/")+1);
-        fileName = fileName.substring(0,fileName.lastIndexOf("."));
-        fileName=encodeName(fileName);
+        //if(name.indexOf('/')!=-1)
+          //  fileName = name.substring(name.lastIndexOf("/")+1);
+        //if(fileName.indexOf('.')!=-1)
+          //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
+        fileName=encodeName(getFileName(pdfUri));
         StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
             case 1:
@@ -162,7 +165,7 @@ public class UploadFile extends AppCompatActivity {
     private void selectPdf(){
 
         Intent intent = new Intent();
-        intent.setType("application/pdf");
+        intent.setType("application/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, 86);
 
@@ -200,5 +203,26 @@ public class UploadFile extends AppCompatActivity {
             ans += (char)Integer.parseInt(s,16);
         }
         return ans;
+    }
+    public String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme().equals("content")) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                }
+            } finally {
+                cursor.close();
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            int cut = result.lastIndexOf('/');
+            if (cut != -1) {
+                result = result.substring(cut + 1);
+            }
+        }
+        return result;
     }
 }
