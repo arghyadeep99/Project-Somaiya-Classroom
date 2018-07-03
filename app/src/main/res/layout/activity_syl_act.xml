@@ -194,6 +194,7 @@
         app:fontFamily="@font/roboto_slab"
         android:text="Download"
         android:inputType="text"
+        android:onClick="openDownload"
         android:background="@drawable/button_shape"
         />
 </LinearLayout>

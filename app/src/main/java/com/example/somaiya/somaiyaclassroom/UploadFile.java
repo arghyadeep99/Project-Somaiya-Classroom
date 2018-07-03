@@ -40,7 +40,7 @@ public class UploadFile extends AppCompatActivity {
     FirebaseDatabase database;
     StorageReference pathToUpload;
     int buttonTracker;
-    String name,fileName;
+    String name,fileName,fileNameWithExtension;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +87,8 @@ public class UploadFile extends AppCompatActivity {
           //  fileName = name.substring(name.lastIndexOf("/")+1);
         //if(fileName.indexOf('.')!=-1)
           //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
-        fileName=encodeName(getFileName(pdfUri));
+        fileName = encodeName(getFileName(pdfUri));
+        fileNameWithExtension = fileName + getFileName(pdfUri).substring(getFileName(pdfUri).lastIndexOf('.')) + "";
         StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
             case 1:
