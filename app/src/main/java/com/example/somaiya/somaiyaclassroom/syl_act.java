@@ -1,7 +1,9 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class syl_act extends AppCompatActivity {
 
@@ -13,5 +15,10 @@ public class syl_act extends AppCompatActivity {
         float zoomFactor = 1.25f;
         if(Magnify.getInstance().getData())
             mag.enlarge(true,findViewById(android.R.id.content),zoomFactor);
+    }
+    public void openDownload(View view)
+    {
+        Intent i = new Intent(syl_act.this,DownloadFile.class);
+        startActivity(i);
     }
 }
