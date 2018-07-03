@@ -29,37 +29,33 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            >
-
-
+            android:layout_weight="2">
 
 
             <TextView
                 android:id="@+id/stu-login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="0dp"
+
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
                 android:text="Welcome to Student Portal"
-                android:layout_marginBottom="40dp"
                 android:textColor="#404040"
                 android:textSize="23sp"
-                app:fontFamily="@font/roboto_slab"
                 android:textStyle="bold"
-                android:layout_centerInParent="true"/>
+                app:fontFamily="@font/roboto_slab" />
         </RelativeLayout>
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="8"
-            android:columnCount="2"
-            android:rowCount="3"
-            android:columnOrderPreserved="false"
             android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
             android:padding="14dp"
+            android:rowCount="3"
 
             >
 
@@ -67,16 +63,17 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+                android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
 
 
                 >
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -86,11 +83,11 @@
 
 
                     <ImageView
+                        android:id="@+id/img1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/syllabus"
-                        android:id="@+id/img1"
 
 
                         />
@@ -100,18 +97,17 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
 
-                        android:background="@drawable/button_shape"
-                        android:inputType="text"
-                        android:text="Syllabus"
                         android:layout_marginTop="10dp"
+                        android:background="@drawable/button_shape"
+                        android:clickable="true"
+                        android:inputType="text"
+                        android:onClick="A"
+                        android:text="Syllabus"
                         android:textAlignment="center"
                         android:textColor="#ffff"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:fontFamily="@font/roboto_slab"
-                        android:onClick="A"
-                        android:clickable="true"
-                        />
+                        app:fontFamily="@font/roboto_slab" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -120,13 +116,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+                android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
 
                 >
 
@@ -140,12 +136,12 @@
                     >
 
                     <ImageView
+                        android:id="@+id/img2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/course"
                         android:contentDescription="@string/COURSE"
-                        android:id="@+id/img2"
+                        android:src="@drawable/course"
 
                         />
 
@@ -178,8 +174,7 @@
                 android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                >
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -189,11 +184,11 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/easy"
-                        android:id="@+id/img3"
 
 
                         />
@@ -219,18 +214,17 @@
             </android.support.v7.widget.CardView>
 
 
-
             <android.support.v7.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+                android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
 
                 >
 
@@ -242,11 +236,11 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/lstyrpprs"
-                        android:id="@+id/img4"
 
                         />
 
@@ -271,18 +265,17 @@
             </android.support.v7.widget.CardView>
 
 
-
             <android.support.v7.widget.CardView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+                android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
 
                 >
 
@@ -294,11 +287,11 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/calendar"
-                        android:id="@+id/img5"
 
                         />
 
@@ -307,18 +300,18 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:autoLink="web"
                         android:background="@drawable/button_shape"
+                        android:clickable="true"
                         android:inputType="text"
+                        android:onClick="E"
                         android:text="View Events"
                         android:textAlignment="center"
                         android:textColor="#ffff"
+                        android:textColorLink="#ffff"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab"
-                        android:autoLink="web"
-                        android:textColorLink="#ffff"
-                        android:clickable="true"
-                        android:onClick="E"
 
                         />
 
@@ -330,13 +323,13 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
+                android:layout_rowWeight="1"
                 app:cardBackgroundColor="@color/colorNew"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
 
                 >
 
@@ -348,11 +341,11 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/faq"
-                        android:id="@+id/img6"
 
                         />
 
