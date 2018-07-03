@@ -134,7 +134,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.student_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            //Snackbar.make(findViewById(R.id.student_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             openStudActivity(null);
                         }
 
