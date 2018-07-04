@@ -40,7 +40,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
 
     private SignInButton SignIn;
     private GoogleSignInClient mGoogleSignInClient;
-    private static final int REQ_CODE=9001;
+    private static final int REQ_CODE=901;
     private static final String TAG = "GoogleActivity";
     private FirebaseAuth mAuth;
     private Switch isEnlarged;

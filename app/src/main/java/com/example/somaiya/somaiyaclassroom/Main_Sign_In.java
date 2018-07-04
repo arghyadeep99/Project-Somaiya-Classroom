@@ -42,7 +42,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
 
     private SignInButton SignIn;
     private GoogleSignInClient mGoogleSignInClient;
-    private static final int REQ_CODE=9001;
+    private static final int REQ_CODE=901;
     private static final String TAG = "GoogleActivity";
     private FirebaseAuth mAuth;
     @Override
