@@ -192,5 +192,6 @@
         android:textSize="18sp"
         android:textColor="#ffff"
         android:inputType="text"
+        android:onClick="open_upload"
         app:fontFamily="@font/roboto_slab"/>
 </LinearLayout>

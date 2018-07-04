@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+
+
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Ask a doubt"
+        android:icon="@drawable/ic_baseline_feedback_24px"
+        android:onClick="settings"
+        />
+
+    <item android:id="@+id/notif"
+        android:title="Notifications"
+        android:icon="@drawable/ic_baseline_notifications_24px"
+        android:onClick="notif"
+        />
+
+    <item android:id="@+id/nav_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_baseline_power_settings_new_24px"
+        android:onClick="onNavigationItemSelected"
+
+        />
+
+
+
+
+
+</menu>

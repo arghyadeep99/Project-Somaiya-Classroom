@@ -1,0 +1,229 @@
+package com.example.somaiya.somaiyaclassroom;
+
+import android.Manifest;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.OpenableColumns;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
+import java.net.URL;
+
+public class UploadFile extends AppCompatActivity {
+    Button selectFile, upload;
+    TextView notification;
+    Uri pdfUri;
+    ProgressDialog progressDialog;
+    FirebaseStorage storage;
+    FirebaseDatabase database;
+    StorageReference pathToUpload;
+    int buttonTracker;
+    String name,fileName;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_upload_file);
+        Bundle bundle = getIntent().getExtras();
+        buttonTracker = bundle.getInt("buttonTracker",1);
+        storage = FirebaseStorage.getInstance();
+        database = FirebaseDatabase.getInstance();
+
+        selectFile = findViewById(R.id.select_1);
+        upload = findViewById(R.id.upload_1);
+        notification = findViewById(R.id.show_text);
+
+
+        selectFile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if(ContextCompat.checkSelfPermission(UploadFile.this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
+                    selectPdf();
+                else
+                    ActivityCompat.requestPermissions(UploadFile.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 9);
+            }
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pdfUri!=null)
+                    uploadFile(pdfUri);
+                else
+                    Toast.makeText(UploadFile.this, "Select a File", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void uploadFile(Uri pdfUri){
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setTitle("Uploading File...");
+        progressDialog.setProgress(0);
+        progressDialog.show();
+        //final String fileName = System.currentTimeMillis()+"";
+        //if(name.indexOf('/')!=-1)
+          //  fileName = name.substring(name.lastIndexOf("/")+1);
+        //if(fileName.indexOf('.')!=-1)
+          //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
+        fileName=encodeName(getFileName(pdfUri));
+
+        StorageReference storageReference=storage.getReference();
+        switch (buttonTracker){
+            case 1:
+                pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
+                break;
+            case 2:
+                pathToUpload=storageReference.child("Course Materials").child(fileName);
+                break;
+            case 4:
+                pathToUpload=storageReference.child("Easy Solutions").child(fileName);
+                break;
+            case 5:
+                pathToUpload=storageReference.child("Previous Years UT Papers").child(fileName);
+                break;
+            case 6:
+                pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileName);
+                break;
+
+        }
+        pathToUpload.putFile(pdfUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+                    @Override
+                    public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
+
+
+                        String url = taskSnapshot.getStorage().getDownloadUrl().toString();
+                        DatabaseReference reference=database.getReference();
+
+                        reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+/*
+                                if (task.isSuccessful())
+                                    Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
+                                else
+                                    Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
+*/
+                            }
+                        });
+
+
+
+                    }
+                }).addOnFailureListener(new OnFailureListener(){
+                    @Override
+                    public  void onFailure(@NonNull Exception e){
+
+                        Toast.makeText(UploadFile.this, "File not uploaded. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                int currentProgress= (int)( 100*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
+                progressDialog.setProgress(currentProgress);
+                if(currentProgress==100)
+                {
+                    progressDialog.cancel();
+                    Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+        if (requestCode==9 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
+        {
+            selectPdf();
+        }
+        else
+            Toast.makeText(UploadFile.this, "Please provide required permission(s).", Toast.LENGTH_SHORT).show();
+    }
+
+    private void selectPdf(){
+
+        Intent intent = new Intent();
+        intent.setType("application/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, 86);
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(requestCode==86 && resultCode==RESULT_OK && data!=null){
+            pdfUri = data.getData();
+            notification.setText("A file is selected: "+ data.getData().getLastPathSegment());
+            name = data.getData().getLastPathSegment();
+        }
+        else{
+            Toast.makeText(UploadFile.this, "Please select a file", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public String encodeName(String name)
+    {
+        String num = "0x";
+        int length = name.length();
+        for(int i=0; i<length;i++)
+        {
+            num += Integer.toHexString(name.codePointAt(i));
+        }
+        return num;
+    }
+    public String decodeName(String num)
+    {
+        String ans = "";
+        String s;
+        num = num.substring(2,num.length());
+        int length = num.length();
+        for(int i=0; i<length;)
+        {
+            s = num.substring(i,i+=2);
+            ans += (char)Integer.parseInt(s,16);
+        }
+        return ans;
+    }
+    public String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme().equals("content")) {
+            Cursor cursor = getContentResolver().query(uri, null, null, null, null);
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    result = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                }
+            } finally {
+                cursor.close();
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            int cut = result.lastIndexOf('/');
+            if (cut != -1) {
+                result = result.substring(cut + 1);
+            }
+        }
+        return result;
+    }
+}

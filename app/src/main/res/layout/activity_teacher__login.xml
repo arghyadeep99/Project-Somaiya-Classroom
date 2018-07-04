@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal|center"
     android:orientation="vertical"
+    android:id="@+id/teacher_login"
     android:background="@drawable/gradient_color"
     tools:context=".Teacher_Login_Activity">
 
