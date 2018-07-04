@@ -23,12 +23,13 @@ public class DownloadFile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_view);
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();//.child("Syllabus");
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                fileName = dataSnapshot.getKey();
+                fileName = decodeName(dataSnapshot.getKey());
                 url = dataSnapshot.getValue(String.class);
+                ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
             }
 
             @Override
@@ -55,7 +56,7 @@ public class DownloadFile extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(DownloadFile.this));
         MyAdapter myAdapter = new MyAdapter(DownloadFile.this,recyclerView,new ArrayList<String>(),new ArrayList<String>());
         recyclerView.setAdapter(myAdapter);
-        ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
+
     }
     public String decodeName(String num)
     {

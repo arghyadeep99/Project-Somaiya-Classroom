@@ -40,7 +40,7 @@ public class UploadFile extends AppCompatActivity {
     FirebaseDatabase database;
     StorageReference pathToUpload;
     int buttonTracker;
-    String name,fileName,fileNameWithExtension;
+    String name;//fileName,fileNameWithExtension;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,24 +87,24 @@ public class UploadFile extends AppCompatActivity {
           //  fileName = name.substring(name.lastIndexOf("/")+1);
         //if(fileName.indexOf('.')!=-1)
           //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
-        fileName = encodeName(getFileName(pdfUri));
-        fileNameWithExtension = fileName + getFileName(pdfUri).substring(getFileName(pdfUri).lastIndexOf('.')) + "";
+        final String fileName = encodeName(getFileName(pdfUri));
+        final String fileNameWithExtension = encodeName(fileName)+getFileName(pdfUri).substring(getFileName(pdfUri).lastIndexOf('.'))+"";
         StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
             case 1:
                 pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
                 break;
             case 2:
-                pathToUpload=storageReference.child("Course Materials").child(fileName);
+                pathToUpload=storageReference.child("Course Materials").child(fileNameWithExtension);
                 break;
             case 4:
-                pathToUpload=storageReference.child("Easy Solutions").child(fileName);
+                pathToUpload=storageReference.child("Easy Solutions").child(fileNameWithExtension);
                 break;
             case 5:
-                pathToUpload=storageReference.child("Previous Years UT Papers").child(fileName);
+                pathToUpload=storageReference.child("Previous Years UT Papers").child(fileNameWithExtension);
                 break;
             case 6:
-                pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileName);
+                pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileNameWithExtension);
                 break;
 
         }
