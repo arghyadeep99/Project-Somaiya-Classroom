@@ -20,13 +20,13 @@ public class HomeActivity extends AppCompatActivity {
         std_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, Student_Login_Activity.class));
+                startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
             }
         });
         tch_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, Teacher_Login_Activity.class));
+                startActivity(new Intent(HomeActivity.this, Main_Sign_In.class));
             }
         });
     }

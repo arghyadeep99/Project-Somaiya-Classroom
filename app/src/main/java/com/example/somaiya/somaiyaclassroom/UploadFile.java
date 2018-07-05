@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UploadFile extends AppCompatActivity {
@@ -40,7 +42,7 @@ public class UploadFile extends AppCompatActivity {
     FirebaseDatabase database;
     StorageReference pathToUpload;
     int buttonTracker;
-    String name;//fileName,fileNameWithExtension;
+    String name,url,location;//fileName,fileNameWithExtension;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +77,7 @@ public class UploadFile extends AppCompatActivity {
             }
         });
     }
-    private void uploadFile(Uri pdfUri){
+    private void uploadFile(final Uri pdfUri){
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -89,34 +91,46 @@ public class UploadFile extends AppCompatActivity {
           //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
         final String fileName = encodeName(getFileName(pdfUri));
         final String fileNameWithExtension = encodeName(fileName)+getFileName(pdfUri).substring(getFileName(pdfUri).lastIndexOf('.'))+"";
-        StorageReference storageReference=storage.getReference();
+        final StorageReference storageReference=storage.getReference();
         switch (buttonTracker){
             case 1:
                 pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
+                location="Syllabus";
                 break;
             case 2:
                 pathToUpload=storageReference.child("Course Materials").child(fileNameWithExtension);
+                location="Course Materials";
                 break;
             case 4:
                 pathToUpload=storageReference.child("Easy Solutions").child(fileNameWithExtension);
+                location="Easy Solutions";
                 break;
             case 5:
                 pathToUpload=storageReference.child("Previous Years UT Papers").child(fileNameWithExtension);
+                location="Previous Years UT Papers";
                 break;
             case 6:
                 pathToUpload=storageReference.child("Previous Years ESE Papers").child(fileNameWithExtension);
+                location="Previous Years ESE Papers";
                 break;
 
         }
         pathToUpload.putFile(pdfUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>(){
+                .addOnSuccessListener(this ,new OnSuccessListener<UploadTask.TaskSnapshot>(){
                     @Override
-                    public  void onSuccess(UploadTask.TaskSnapshot taskSnapshot){
+                    public  void onSuccess(final UploadTask.TaskSnapshot taskSnapshot){
 
-
-                        String url = taskSnapshot.getStorage().getDownloadUrl().toString();
-                        DatabaseReference reference=database.getReference();
-
+                        //String url = taskSnapshot.getStorage().getDownloadUrl().toString();
+                        final DatabaseReference reference;
+                        reference=database.getReference().child(location);
+                        pathToUpload.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                Uri temp = uri;
+                                url = temp.toString();
+                                reference.child(fileName).setValue(url);
+                            }
+                        });
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
