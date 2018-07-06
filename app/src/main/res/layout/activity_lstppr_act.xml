@@ -31,6 +31,7 @@
         android:inputType="text"
         android:textSize="18sp"
         android:textColor="#ffff"
+        android:onClick="open_download"
         android:background="@drawable/button_shape"/>
 
     <Button
@@ -44,6 +45,7 @@
         android:inputType="text"
         android:textSize="18sp"
         android:textColor="#ffff"
+        android:onClick="open_download2"
         android:background="@drawable/button_shape"/>
 
 </LinearLayout>

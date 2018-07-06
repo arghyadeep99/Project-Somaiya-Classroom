@@ -1,7 +1,9 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class esysol_act extends AppCompatActivity {
 
@@ -14,4 +16,9 @@ public class esysol_act extends AppCompatActivity {
         if(Magnify.getInstance().getData())
             mag.enlarge(true,findViewById(android.R.id.content),zoomFactor);
     }
+   /* public void open_download(View view) {
+        Intent upload = new Intent(esysol_act.this, DownloadFile.class);
+        upload.putExtra("buttonTracker",4);
+        startActivity(upload);
+    }*/
 }

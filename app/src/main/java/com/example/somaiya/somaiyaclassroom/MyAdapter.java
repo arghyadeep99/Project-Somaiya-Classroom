@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,10 +58,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int pos = recyclerView.getChildLayoutPosition(view);
+                    int position = recyclerView.getChildLayoutPosition(view);
+                    //Uri uri = Uri.parse(urls.get(position));
                     Intent intent = new Intent();
+                    //intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     intent.setType(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(urls.get(pos)));
+                    intent.setData(Uri.parse(urls.get(position)));
+                    Log.e("URLS:",urls.get(position) + " " + contents.get(position));
                     context.startActivity(intent);
                 }
             });

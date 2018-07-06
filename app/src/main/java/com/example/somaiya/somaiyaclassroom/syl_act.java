@@ -1,5 +1,6 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class syl_act extends AppCompatActivity {
     public void openDownload(View view)
     {
         Intent i = new Intent(syl_act.this,DownloadFile.class);
+        i.putExtra("buttonTracker",1);
         startActivity(i);
     }
 }
