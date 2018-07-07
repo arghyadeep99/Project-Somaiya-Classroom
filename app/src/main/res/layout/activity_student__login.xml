@@ -44,6 +44,7 @@
                 android:textColor="#404040"
                 android:textSize="23sp"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 app:fontFamily="@font/roboto_slab" />
         </RelativeLayout>
 
@@ -67,6 +68,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="syllabus"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -89,7 +91,6 @@
                         android:layout_gravity="center_horizontal"
                         android:src="@drawable/syllabus"
 
-
                         />
 
                     <TextView
@@ -98,13 +99,12 @@
                         android:layout_height="wrap_content"
 
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_shape"
+
                         android:clickable="true"
                         android:inputType="text"
-                        android:onClick="A"
                         android:text="Syllabus"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />
@@ -120,6 +120,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="CourseMaterials"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -127,7 +128,7 @@
                 >
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:layout_margin="16dp"
@@ -147,15 +148,15 @@
 
                     <TextView
                         android:id="@+id/courseMaterial"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_shape"
+
                         android:clickable="true"
                         android:inputType="text"
-                        android:onClick="B"
                         android:text="Course Content"
-                        android:textColor="#ffff"
+                        android:textAlignment="center"
+                        android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />
@@ -172,6 +173,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="EasySolutions"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
@@ -188,8 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/easy"
-
+                        android:src="@drawable/solutions"
 
                         />
 
@@ -198,14 +199,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_shape"
                         android:clickable="true"
                         android:inputType="text"
-                        android:onClick="C"
-                        android:text="Easy Solution"
+                        android:text="Easy Solutions"
                         android:textAlignment="center"
-
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />
@@ -222,6 +220,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="PreviousPapers"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -240,7 +239,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/lstyrpprs"
+                        android:src="@drawable/past_papers"
 
                         />
 
@@ -249,14 +248,11 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_shape"
                         android:clickable="true"
                         android:inputType="text"
-
-                        android:onClick="D"
-                        android:text="Prev.Papers"
+                        android:text="Past Papers"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />
@@ -273,6 +269,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="ViewEvents"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -291,7 +288,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/calendar"
+                        android:src="@drawable/view_calendar"
 
                         />
 
@@ -301,14 +298,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:autoLink="web"
-                        android:background="@drawable/button_shape"
                         android:clickable="true"
                         android:inputType="text"
-                        android:onClick="E"
                         android:text="View Events"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
-                        android:textColorLink="#ffff"
+                        android:textColor="#000"
+                        android:textColorLink="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab"
@@ -327,6 +322,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
+                android:onClick="FAQs"
                 app:cardBackgroundColor="@color/colorNew"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
@@ -345,7 +341,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/faq"
+                        android:src="@drawable/faqs"
 
                         />
 
@@ -354,15 +350,13 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/button_shape"
                         android:inputType="text"
                         android:text="FAQs"
                         android:textAlignment="center"
-                        android:textColor="#ffff"
+                        android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab"
-
                         />
 
                 </LinearLayout>
@@ -382,8 +376,6 @@
         android:layout_gravity="start"
 
         >
-
-
 
     </android.support.design.widget.NavigationView>
 

@@ -97,13 +97,6 @@ public class Student_Login_Activity extends AppCompatActivity {
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
-        /*if (firebaseAuth.getCurrentUser() == null) {
-            finish();
-            startActivity(new Intent(this, AlreadyRegisteredLoginStudent.class));
-        }*/
-
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -116,30 +109,33 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
 
-    public void A(View v) {
+    public void syllabus(View v) {
         Intent i = new Intent(this, syl_act.class);
         startActivity(i);
     }
 
-    public void B(View v) {
+    public void CourseMaterials(View v) {
         Intent i = new Intent(Student_Login_Activity.this, course_act.class);
         startActivity(i);
     }
 
-    public void C(View v) {
+    public void EasySolutions(View v) {
         Intent i = new Intent(this, esysol_act.class);
         startActivity(i);
     }
 
-    public void D(View v) {
+    public void PreviousPapers(View v) {
         Intent i = new Intent(this, lstppr_act.class);
         startActivity(i);
     }
 
-    public void E(View v) {
+    public void ViewEvents(View v) {
         Uri uri = Uri.parse("https://www.google.com/calendar");
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
+    }
+    public void FAQs(View v) {
+        startActivity(new Intent(this,FAQ.class));
     }
 
     public void openMainSignInStudent(FirebaseUser user){
@@ -148,11 +144,11 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
 
-    public void onNavigationItemSelected(MenuItem item) {
+    public void SIGNOUT(MenuItem item) {
         logout();
     }
 
-    public void notif(MenuItem item) {
+    public void notifications(MenuItem item) {
         Uri uri = Uri.parse("https://www.google.com/calendar");
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
@@ -164,7 +160,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         String aEmailList[] = {"a.chachra@somaiya.edu"};
         emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Query in FCP");
-        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "The following is my query");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
         startActivity(emailIntent);
     }
 

@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -20,31 +21,69 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".Teacher_Login_Activity" />
-        <activity android:name=".Main_Sign_In" />
-        <activity android:name=".Forgot_Password_Activity" />
-        <activity android:name=".Main_Sign_In_Student" />
-        <activity android:name=".Student_Login_Activity" />
-        <activity android:name=".courseMaterial" />
-        <activity android:name=".Syllabus" />
-        <activity android:name=".PreviousPapers" />
-        <activity android:name=".Addevent" />
-        <activity android:name=".Easysolution" />
-        <activity android:name=".syl_act" />
-        <activity android:name=".esysol_act" />
-        <activity android:name=".lstppr_act" />
-        <activity android:name=".course_act" />
-        <activity android:name=".UploadFile" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Teacher_Login_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main_Sign_In"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Forgot_Password_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main_Sign_In_Student"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Student_Login_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".courseMaterial"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Syllabus"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PreviousPapers"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Addevent"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Easysolution"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".syl_act"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".esysol_act"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lstppr_act"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".course_act"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UploadFile"
+            android:screenOrientation="portrait" />
         <activity android:name=".Magnify" />
+        <activity
+            android:name=".DownloadFile"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
+        <activity android:name=".FAQ" />
+        <activity android:name=".MyAdapter"></activity>
     </application>
 
 </manifest>

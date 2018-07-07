@@ -41,6 +41,7 @@
         android:inputType="text"
         android:layout_marginTop="5dp"
         app:fontFamily="@font/roboto_slab"
+        android:onClick="open_download"
         android:text="Download" />
 
 

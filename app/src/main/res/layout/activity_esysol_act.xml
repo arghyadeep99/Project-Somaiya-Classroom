@@ -27,28 +27,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-    <RadioButton
-        android:id="@+id/radioButton_stu"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:textColor="#404040"
-        android:text="Net Banking"
-        android:textSize="18sp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/roboto_slab"/>
-    <RadioButton
-        android:id="@+id/radioButton2_stu"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="#404040"
-        android:text="Card Payment"
-        android:textSize="18sp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/roboto_slab"/>
+        <RadioButton
+            android:id="@+id/radioButton_stu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textColor="#404040"
+            android:text="Net Banking"
+            android:textSize="18sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/roboto_slab"/>
+        <RadioButton
+            android:id="@+id/radioButton2_stu"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="#404040"
+            android:text="Card Payment"
+            android:textSize="18sp"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/roboto_slab"/>
     </RadioGroup>
 
     <Button

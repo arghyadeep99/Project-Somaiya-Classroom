@@ -42,7 +42,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
 
     private SignInButton SignIn;
     private GoogleSignInClient mGoogleSignInClient;
-    private static final int REQ_CODE=901;
+    private static final int REQ_CODE=9001;
     private static final String TAG = "GoogleActivity";
     private FirebaseAuth mAuth;
     @Override
@@ -120,7 +120,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            //Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(Main_Sign_In.this,"Log In Failed",Toast.LENGTH_SHORT).show();
                             openProfActivity(null);
                         }
 
