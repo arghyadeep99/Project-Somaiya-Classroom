@@ -168,15 +168,21 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
     private void logout() {
+
+
         finish();
         mAuth.signOut();
+        Globals.stu = true;
+        Globals.tea = true;
         mGoogleSignInClient.signOut().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         openMainSignInStudent(null);
+
                     }
                 });
+
     }
     public void about(MenuItem item){
         startActivity(new Intent(this, about.class));
@@ -184,7 +190,8 @@ public class Student_Login_Activity extends AppCompatActivity {
 
    @Override
    public void onBackPressed() {
-
+        //Globals.tea = true;
+       Globals.stu = true;
        AlertDialog.Builder builder= new AlertDialog.Builder(this);
        builder.setCancelable(false);
        builder.setMessage("Are you sure you want to go back to Home Screen?");

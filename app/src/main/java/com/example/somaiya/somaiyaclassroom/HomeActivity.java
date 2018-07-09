@@ -6,10 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 
 public class HomeActivity extends AppCompatActivity {
+
     private CardView tch_button;
     private CardView std_button;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +23,31 @@ public class HomeActivity extends AppCompatActivity {
 
         tch_button = (CardView) findViewById(R.id.tch_btn);
         std_button = (CardView) findViewById(R.id.stu_btn);
+
+
         std_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
+
+                if(Globals.stu) {
+                    //Globals.tea = false;
+                    startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
+                }
+                else
+                    Toast.makeText(HomeActivity.this, "You are logged in as Teacher.", Toast.LENGTH_SHORT).show();
+
             }
         });
         tch_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, Main_Sign_In.class));
+
+                if(Globals.tea) {
+                    //Globals.stu = false;
+                    startActivity(new Intent(HomeActivity.this, Main_Sign_In.class));
+                }
+                else
+                    Toast.makeText(HomeActivity.this, "You are logged in as Student.", Toast.LENGTH_SHORT).show();
             }
         });
     }
