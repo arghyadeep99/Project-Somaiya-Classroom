@@ -37,7 +37,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 
 
-
 public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private SignInButton SignIn;
@@ -100,7 +99,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             }
         }
     }
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         // [START_EXCLUDE silent]
         //showProgressDialog();
