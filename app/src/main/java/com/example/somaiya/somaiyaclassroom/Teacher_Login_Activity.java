@@ -1,11 +1,13 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -175,16 +177,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         startActivity(i);
     }
 
-    public void chat(MenuItem item) {
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setType("text/plain");
-        String aEmailList[] = {"a.chachra@somaiya.edu"};
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Query in FCP");
-        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
-        startActivity(emailIntent);
-    }
-
     private void logout() {
         finish();
         mAuth.signOut();
@@ -199,6 +191,22 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
 
     public void about(MenuItem item) {
         startActivity(new Intent(this, about.class));
+    }
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure you want to go back to Home Screen?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
 }
 

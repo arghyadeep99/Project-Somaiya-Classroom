@@ -136,6 +136,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
        // hideProgressDialog();
         if (user != null) {
             startActivity(new Intent(this,Teacher_Login_Activity.class));
+            finish();
         }
     }
 }

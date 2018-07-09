@@ -1,11 +1,14 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.app.Dialog;
 import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -53,6 +56,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static android.support.v4.os.LocaleListCompat.create;
 
 
 public class Student_Login_Activity extends AppCompatActivity {
@@ -179,13 +183,20 @@ public class Student_Login_Activity extends AppCompatActivity {
         startActivity(new Intent(this, about.class));
     }
 
-    /**@Override public void onBackPressed() {
+   @Override
+   public void onBackPressed() {
 
-    backpress = (backpress + 1);
-    Toast.makeText(getApplicationContext(), " Press Back again to Exit ", Toast.LENGTH_SHORT).show();
+       AlertDialog.Builder builder= new AlertDialog.Builder(this);
+       builder.setCancelable(false);
+       builder.setMessage("Are you sure you want to go back to Home Screen?");
+       builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialog, int which) {
 
-    if (backpress>1) {
-    finish();
+               finish();
+           }
+       });
+       builder.setNegativeButton("No", null);
+       builder.show();
     }
-    }**/
 }
