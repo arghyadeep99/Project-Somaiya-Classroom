@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
+    public boolean buttonPressed;
     private CardView tch_button;
     private CardView std_button;
 
@@ -22,12 +23,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
+                buttonPressed = false;
             }
         });
         tch_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, Main_Sign_In.class));
+                buttonPressed = true;
             }
         });
     }
