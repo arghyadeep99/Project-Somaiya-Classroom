@@ -46,6 +46,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_rowWeight="1"
+                android:onClick="student"
                 app:cardBackgroundColor="#80deea"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
@@ -97,6 +98,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_rowWeight="1"
+                android:onClick="teacher"
                 app:cardBackgroundColor="#80deea"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
