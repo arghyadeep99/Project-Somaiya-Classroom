@@ -190,7 +190,7 @@ public class Student_Login_Activity extends AppCompatActivity {
 
    @Override
    public void onBackPressed() {
-        //Globals.tea = true;
+        Globals.tea = false;
        Globals.stu = true;
        AlertDialog.Builder builder= new AlertDialog.Builder(this);
        builder.setCancelable(false);
@@ -198,7 +198,8 @@ public class Student_Login_Activity extends AppCompatActivity {
        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
            @Override
            public void onClick(DialogInterface dialog, int which) {
-
+               Globals.stu = true;
+               Globals.tea = false;
                finish();
            }
        });

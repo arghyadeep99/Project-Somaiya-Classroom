@@ -205,13 +205,17 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     public void onBackPressed() {
         //Globals.stu = true;
         Globals.tea = true;
+        Globals.stu = false;
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setMessage("Are you sure you want to go back to Home Screen?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Globals.stu = false;
+                Globals.tea = true;
                 finish();
+
             }
         });
         builder.setNegativeButton("No", null);
