@@ -78,7 +78,7 @@
                         android:clickable="true"
                         android:inputType="text"
                         android:text="I am a Student"
-                        android:textColor="#000"
+                        android:textColor="#404040"
                         android:textSize="25sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />
@@ -133,7 +133,7 @@
                         android:clickable="true"
                         android:inputType="text"
                         android:text="I am a Professor"
-                        android:textColor="#000"
+                        android:textColor="#404040"
                         android:textSize="25sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab" />

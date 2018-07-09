@@ -12,7 +12,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:src="@drawable/student"
-        app:border_color="#FF000000"
+
         android:layout_marginLeft="24dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

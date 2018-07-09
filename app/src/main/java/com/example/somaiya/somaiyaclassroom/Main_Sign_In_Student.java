@@ -81,6 +81,11 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuthStu.getCurrentUser();
+        if(currentUser != null){
+            Globals.tea = false;
+            Globals.stu = true;
+        }
+
         openStudActivity(currentUser);
     }
 
@@ -146,7 +151,8 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private void openStudActivity(FirebaseUser user) {
         // hideProgressDialog();
         if (user != null) {
-            startActivity(new Intent(this,Student_Login_Activity.class));
+            if(Globals.stu)
+                startActivity(new Intent(this,Student_Login_Activity.class));
             finish();
         }
     }
