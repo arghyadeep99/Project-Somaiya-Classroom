@@ -178,15 +178,21 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
 
     private void logout() {
+
+
         finish();
         mAuth.signOut();
+        Globals.tea = true;
+        Globals.stu = true;
         mGoogleSignInClient.signOut().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         openMainSignInProf(null);
+
                     }
                 });
+
     }
 
     public void about(MenuItem item) {
@@ -194,14 +200,14 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
     @Override
     public void onBackPressed() {
-
+        //Globals.stu = true;
+        Globals.tea = true;
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
         builder.setCancelable(false);
         builder.setMessage("Are you sure you want to go back to Home Screen?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
                 finish();
             }
         });
