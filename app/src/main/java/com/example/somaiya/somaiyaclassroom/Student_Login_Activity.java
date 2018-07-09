@@ -95,7 +95,6 @@ public class Student_Login_Activity extends AppCompatActivity {
         mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.Open, R.string.Close);
         mdrawerlayout.addDrawerListener(mtoggle);
         mtoggle.syncState();
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
