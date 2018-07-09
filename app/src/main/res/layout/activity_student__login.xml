@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical|center_horizontal|center"
     android:orientation="vertical"
-    android:background="@drawable/gradient_color"
+    android:background="#ffff"
     tools:context=".Student_Login_Activity"
     android:id="@+id/drawerLayout"
 
@@ -19,12 +19,14 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal|center"
         android:orientation="vertical"
-        android:background="@drawable/gradient_color"
+        android:background="#ffff"
         android:weightSum="10">
 
         <include layout="@layout/navigation_action"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -69,7 +71,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="syllabus"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
 
@@ -121,7 +123,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="CourseMaterials"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
 
@@ -174,7 +176,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="EasySolutions"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp">
 
@@ -221,7 +223,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="PreviousPapers"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
 
@@ -270,7 +272,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="ViewEvents"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
 
@@ -323,7 +325,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_rowWeight="1"
                 android:onClick="FAQs"
-                app:cardBackgroundColor="@color/colorNew"
+                app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
 
@@ -374,6 +376,7 @@
         android:layout_height="match_parent"
         app:menu="@menu/navigation_menu"
         android:layout_gravity="start"
+        app:itemTextColor="#01579b"
 
         >
 

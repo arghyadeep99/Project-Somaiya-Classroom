@@ -154,7 +154,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void settings(MenuItem item) {
+    public void chat(MenuItem item) {
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
         String aEmailList[] = {"a.chachra@somaiya.edu"};
@@ -175,6 +175,10 @@ public class Student_Login_Activity extends AppCompatActivity {
                     }
                 });
     }
+    public void about(MenuItem item){
+        startActivity(new Intent(this, about.class));
+    }
+
     /**@Override public void onBackPressed() {
 
     backpress = (backpress + 1);

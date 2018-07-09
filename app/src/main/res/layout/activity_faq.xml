@@ -11,7 +11,21 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context=".FAQ"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="210dp"
+        android:layout_height="123dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/faqs_head" />
 
+    <TextView
+        android:id="@+id/Q1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:text="" />
 </RelativeLayout>

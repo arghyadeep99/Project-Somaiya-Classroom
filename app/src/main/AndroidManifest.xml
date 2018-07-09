@@ -53,9 +53,6 @@
             android:name=".PreviousPapers"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Addevent"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Easysolution"
             android:screenOrientation="portrait" />
         <activity
@@ -82,8 +79,16 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".FAQ" />
-        <activity android:name=".MyAdapter"></activity>
+        <activity
+            android:name=".FAQ"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MyAdapter"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".about"
+            android:screenOrientation="portrait"
+        />
     </application>
 
 </manifest>

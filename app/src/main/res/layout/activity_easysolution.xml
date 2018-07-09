@@ -1,36 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".Easysolution"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Easy Solutions PDF"
+            android:textSize="25sp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:textColor="#01579b"
+            app:fontFamily="@font/roboto_slab"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Easy Solutions PDF"
-        android:textSize="25sp"
-        android:layout_marginTop="60dp"
-        android:layout_gravity="center"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textStyle="bold"/>
-
-    <Button
-        android:id="@+id/button"
-        android:background="@drawable/button_shape"
-        android:inputType="text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center"
-        app:fontFamily="@font/roboto_slab"
-        android:textColor="#ffff"
-        android:textSize="18sp"
-        android:onClick="open_upload"
-        android:text="Upload" />
-</LinearLayout>
+        <Button
+            android:id="@+id/button"
+            android:background="@drawable/button_shape"
+            android:inputType="text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center"
+            app:fontFamily="@font/roboto_slab"
+            android:textColor="#ffff"
+            android:textSize="18sp"
+            android:onClick="open_upload"
+            android:text="Upload" />
+    </LinearLayout>
+</ScrollView>

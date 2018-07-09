@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UploadFile"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff">
 
     <Button
         android:id="@+id/select_1"
