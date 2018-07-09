@@ -137,7 +137,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void openProfActivity(FirebaseUser user) {
-       // hideProgressDialog();
+        // hideProgressDialog();
         if (user != null) {
             if(Globals.tea)
                 startActivity(new Intent(this,Teacher_Login_Activity.class));
