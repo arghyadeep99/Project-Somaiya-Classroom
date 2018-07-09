@@ -212,8 +212,8 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Globals.stu = false;
-                Globals.tea = true;
+                //Globals.stu = false;
+                //Globals.tea = true;
                 finish();
 
             }
