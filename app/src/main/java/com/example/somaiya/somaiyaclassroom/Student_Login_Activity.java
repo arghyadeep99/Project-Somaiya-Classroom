@@ -198,8 +198,8 @@ public class Student_Login_Activity extends AppCompatActivity {
        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
            @Override
            public void onClick(DialogInterface dialog, int which) {
-               Globals.stu = true;
-               Globals.tea = false;
+               //Globals.stu = true;
+               //Globals.tea = false;
                finish();
            }
        });
