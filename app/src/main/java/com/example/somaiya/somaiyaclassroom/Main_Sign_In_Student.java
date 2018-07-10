@@ -107,6 +107,8 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
+                Globals.stu = true;
+                Globals.tea = true;
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In_Student.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
