@@ -37,7 +37,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 
 
-
 public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private SignInButton SignIn;
@@ -66,6 +65,10 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Globals.tea = true;
+            Globals.stu = false;
+        }
         openProfActivity(currentUser);
     }
     @Override
@@ -87,6 +90,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         if (requestCode == REQ_CODE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                Globals.stu = false;
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
@@ -100,7 +104,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             }
         }
     }
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         // [START_EXCLUDE silent]
         //showProgressDialog();
@@ -133,9 +137,10 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void openProfActivity(FirebaseUser user) {
-       // hideProgressDialog();
+        // hideProgressDialog();
         if (user != null) {
-            startActivity(new Intent(this,Teacher_Login_Activity.class));
+            if(Globals.tea)
+                startActivity(new Intent(this,Teacher_Login_Activity.class));
             finish();
         }
     }

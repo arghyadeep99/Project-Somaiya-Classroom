@@ -81,6 +81,11 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuthStu.getCurrentUser();
+        if(currentUser != null){
+            Globals.tea = false;
+            Globals.stu = true;
+        }
+
         openStudActivity(currentUser);
     }
 
@@ -97,12 +102,14 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         if (requestCode == REQ_CODE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                Globals.tea = false;
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                Toast.makeText(Main_Sign_In_Student.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
                 // [START_EXCLUDE]
                 openStudActivity(null);
                 // [END_EXCLUDE]
@@ -144,7 +151,8 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private void openStudActivity(FirebaseUser user) {
         // hideProgressDialog();
         if (user != null) {
-            startActivity(new Intent(this,Student_Login_Activity.class));
+            if(Globals.stu)
+                startActivity(new Intent(this,Student_Login_Activity.class));
             finish();
         }
     }

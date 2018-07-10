@@ -95,7 +95,6 @@ public class Student_Login_Activity extends AppCompatActivity {
         mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.Open, R.string.Close);
         mdrawerlayout.addDrawerListener(mtoggle);
         mtoggle.syncState();
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -169,34 +168,42 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
     private void logout() {
+
+
         finish();
         mAuth.signOut();
+        Globals.stu = true;
+        Globals.tea = true;
         mGoogleSignInClient.signOut().addOnCompleteListener(this,
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         openMainSignInStudent(null);
+
                     }
                 });
+
     }
     public void about(MenuItem item){
         startActivity(new Intent(this, about.class));
     }
 
-   @Override
-   public void onBackPressed() {
-
-       AlertDialog.Builder builder= new AlertDialog.Builder(this);
-       builder.setCancelable(false);
-       builder.setMessage("Are you sure you want to go back to Home Screen?");
-       builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-           @Override
-           public void onClick(DialogInterface dialog, int which) {
-
-               finish();
-           }
-       });
-       builder.setNegativeButton("No", null);
-       builder.show();
+    @Override
+    public void onBackPressed() {
+        Globals.tea = false;
+        Globals.stu = true;
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure you want to go back to Home Screen?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Globals.stu = true;
+                //Globals.tea = false;
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
 }
