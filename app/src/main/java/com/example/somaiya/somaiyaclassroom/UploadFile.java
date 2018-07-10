@@ -86,9 +86,9 @@ public class UploadFile extends AppCompatActivity {
         progressDialog.show();
         //final String fileName = System.currentTimeMillis()+"";
         //if(name.indexOf('/')!=-1)
-          //  fileName = name.substring(name.lastIndexOf("/")+1);
+        //  fileName = name.substring(name.lastIndexOf("/")+1);
         //if(fileName.indexOf('.')!=-1)
-          //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
+        //  fileName = fileName.substring(0,fileName.lastIndexOf("."));
         final String fileName = encodeName(getFileName(pdfUri));
         final String fileNameWithExtension = encodeName(fileName)+getFileName(pdfUri).substring(getFileName(pdfUri).lastIndexOf('.'))+"";
         final StorageReference storageReference=storage.getReference();
@@ -147,11 +147,11 @@ public class UploadFile extends AppCompatActivity {
 
                     }
                 }).addOnFailureListener(new OnFailureListener(){
-                    @Override
-                    public  void onFailure(@NonNull Exception e){
+            @Override
+            public  void onFailure(@NonNull Exception e){
 
-                        Toast.makeText(UploadFile.this, "File not uploaded. Please try again.", Toast.LENGTH_SHORT).show();
-                    }
+                Toast.makeText(UploadFile.this, "File not uploaded. Please try again.", Toast.LENGTH_SHORT).show();
+            }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff">
 
     <TextView
         android:id="@+id/TEXT1_stu"
@@ -15,7 +15,7 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textColor="#404040"
+        android:textColor="@color/Maroon"
         android:textSize="25sp"
         android:textStyle="bold"
         app:fontFamily="@font/roboto_slab"
@@ -29,7 +29,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:textColor="#202020">
+        android:textColor="@color/Maroon">
 
 
         <TableRow>
@@ -38,7 +38,7 @@
                 android:text="Chapter 1."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
 
             <TextView
@@ -46,7 +46,7 @@
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -60,7 +60,7 @@
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -70,14 +70,14 @@
                 android:text="Chapter 2."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Basic Operators"
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -93,14 +93,14 @@
                 android:text="Chapter 3."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Control Structures "
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -116,14 +116,14 @@
                 android:text="Chapter 4."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Arrays and Structures"
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -140,14 +140,14 @@
                 android:text="Chapter 5."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="User Defined Functions"
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -164,14 +164,14 @@
                 android:text="Chapter 6."
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
             <TextView
                 android:text="Pointers and Files"
                 android:gravity="left"
                 android:padding="3dip"
                 android:textSize="18sp"
-                android:textColor="#404040"
+                android:textColor="@color/Maroon"
                 app:fontFamily="@font/roboto_slab"/>
         </TableRow>
 
@@ -180,6 +180,8 @@
                 android:layout_column="1"
                 android:padding="3dip" />
         </TableRow>
+
+
 
     </TableLayout>
 
@@ -193,8 +195,8 @@
         android:textSize="18sp"
         app:fontFamily="@font/roboto_slab"
         android:text="Download"
-        android:inputType="text"
         android:onClick="openDownload"
+        android:inputType="text"
         android:background="@drawable/button_shape"
         />
 </LinearLayout>

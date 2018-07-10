@@ -42,7 +42,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private GoogleSignInClient mGoogleSignInClient;
     private static final int REQ_CODE=9001;
     private static final String TAG = "GoogleActivity";
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuthStu;
     private Switch isEnlarged;
     public static Boolean isZoom;
     private float zoomFactor = 1.25f;
@@ -61,13 +61,8 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                 SignIn();
             }
         });
-        mAuth = FirebaseAuth.getInstance();
+        mAuthStu = FirebaseAuth.getInstance();
 
-        SignIn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                SignIn();
-            }
-        });
         isEnlarged = findViewById(R.id.switch1);
         isEnlarged.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +80,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        FirebaseUser currentUser = mAuthStu.getCurrentUser();
         openStudActivity(currentUser);
     }
 
@@ -121,7 +116,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         // [END_EXCLUDE]
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mAuth.signInWithCredential(credential)
+        mAuthStu.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -129,12 +124,13 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             Toast.makeText(Main_Sign_In_Student.this,"Logged In Successfully",Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser user = mAuthStu.getCurrentUser();
                             openStudActivity(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.student_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(Main_Sign_In_Student.this,"Log In Failed",Toast.LENGTH_SHORT).show();
+                            //Snackbar.make(findViewById(R.id.student_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             openStudActivity(null);
                         }
 
@@ -149,6 +145,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         // hideProgressDialog();
         if (user != null) {
             startActivity(new Intent(this,Student_Login_Activity.class));
+            finish();
         }
     }
 }
