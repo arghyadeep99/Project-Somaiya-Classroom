@@ -98,6 +98,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
+                Globals.stu = true;
+                Globals.tea = true;
                 // [START_EXCLUDE]
                 openProfActivity(null);
                 // [END_EXCLUDE]

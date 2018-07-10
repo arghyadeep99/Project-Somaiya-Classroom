@@ -110,6 +110,8 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In_Student.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
+                Globals.stu = true;
+                Globals.tea = true;
                 // [START_EXCLUDE]
                 openStudActivity(null);
                 // [END_EXCLUDE]
