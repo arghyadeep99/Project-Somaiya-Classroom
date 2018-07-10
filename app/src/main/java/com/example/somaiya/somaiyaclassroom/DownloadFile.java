@@ -36,10 +36,10 @@ public class DownloadFile extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Syllabus");
                 break;
             case 2:
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Material");
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials");
                 break;
             case 4:
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("Easy Solution");
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Easy Solutions");
                 break;
             case 5:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Previous Years UT Papers");
