@@ -1,6 +1,7 @@
 package com.example.somaiya.somaiyaclassroom;
 
 import android.app.Application;
+import android.support.v7.app.AppCompatActivity;
 
 public class Globals extends Application {
 

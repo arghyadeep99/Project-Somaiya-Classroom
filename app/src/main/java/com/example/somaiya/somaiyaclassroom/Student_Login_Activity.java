@@ -188,22 +188,22 @@ public class Student_Login_Activity extends AppCompatActivity {
         startActivity(new Intent(this, about.class));
     }
 
-   @Override
-   public void onBackPressed() {
+    @Override
+    public void onBackPressed() {
         Globals.tea = false;
-       Globals.stu = true;
-       AlertDialog.Builder builder= new AlertDialog.Builder(this);
-       builder.setCancelable(false);
-       builder.setMessage("Are you sure you want to go back to Home Screen?");
-       builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-           @Override
-           public void onClick(DialogInterface dialog, int which) {
-               //Globals.stu = true;
-               //Globals.tea = false;
-               finish();
-           }
-       });
-       builder.setNegativeButton("No", null);
-       builder.show();
+        Globals.stu = true;
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure you want to go back to Home Screen?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Globals.stu = true;
+                //Globals.tea = false;
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
 }

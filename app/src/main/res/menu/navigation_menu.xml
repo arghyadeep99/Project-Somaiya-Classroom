@@ -19,7 +19,6 @@
         android:title="Logout"
         android:icon="@drawable/ic_baseline_power_settings_new_24px"
         android:onClick="SIGNOUT"
-
         />
     <item
     android:id="@+id/report_bug"
