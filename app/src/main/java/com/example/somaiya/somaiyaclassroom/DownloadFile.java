@@ -55,8 +55,14 @@ public class DownloadFile extends AppCompatActivity {
                 url = dataSnapshot.getValue(String.class);
                 //url = "https" + url.substring(2);
                 //url = "http://" + dataSnapshot.getStorage().get
+                //if syllabus has more than one file present then overwrite it
+                if((recyclerView.getAdapter()).getItemCount()>0 && buttonTracker==1)
+                {
+                    ((MyAdapter) recyclerView.getAdapter()).contents.clear();
+                    ((MyAdapter) recyclerView.getAdapter()).urls.clear();
+                }
                 ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
-                Log.e("url:",url);
+                //Log.e("url:",url);
             }
 
             @Override
