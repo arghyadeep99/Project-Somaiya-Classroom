@@ -22,8 +22,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -123,6 +127,10 @@ public class UploadFile extends AppCompatActivity {
                         //String url = taskSnapshot.getStorage().getDownloadUrl().toString();
                         final DatabaseReference reference;
                         reference=database.getReference().child(location);
+                        if(buttonTracker==1)
+                        {
+                            reference.setValue(null);
+                        }
                         pathToUpload.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
@@ -134,12 +142,12 @@ public class UploadFile extends AppCompatActivity {
                         reference.child(fileName).setValue(url).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-/*
+                        /*
                                 if (task.isSuccessful())
                                     Toast.makeText(UploadFile.this, "File successfully uploaded!", Toast.LENGTH_SHORT).show();
                                 else
                                     Toast.makeText(UploadFile.this, "File not successfully uploaded!", Toast.LENGTH_SHORT).show();
-*/
+                        */
                             }
                         });
 

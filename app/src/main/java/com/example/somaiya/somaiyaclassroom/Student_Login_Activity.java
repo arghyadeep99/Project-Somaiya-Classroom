@@ -4,7 +4,11 @@ import android.app.Dialog;
 import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,9 +20,12 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.URLUtil;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 
@@ -32,6 +39,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import android.content.Intent;
@@ -55,41 +66,53 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mahfa.dnswitch.DayNightSwitch;
+import com.mahfa.dnswitch.DayNightSwitchListener;
 
 import static android.support.v4.os.LocaleListCompat.create;
 
 
 public class Student_Login_Activity extends AppCompatActivity {
 
-
+    public View background_view;
     private DrawerLayout mdrawerlayout;
     private ActionBarDrawerToggle mtoggle;
     private Toolbar mToolbar;
-    TextView HyperLink;
-    Spanned Text;
-    private Button Logout;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
-    NavigationView navigation;
-    Adapter AdapterView;
+    DayNightSwitch dayNightSwitch;
     DrawerLayout.DrawerListener mDrawerListMDrawerL;
     public FirebaseUser user;
     GoogleApiClient mGoogleApiClient;
-
+    RoundedBitmapDrawable drawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student__login);
-        Logout = (Button) findViewById(R.id.nav_logout);
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
         mAuth = FirebaseAuth.getInstance();
-
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);
-
+        dayNightSwitch= (DayNightSwitch) findViewById(R.id.night);
+        //background_view= findViewById(R.id.background_view);
+        if(dayNightSwitch!=null) {
+            dayNightSwitch.setDuration(450);
+            dayNightSwitch.setListener(new DayNightSwitchListener() {
+                @Override
+                public void onSwitch(boolean isNight) {
+                    if (isNight) {
+                        Toast.makeText(Student_Login_Activity.this, "Night Mode On", Toast.LENGTH_SHORT).show();
+                        //background_view.setAlpha(1f);
+                    } else {
+                        Toast.makeText(Student_Login_Activity.this, "Night Mode Off", Toast.LENGTH_SHORT).show();
+                        //background_view.setAlpha(0f);
+                    }
+                }
+            });
+        }
 
         mdrawerlayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.Open, R.string.Close);
@@ -165,6 +188,9 @@ public class Student_Login_Activity extends AppCompatActivity {
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Query in FCP");
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
         startActivity(emailIntent);
+    }
+    public void report_bug(MenuItem item){
+
     }
 
     private void logout() {

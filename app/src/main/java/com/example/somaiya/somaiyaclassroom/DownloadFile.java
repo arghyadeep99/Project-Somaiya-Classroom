@@ -36,10 +36,10 @@ public class DownloadFile extends AppCompatActivity {
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Syllabus");
                 break;
             case 2:
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Material");
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials");
                 break;
             case 4:
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("Easy Solution");
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Easy Solutions");
                 break;
             case 5:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Previous Years UT Papers");
@@ -55,8 +55,14 @@ public class DownloadFile extends AppCompatActivity {
                 url = dataSnapshot.getValue(String.class);
                 //url = "https" + url.substring(2);
                 //url = "http://" + dataSnapshot.getStorage().get
+                //if syllabus has more than one file present then overwrite it
+                if((recyclerView.getAdapter()).getItemCount()>0 && buttonTracker==1)
+                {
+                    ((MyAdapter) recyclerView.getAdapter()).contents.clear();
+                    ((MyAdapter) recyclerView.getAdapter()).urls.clear();
+                }
                 ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
-                Log.e("url:",url);
+                //Log.e("url:",url);
             }
 
             @Override
@@ -95,7 +101,7 @@ public class DownloadFile extends AppCompatActivity {
         for(int i=0; i<length;)
         {
             s = num.substring(i,i+=2);
-            ans += (char)Integer.parseInt(s,16);
+            ans=ans + (char)Integer.parseInt(s,16);
         }
         return ans;
     }

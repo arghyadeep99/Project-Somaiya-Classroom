@@ -14,12 +14,10 @@
         android:icon="@drawable/ic_baseline_notifications_24px"
         android:onClick="notifications"
         />
-
-    <item android:id="@+id/nav_logout"
-        android:title="Logout"
-        android:icon="@drawable/ic_baseline_power_settings_new_24px"
-        android:onClick="SIGNOUT"
-
+    <item android:id="@+id/night_mode"
+        android:title="Night Mode"
+        android:icon="@drawable/moon"
+        app:actionLayout="@layout/night_toggle"
         />
     <item
     android:id="@+id/report_bug"
@@ -30,6 +28,13 @@
         android:title="About"
         android:icon="@drawable/about_icon"
         android:onClick="about"
+
+        />
+
+    <item android:id="@+id/nav_logout"
+        android:title="Logout"
+        android:icon="@drawable/ic_baseline_power_settings_new_24px"
+        android:onClick="SIGNOUT"
 
         />
 

@@ -23,12 +23,6 @@
     <string name="TEXT3">CLICK HERE TO DOWNLOAD SYLLABUS</string>
     <string name="TEXT4">CONTENTS</string>
     <string name="DWNLD">DOWNLOAD</string>
-    <string name="a">Problem Definition and Algorithms</string>
-    <string name="b">Operators and Expressions</string>
-    <string name="c">Control Structures</string>
-    <string name="d">Functions</string>
-    <string name="e">Arrays and Strings</string>
-    <string name="f">Pointers and Files</string>
     <string name="pay1">NET BANKING</string>
     <string name="pay2">CARD PAYMENT</string>
     <string name="termtest">TERM TEST PAPERS</string>
@@ -42,6 +36,13 @@
     <string name="lst">LAST YR PAPERS</string>
     <string name="Open">OPEN</string>
     <string name="Close">CLOSE</string>
+    <!--Shared Preference keys-->
+    <string name="USER_INFO">com.example.somaiya.somaiyaclassroom.PREF_USER_INFO</string>
+    <string name="pref_key_name">name</string>
+    <string name="pref_key_svv_mail">svv_mail</string>
+    <string name="pref_key_email">email</string>
+    <string name="pref_key_pic_url">picUrl</string>
+    <string name="display_name">Username</string>
     <string-array name="list">
         <item>Chapter 1.  Introduction to C</item>
 
