@@ -1,52 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".PreviousPapers"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textStyle="bold"
-        android:text="Press button to Upload"
-        android:textSize="25sp" />
+        <TextView
+            android:id="@+id/TEXT_stu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Press to Upload"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="#01579b"
+            android:textSize="25sp"
+            app:fontFamily="@font/roboto_slab"
+            android:textStyle="bold"
+            android:layout_marginTop="60dp"
+            />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            app:fontFamily="@font/roboto_slab"
+            android:text="Term Test Papers"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:textColor="#ffff"
+            android:onClick="open_upload"
+            android:background="@drawable/button_shape"/>
 
-    <Button
-        android:id="@+id/button"
-        android:background="@drawable/button_shape"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#ffff"
-        android:textSize="18sp"
-        android:inputType="text"
-        app:fontFamily="@font/roboto_slab"
-        android:textStyle="bold"
-        android:layout_marginTop="70dp"
-        android:onClick="open_upload"
-        android:text="  Upload Term Test Papers  " />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:fontFamily="@font/roboto_slab"
+            android:text="End Sem Papers"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:onClick="open_upload2"
+            android:textColor="#ffff"
+            android:background="@drawable/button_shape"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:background="@drawable/button_shape"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textColor="#ffff"
-        android:textSize="18sp"
-        android:inputType="text"
-        app:fontFamily="@font/roboto_slab"
-        android:textStyle="bold"
-        android:layout_marginTop="40dp"
-        android:onClick="open_upload2"
-        android:text="  Upload End Sem Papers  "/>
-</LinearLayout>
+</ScrollView>

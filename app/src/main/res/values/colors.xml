@@ -3,5 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorNew">#c597f9</color>
     <color name="colorWhite">#ffff</color>
+    <color name="colorNew2">#45a1b6</color>
+    <color name="button_grey">#757575</color>
+    <color name="Shrine_pink">#FEDBD0</color>
+    <color name="Maroon">#442C2E</color>
 </resources>

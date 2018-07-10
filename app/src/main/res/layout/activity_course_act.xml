@@ -1,167 +1,57 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
     <TextView
         android:id="@+id/TEXT_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/listview"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto_slab"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Download Course Material"
+        android:text="Course Material"
         android:textAlignment="center"
-        android:textColor="#404040"
+        android:textColor="#01579b"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/roboto_slab"/>
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Chapter 1. Overview of C"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button11"
-        android:background="@drawable/button_shape"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Download" />
-
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 2. Operators"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button22"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="Download"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"/>
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 3. Control Structures"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button33"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:layout_marginTop="5dp"
-        android:inputType="text"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Download" />
-
-
-    <TextView
-        android:id="@+id/textView44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 4. Arrays and Structures"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button44"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:layout_marginTop="5dp"
-        android:inputType="text"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Download" />
-
-    <TextView
-        android:id="@+id/textView55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 5. User-defined Functions"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button55"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Download" />
-
-    <TextView
-        android:id="@+id/textView66"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 6. Pointers and Files"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="159dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
         android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Download" />
-</LinearLayout>
+        android:inputType="text"
+        android:text="Download"
+        android:onClick="open_download"
+        android:textColor="#ffff"
+        android:textSize="20sp"
+        app:fontFamily="@font/roboto_slab" />
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="342dp"
+        android:layout_height="490dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:entries="@array/list"
+        android:paddingTop="70dp" />
+
+
+</RelativeLayout>

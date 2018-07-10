@@ -37,7 +37,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 
 
-
 public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private SignInButton SignIn;
@@ -66,6 +65,10 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Globals.tea = true;
+            Globals.stu = false;
+        }
         openProfActivity(currentUser);
     }
     @Override
@@ -87,6 +90,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         if (requestCode == REQ_CODE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                Globals.stu = false;
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
@@ -94,13 +98,15 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
+                Globals.stu = true;
+                Globals.tea = true;
                 // [START_EXCLUDE]
                 openProfActivity(null);
                 // [END_EXCLUDE]
             }
         }
     }
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         // [START_EXCLUDE silent]
         //showProgressDialog();
@@ -120,7 +126,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            //Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(Main_Sign_In.this,"Log In Failed",Toast.LENGTH_SHORT).show();
                             openProfActivity(null);
                         }
 
@@ -132,9 +139,11 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void openProfActivity(FirebaseUser user) {
-       // hideProgressDialog();
+        // hideProgressDialog();
         if (user != null) {
-            startActivity(new Intent(this,Teacher_Login_Activity.class));
+            if(Globals.tea)
+                startActivity(new Intent(this,Teacher_Login_Activity.class));
+            finish();
         }
     }
 }
