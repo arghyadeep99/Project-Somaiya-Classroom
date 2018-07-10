@@ -40,6 +40,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-
+    //implementation 'com.applandeo:material-calendar-view:1.4.0'
+    implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

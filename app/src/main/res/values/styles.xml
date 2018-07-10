@@ -10,7 +10,6 @@
         <item name="drawerArrowStyle">@style/DrawerIcon</item>
 
 
-
     </style>
     <style name="CardViewStyle" parent="CardView">
         <item name="cardCornerRadius">4dp</item>
