@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.somaiya.somaiyaclassroom"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.Mahfa:DayNightSwitch:1.2'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
 
 }
 apply plugin: 'com.google.gms.google-services'
