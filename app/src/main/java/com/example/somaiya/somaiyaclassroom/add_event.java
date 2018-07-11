@@ -18,7 +18,7 @@ public class add_event extends AppCompatActivity implements
         View.OnClickListener {
 
     Button btnDatePicker, btnTimePicker;
-    EditText txtDate, txtTime;
+    EditText txtDate, txtTime, txtText;
     private int mYear, mMonth, mDay, mHour, mMinute;
 
     @Override
@@ -35,7 +35,12 @@ public class add_event extends AppCompatActivity implements
         btnTimePicker.setOnClickListener(add_event.this);
 
 
-
+        txtText=(EditText)findViewById(R.id.in_text);
+        txtText.setOnClickListener(new View.OnClickListener(){
+            public void  onClick(View view){
+                Globals.note = txtText.getText().toString();
+            }
+        });
   /*      String date = txtDate.getText().toString();
         String time = txtTime.getText().toString();
         String [] l_date = date.split("-", 3);

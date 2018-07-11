@@ -13,6 +13,7 @@ public class Globals extends Application {
     public static int hour;
     public static  int min;
     public static long mi;
+    public static String note;
    /* private boolean data = true;
     public boolean getData(){
         return this.data;

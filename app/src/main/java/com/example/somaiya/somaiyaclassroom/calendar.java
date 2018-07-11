@@ -69,7 +69,7 @@ public class calendar extends AppCompatActivity {
         final long d = cal.getTimeInMillis();
 */      final long d = Globals.mi;
         // Adding events
-        final Event event1 = new Event(Color.GREEN, d, "App Submission!");
+        final Event event1 = new Event(Color.GREEN, d, Globals.note);
         compactCalendar.addEvent(event1);
 
         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
