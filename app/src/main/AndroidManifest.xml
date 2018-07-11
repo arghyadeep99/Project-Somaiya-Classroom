@@ -86,10 +86,21 @@
         <activity
             android:name=".about"
             android:screenOrientation="portrait" />
-        <activity android:name=".net_banking" />
-        <activity android:name=".PaymentDetails" />
-        <activity android:name=".faq_tch" />
-        <activity android:name=".faq"></activity>
+        <activity android:name=".net_banking"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".PaymentDetails"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".faq_tch" 
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".faq"
+                  android:screenOrientation="portrait">
+      </activity>
+
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="true"
+            />
+
     </application>
 
 </manifest>

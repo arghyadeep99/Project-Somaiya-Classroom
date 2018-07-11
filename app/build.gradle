@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'io.fabric'
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -44,6 +44,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.Mahfa:DayNightSwitch:1.2'
     implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
-
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
 }
 apply plugin: 'com.google.gms.google-services'

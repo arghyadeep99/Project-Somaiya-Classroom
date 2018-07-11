@@ -18,7 +18,7 @@
         android:title="Night Mode"
         android:icon="@drawable/moon"
         app:actionLayout="@layout/night_toggle"
-        />
+    />
     <item
     android:id="@+id/report_bug"
     android:title="Report a bug"
