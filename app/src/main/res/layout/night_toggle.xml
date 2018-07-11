@@ -12,4 +12,11 @@
         android:layout_height="20dp"
         android:padding="16dp"
          />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/background_view"
+        android:background="@color/cardview_dark_background"
+        android:alpha="0"
+        />
 </LinearLayout>

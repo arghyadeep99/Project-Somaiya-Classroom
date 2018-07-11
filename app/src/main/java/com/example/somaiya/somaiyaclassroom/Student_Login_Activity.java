@@ -15,16 +15,20 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.URLUtil;
 import android.widget.Adapter;
 import android.widget.Button;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -43,6 +47,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import android.content.Intent;
@@ -69,6 +74,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
 
+import io.fabric.sdk.android.Fabric;
+
 import static android.support.v4.os.LocaleListCompat.create;
 
 
@@ -84,7 +91,6 @@ public class Student_Login_Activity extends AppCompatActivity {
     DrawerLayout.DrawerListener mDrawerListMDrawerL;
     public FirebaseUser user;
     GoogleApiClient mGoogleApiClient;
-    RoundedBitmapDrawable drawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,9 +102,12 @@ public class Student_Login_Activity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);
-        dayNightSwitch= (DayNightSwitch) findViewById(R.id.night);
-        //background_view= findViewById(R.id.background_view);
+        /**LayoutInflater night= LayoutInflater.from(getApplicationContext());
+        View toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
         if(dayNightSwitch!=null) {
+            dayNightSwitch = (DayNightSwitch) findViewById(R.id.night);
+            //background_view= findViewById(R.id.background_view);
+
             dayNightSwitch.setDuration(450);
             dayNightSwitch.setListener(new DayNightSwitchListener() {
                 @Override
@@ -133,8 +142,6 @@ public class Student_Login_Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-
-
     public void syllabus(View v) {
         Intent i = new Intent(this, syl_act.class);
         startActivity(i);

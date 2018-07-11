@@ -21,7 +21,8 @@
         android:orientation="vertical"
         android:background="#ffff"
         android:alpha="1"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:id="@+id/stu_layout">
 
         <include layout="@layout/navigation_action"
             android:layout_width="match_parent"

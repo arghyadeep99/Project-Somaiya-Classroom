@@ -62,7 +62,7 @@ public class DownloadFile extends AppCompatActivity {
                     ((MyAdapter) recyclerView.getAdapter()).urls.clear();
                 }
                 ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
-                //Log.e("url:",url);
+                Log.e("url:",url);
             }
 
             @Override

@@ -153,8 +153,15 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private void openStudActivity(FirebaseUser user) {
         // hideProgressDialog();
         if (user != null) {
-            if(Globals.stu)
-                startActivity(new Intent(this,Student_Login_Activity.class));
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            String photoUrl = user.getPhotoUrl().toString();
+            if(Globals.stu) {
+                startActivity(new Intent(this, Student_Login_Activity.class)
+                        .putExtra("NAME", name)
+                        .putExtra("EMAIL", email)
+                        .putExtra("PhotoURL", photoUrl));
+            }
             finish();
         }
     }
