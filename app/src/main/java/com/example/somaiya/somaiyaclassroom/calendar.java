@@ -91,7 +91,7 @@ public class calendar extends AppCompatActivity {
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
                 textView.setText(dateFormatForMonth.format(firstDayOfNewMonth));
-                Log.d(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
+                Log.e(TAG, "Month was scrolled to: " + firstDayOfNewMonth);
             }
         });
 

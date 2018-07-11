@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -15,12 +16,19 @@
         android:layout_marginTop="82dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="SELECT DATE"
+        android:text="Select Date"
+        android:textColor="#fff"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:id="@+id/btn_date"
         android:layout_alignBottom="@+id/in_date"
         android:layout_toRightOf="@+id/in_date"
@@ -30,24 +38,38 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/in_time"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:layout_below="@+id/in_date"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="SELECT TIME"
+        android:text="Select Time"
+        android:textColor="#fff"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"
         android:id="@+id/btn_time"
         android:layout_below="@+id/btn_date"
         android:layout_alignLeft="@+id/btn_date"
-        android:layout_alignStart="@+id/btn_date" />
+        android:layout_alignStart="@+id/btn_date"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text= "Add" />
+        android:text= "Add"
+        android:textColor="#fff"
+        android:inputType="text"
+        android:background="@drawable/button_shape"
+        android:textSize="18sp"
+        app:fontFamily="@font/roboto_slab"/>
 
 </RelativeLayout>
