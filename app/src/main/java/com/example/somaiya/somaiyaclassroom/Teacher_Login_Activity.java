@@ -60,7 +60,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     public TextView display_username;
     public TextView display_mail;
     public ImageView display_pic;
-    private DrawerLayout teacher_layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -225,7 +225,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
     @Override
     public void onBackPressed() {
-        //Globals.stu = true;
         Globals.tea = true;
         Globals.stu = false;
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
