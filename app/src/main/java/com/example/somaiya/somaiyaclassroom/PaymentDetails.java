@@ -11,6 +11,7 @@ import org.json.JSONObject;
 public class PaymentDetails extends AppCompatActivity {
 
     TextView txtId, txtStatus, txtAmount;
+    Boolean var = false;
 
 
     @Override
@@ -29,6 +30,7 @@ public class PaymentDetails extends AppCompatActivity {
         }
     }
 
+    
     private void showDetails(JSONObject response, String paymentAmount) {
         try {
             txtId.setText(response.getString("id"));
@@ -39,4 +41,14 @@ public class PaymentDetails extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    if(txtStatus.getText()=="approved")
+        { var=true;
+         }
+    public void open_download(View view){
+        Intent intent = new Intent(PaymentDetails.this,DownloadFile.class);
+        upload.putExtra("buttonTracker",4);
+        If(var)
+         {
+        startActivity(intent);}
+        }
 }
