@@ -30,7 +30,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
-        android:entries="@array/faq_stu" />
+        android:entries="@array/faq_tch" />
 
     <TextView
         android:layout_width="328dp"
@@ -55,7 +55,7 @@
 
         android:layout_marginBottom="63dp"
         android:gravity="center"
-        android:text=" For further queries, contact "
+        android:text=" For further queries contact "
         android:textColor="#01579b"
 
         android:textSize="20sp" />

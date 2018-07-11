@@ -20,7 +20,9 @@
         android:gravity="center_vertical|center_horizontal|center"
         android:orientation="vertical"
         android:background="#ffff"
-        android:weightSum="10">
+        android:alpha="1"
+        android:weightSum="10"
+        android:id="@+id/stu_layout">
 
         <include layout="@layout/navigation_action"
             android:layout_width="match_parent"
@@ -376,7 +378,6 @@
         android:layout_gravity="start"
         app:itemTextColor="#01579b"
         android:id="@+id/nav_view_student"
-
         >
 
     </android.support.design.widget.NavigationView>

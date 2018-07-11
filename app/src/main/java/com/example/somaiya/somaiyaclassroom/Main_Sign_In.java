@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -98,6 +99,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
+                Globals.stu = true;
+                Globals.tea = true;
                 // [START_EXCLUDE]
                 openProfActivity(null);
                 // [END_EXCLUDE]
@@ -106,6 +109,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     }
     private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+
         // [START_EXCLUDE silent]
         //showProgressDialog();
         // [END_EXCLUDE]
@@ -139,9 +143,16 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     private void openProfActivity(FirebaseUser user) {
         // hideProgressDialog();
         if (user != null) {
-            if(Globals.tea)
-                startActivity(new Intent(this,Teacher_Login_Activity.class));
-            finish();
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            String photoUrl = user.getPhotoUrl().toString();
+            if(Globals.tea) {
+                startActivity(new Intent(this, Teacher_Login_Activity.class)
+                        .putExtra("NAME", name)
+                        .putExtra("EMAIL", email)
+                        .putExtra("PhotoURL", photoUrl));
+            }
+                finish();
         }
     }
 }
