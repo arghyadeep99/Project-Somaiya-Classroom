@@ -20,6 +20,7 @@
     <item name="cardViewStyle">@style/CardView</item>
     <item name="drawerArrowStyle">@style/DrawerIcon</item>
      <item name="android:textColor">#ffff</item>
+
     </style>
 
     <style name="CardViewStyle" parent="CardView">

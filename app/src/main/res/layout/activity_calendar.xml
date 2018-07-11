@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".calendar">
+
+
+    <TextView
+        android:id="@+id/current_month"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:background="#80DEEA"
+        android:textAlignment="center"
+        android:textColor="#404040"
+        android:textStyle="bold"
+        app:fontFamily="@font/roboto_slab" />
+
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:compactCalendarBackgroundColor="#80DEEA"
+        app:compactCalendarCurrentDayBackgroundColor="#FF1493"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="#FFC0CB"
+        app:compactCalendarMultiEventIndicatorColor="#404040"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextColor="#404040"
+        app:compactCalendarTextSize="12sp"
+        app:fontFamily="@font/roboto_slab"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp" />
+    
+
+</LinearLayout>

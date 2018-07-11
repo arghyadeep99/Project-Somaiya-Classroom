@@ -86,6 +86,8 @@
         <activity
             android:name=".about"
             android:screenOrientation="portrait" />
+        <activity android:name=".calendar" />
+        <activity android:name=".add_event"></activity>
         <activity android:name=".net_banking"
                   android:screenOrientation="portrait"/>
         <activity android:name=".PaymentDetails"
