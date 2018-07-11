@@ -39,4 +39,7 @@ public class PaymentDetails extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    
+    public void open_download(View view){
+        
 }
