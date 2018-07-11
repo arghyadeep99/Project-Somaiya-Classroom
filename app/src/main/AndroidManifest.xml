@@ -11,14 +11,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".Globals"
         android:allowBackup="true"
         android:icon="@mipmap/kjsce"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/kjsce"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".Globals"
-        >
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -82,19 +81,26 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".FAQ"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".MyAdapter"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".about"
-            android:screenOrientation="portrait"
-        />
+            android:screenOrientation="portrait" />
+        <activity android:name=".net_banking"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".PaymentDetails"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".faq_tch" 
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".faq"
+                  android:screenOrientation="portrait">
+      </activity>
+
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="false"
+            android:value="true"
             />
+
     </application>
 
 </manifest>

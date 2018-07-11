@@ -168,7 +168,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         startActivity(i);
     }
     public void FAQs(View v) {
-        startActivity(new Intent(this,FAQ.class));
+        startActivity(new Intent(this,faq.class));
     }
 
     public void openMainSignInStudent(FirebaseUser user){

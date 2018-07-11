@@ -148,7 +148,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
 
     public void FAQs(View v) {
-        startActivity(new Intent(this, FAQ.class));
+        startActivity(new Intent(this, faq_tch.class));
     }
 
 
