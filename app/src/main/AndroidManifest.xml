@@ -89,7 +89,8 @@
         <activity
             android:name=".about"
             android:screenOrientation="portrait" />
-        <activity android:name=".calendar"></activity>
+        <activity android:name=".calendar" />
+        <activity android:name=".add_event"></activity>
     </application>
 
 </manifest>
