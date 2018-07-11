@@ -101,7 +101,7 @@ public class DownloadFile extends AppCompatActivity {
         for(int i=0; i<length;)
         {
             s = num.substring(i,i+=2);
-            ans += (char)Integer.parseInt(s,16);
+            ans=ans + (char)Integer.parseInt(s,16);
         }
         return ans;
     }
