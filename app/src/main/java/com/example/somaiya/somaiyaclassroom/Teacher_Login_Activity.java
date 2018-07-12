@@ -157,7 +157,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
         */
-        Intent open_calendar = new Intent(Teacher_Login_Activity.this, add_event.class);
+        Intent open_calendar = new Intent(Teacher_Login_Activity.this, CalEvent.class);
         startActivity(open_calendar);
     }
 

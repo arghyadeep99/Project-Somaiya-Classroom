@@ -87,22 +87,27 @@
             android:name=".about"
             android:screenOrientation="portrait" />
         <activity android:name=".calendar" />
-        <activity android:name=".add_event"></activity>
-        <activity android:name=".net_banking"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".PaymentDetails"
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".faq_tch" 
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".FAQ"
-                  android:screenOrientation="portrait">
-      </activity>
+        <activity android:name=".add_event" />
+        <activity
+            android:name=".net_banking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaymentDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".faq_tch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FAQ"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="true"
-            />
+            android:value="true" />
 
+        <activity android:name=".CalEvent" />
+        <activity android:name=".AddNoteActivity" />
+        <activity android:name=".NotePreviewActivity"></activity>
     </application>
 
 </manifest>
