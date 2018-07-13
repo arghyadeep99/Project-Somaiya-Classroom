@@ -25,7 +25,7 @@ public class AddNoteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent returnIntent = new Intent();
                 MyEventDay myEventDay = new MyEventDay((Calendar) datePicker.getSelectedDate(),
-                        R.drawable.g_plus, noteEditText.getText().toString());
+                        R.drawable.event_alert, noteEditText.getText().toString());
                 returnIntent.putExtra(CalEvent.RESULT, myEventDay);
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();

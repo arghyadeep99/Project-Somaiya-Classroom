@@ -37,9 +37,6 @@
             android:name=".Main_Sign_In"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Forgot_Password_Activity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Main_Sign_In_Student"
             android:screenOrientation="portrait" />
         <activity
