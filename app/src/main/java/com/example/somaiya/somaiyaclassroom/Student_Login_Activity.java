@@ -117,7 +117,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         //Intent i = new Intent(Intent.ACTION_VIEW, uri);
         //startActivity(i);
 
-        Intent i = new Intent(Student_Login_Activity.this, calendar.class);
+        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
         startActivity(i);
     }
     public void FAQs(View v) {

@@ -107,7 +107,8 @@
 
         <activity android:name=".CalEvent" />
         <activity android:name=".AddNoteActivity" />
-        <activity android:name=".NotePreviewActivity"></activity>
+        <activity android:name=".NotePreviewActivity" />
+        <activity android:name=".StudentCalendar"></activity>
     </application>
 
 </manifest>
