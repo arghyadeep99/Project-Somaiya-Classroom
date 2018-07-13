@@ -14,15 +14,18 @@
         android:icon="@drawable/ic_baseline_notifications_24px"
         android:onClick="notifications"
         />
+
     <item android:id="@+id/night_mode"
         android:title="Night Mode"
         android:icon="@drawable/moon"
         app:actionLayout="@layout/night_toggle"
-        />
+    />
+
     <item
     android:id="@+id/report_bug"
     android:title="Report a bug"
     android:icon="@drawable/report_bug"
+        android:onClick="report_bug"
         />
     <item android:id="@+id/about_app"
         android:title="About"

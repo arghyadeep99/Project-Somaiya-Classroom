@@ -298,6 +298,7 @@
                         android:layout_marginTop="10dp"
                         android:autoLink="web"
                         android:clickable="true"
+                        android:onClick="openCalendar"
                         android:inputType="text"
                         android:text="Add Events"
                         android:textAlignment="center"

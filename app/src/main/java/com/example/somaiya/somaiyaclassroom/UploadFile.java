@@ -101,9 +101,29 @@ public class UploadFile extends AppCompatActivity {
                 pathToUpload=storageReference.child("Syllabus/syllabus.pdf");
                 location="Syllabus";
                 break;
-            case 2:
-                pathToUpload=storageReference.child("Course Materials").child(fileNameWithExtension);
-                location="Course Materials";
+            case 10:
+                pathToUpload=storageReference.child("Course Materials/Chap 1").child(fileNameWithExtension);
+                location="Course Materials/Chap 1";
+                break;
+            case 11:
+                pathToUpload=storageReference.child("Course Materials/Chap 2").child(fileNameWithExtension);
+                location="Course Materials/Chap 2";
+                break;
+            case 12:
+                pathToUpload=storageReference.child("Course Materials/Chap 3").child(fileNameWithExtension);
+                location="Course Materials/Chap 3";
+                break;
+            case 13:
+                pathToUpload=storageReference.child("Course Materials/Chap 4").child(fileNameWithExtension);
+                location="Course Materials/Chap 4";
+                break;
+            case 14:
+                pathToUpload=storageReference.child("Course Materials/Chap 5").child(fileNameWithExtension);
+                location="Course Materials/Chap 5";
+                break;
+            case 15:
+                pathToUpload=storageReference.child("Course Materials/Chap 6").child(fileNameWithExtension);
+                location="Course Materials/Chap 6";
                 break;
             case 4:
                 pathToUpload=storageReference.child("Easy Solutions").child(fileNameWithExtension);

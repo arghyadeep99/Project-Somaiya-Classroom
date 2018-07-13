@@ -67,7 +67,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
-        android:text="Made with ❤ on GitHub"
-        />
+        android:layout_marginBottom="38dp"
+        android:text="Made with ❤ on GitHub" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp"
+        app:srcCompat="@drawable/github_logo" />
 </RelativeLayout>

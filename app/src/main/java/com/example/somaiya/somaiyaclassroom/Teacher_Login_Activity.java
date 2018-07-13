@@ -14,14 +14,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,6 +38,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
+
+import io.fabric.sdk.android.Fabric;
 
 public class Teacher_Login_Activity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -49,12 +57,14 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     private DrawerLayout mdrawerlayout;
     private ActionBarDrawerToggle mtoggle;
     private Toolbar mToolbar;
+    public TextView display_username;
+    public TextView display_mail;
+    public ImageView display_pic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher__login);
-
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id))
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().requestProfile().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
@@ -67,7 +77,11 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         mToolbar = (Toolbar) findViewById(R.id.nav_action_tch);
         Calendar = (CardView) findViewById(R.id.Calendar);
         setSupportActionBar(mToolbar);
-
+        /**LayoutInflater inflater= LayoutInflater.from(getApplicationContext());
+        View header=inflater.inflate(R.layout.viewprofile,mdrawerlayout,true);
+        display_username=(TextView) header.findViewById(R.id.username);
+        display_mail=(TextView) header.findViewById(R.id.email);
+**/
         mdrawerlayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.Open, R.string.Close);
         mdrawerlayout.addDrawerListener(mtoggle);
@@ -77,9 +91,14 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-
-
+        /**String name=getIntent().getExtras().getString("NAME", "Arghyadeep Das");
+        String email=getIntent().getExtras().getString("EMAIL","arghyadeep.d@somaiya.edu");
+        String photoURL=getIntent().getExtras().getString("PhotoURL");
+        display_username.setText(name);
+        display_mail.setText(email);
+        display_pic=(ImageView) header.findViewById(R.id.profile_image);
+        Glide.with(this).load(photoURL).into(display_pic);
+**/
         mCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,14 +148,17 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
 
     public void FAQs(View v) {
-        startActivity(new Intent(this, FAQ.class));
+        startActivity(new Intent(this, faq_tch.class));
     }
 
 
     public void openCalendar(View v) {
-        Uri uri = Uri.parse("https://www.google.com/calendar");
+        /*Uri uri = Uri.parse("https://www.google.com/calendar");
         Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
+        */
+        Intent open_calendar = new Intent(Teacher_Login_Activity.this, add_event.class);
+        startActivity(open_calendar);
     }
 
     public void openActivitycourseMaterial() {
@@ -203,7 +225,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
     @Override
     public void onBackPressed() {
-        //Globals.stu = true;
         Globals.tea = true;
         Globals.stu = false;
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
@@ -222,6 +243,4 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         builder.show();
     }
 }
-
-
 
