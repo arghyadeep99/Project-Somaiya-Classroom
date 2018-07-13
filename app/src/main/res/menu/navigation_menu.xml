@@ -25,6 +25,7 @@
     android:id="@+id/report_bug"
     android:title="Report a bug"
     android:icon="@drawable/report_bug"
+        android:onClick="report_bug"
         />
     <item android:id="@+id/about_app"
         android:title="About"

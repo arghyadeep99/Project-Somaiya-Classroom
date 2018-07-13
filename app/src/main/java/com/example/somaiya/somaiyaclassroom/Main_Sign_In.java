@@ -9,7 +9,9 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,11 +47,15 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     private static final int REQ_CODE=9001;
     private static final String TAG = "GoogleActivity";
     private FirebaseAuth mAuth;
+    private static final String password="Professor@123";
+    private EditText prof_pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__sign__in);
         SignIn = (SignInButton) findViewById(R.id.SignIn);
+        prof_pass=(EditText) findViewById(R.id.password_prof);
+        SignIn.setEnabled(false);
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
@@ -59,7 +65,27 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             }
         });
         mAuth = FirebaseAuth.getInstance();
+        prof_pass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().equals(password)){
+                    SignIn.setEnabled(true);
+                }
+                else{
+                    SignIn.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
     @Override
     public void onStart() {
@@ -69,9 +95,11 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         if(currentUser != null){
             Globals.tea = true;
             Globals.stu = false;
+
         }
         openProfActivity(currentUser);
     }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
