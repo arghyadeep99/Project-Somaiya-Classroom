@@ -32,9 +32,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.2'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
     //noinspection GradleCompatible
@@ -47,6 +45,6 @@ dependencies {
     implementation 'com.github.Mahfa:DayNightSwitch:1.2'
     implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

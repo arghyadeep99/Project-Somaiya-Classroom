@@ -30,13 +30,17 @@ public class NotePreviewActivity extends AppCompatActivity {
             Object event = intent.getParcelableExtra(CalEvent.EVENT);
             if(event instanceof MyEventDay){
                 MyEventDay myEventDay = (MyEventDay)event;
-                requireNonNull(getSupportActionBar()).setTitle(getFormattedDate(myEventDay.getCalendar().getTime()));
+                //Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
+                //getSupportActionBar().setTitle(getFormattedDate(myEventDay.getCalendar().getTime()));
+
                 note.setText(myEventDay.getNote());
                 return;
             }
             if(event instanceof EventDay){
                 EventDay eventDay = (EventDay)event;
-                requireNonNull(getSupportActionBar()).setTitle(getFormattedDate(eventDay.getCalendar().getTime()));
+                //Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(true);
+                //getSupportActionBar().setTitle(getFormattedDate(eventDay.getCalendar().getTime()));
+
             }
         }
     }
