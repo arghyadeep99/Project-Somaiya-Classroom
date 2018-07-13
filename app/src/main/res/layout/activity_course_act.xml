@@ -26,7 +26,7 @@
         android:textSize="25sp"
         android:textStyle="bold" />
 
-    <Button
+   <!-- <Button
         android:id="@+id/button6"
         android:layout_width="159dp"
         android:layout_height="50dp"
@@ -39,18 +39,19 @@
         android:onClick="open_download"
         android:textColor="#ffff"
         android:textSize="20sp"
-        app:fontFamily="@font/roboto_slab" />
+        app:fontFamily="@font/roboto_slab" /> -->
 
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="342dp"
-        android:layout_height="490dp"
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:entries="@array/list"
+        android:divider="@drawable/divider"
+        android:dividerHeight="35dp"
         android:paddingTop="70dp" />
 
 

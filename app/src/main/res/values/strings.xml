@@ -44,7 +44,7 @@
     <string name="pref_key_pic_url">picUrl</string>
     <string name="display_name">Username</string>
     <string-array name="list">
-        <item>Chapter 1.  Introduction to C</item>
+        <item name="chap1">Chapter 1.  Introduction to C</item>
 
         <item>Chapter 2.  Basic Operators</item>
 
@@ -55,17 +55,6 @@
         <item>Chapter 5.  User Defined Functions</item>
 
         <item>Chapter 6.  Pointers and Files</item>
-
-        <item>Chapter 7.  Programming Fundamentals</item>
-
-        <item>Chapter 8.  Programming Exercises</item>
-
-        <item>Chapter 9.  Advanced C Problems</item>
-
-        <item>Chapter 10. Algorithms</item>
-        <item>Chapter 11. Problem Definitions</item>
-        <item>Chapter 12. Flowcharts</item>
-        <item>Chapter 13. Dynamic Memory Allocation </item>
 
     </string-array>
     <string-array name="names">
