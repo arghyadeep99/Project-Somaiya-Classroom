@@ -1,86 +1,62 @@
 package com.example.somaiya.somaiyaclassroom;
 
-import android.app.Dialog;
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
-import android.text.Html;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.URLUtil;
-import android.widget.Adapter;
-import android.widget.Button;
 import android.support.v7.widget.Toolbar;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
-import android.widget.TextView;
 
-
-
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import android.content.Intent;
-import android.net.Uri;
+
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
+import com.squareup.picasso.Picasso;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
 
-import io.fabric.sdk.android.Fabric;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import android.os.StrictMode;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-import static android.support.v4.os.LocaleListCompat.create;
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
+import static java.security.AccessController.getContext;
 
 
 public class Student_Login_Activity extends AppCompatActivity {
 
+    MyAdapter.ViewHolder holder;
     public View background_view;
     private DrawerLayout mdrawerlayout;
     private ActionBarDrawerToggle mtoggle;
@@ -92,18 +68,76 @@ public class Student_Login_Activity extends AppCompatActivity {
     public FirebaseUser user;
     GoogleApiClient mGoogleApiClient;
 
+    private Bitmap bitmap;
+    String photoUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student__login);
-        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+        String email = bundle.getString("EMAIL");
+        NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_view_student);
+        View header=mNavigationView.getHeaderView(0);
+
+        TextView username=(TextView)header.findViewById(R.id.username);
+        username.setText(name);
+        TextView Stuname=findViewById(R.id.stu_login);
+        Stuname.setText("Hello "+name);
+        TextView emailid=(TextView)header.findViewById(R.id.email);
+        emailid.setText(email);
+
+       String photoURL = bundle.getString("PhotoURL");
+
+        CircleImageView image=header.findViewById(profile_image);
+
+        Glide.with(Student_Login_Activity.this).load(photoURL).into(image);
+        /*try {
+            Glide.with(getApplicationContext()).load(photoURL).into(image);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+
+
+           /* GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+            if (acct != null) {
+                String personName = acct.getDisplayName();
+                String personGivenName = acct.getGivenName();
+                String personFamilyName = acct.getFamilyName();
+                String personEmail = acct.getEmail();
+                String personId = acct.getId();
+                String personPhoto = acct.getPhotoUrl().toString();
+
+
+
+                File f = new File(personPhoto);
+
+            }*/
+
+
+
+
+
+
+            GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
         mAuth = FirebaseAuth.getInstance();
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
+
+
+       /*RequestOptions options = new RequestOptions()
+                             .centerCrop()
+                             .placeholder(R.mipmap.ic_launcher_round)
+                             .error(R.mipmap.ic_launcher_round);
+                           Glide.with(this).load(photoURL).apply(options).into(image);*/
+
+        mToolbar.setTitle("Welcome to Student Portal");
         setSupportActionBar(mToolbar);
         /**LayoutInflater night= LayoutInflater.from(getApplicationContext());
-        View toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
+        V Glide.with(this).load(image_url).apply(options).into(imageView);iew toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
         if(dayNightSwitch!=null) {
             dayNightSwitch = (DayNightSwitch) findViewById(R.id.night);
             //background_view= findViewById(R.id.background_view);
@@ -130,9 +164,13 @@ public class Student_Login_Activity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
     }
+
+
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mtoggle.onOptionsItemSelected(item)) {
@@ -171,7 +209,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         startActivity(i);
     }
     public void FAQs(View v) {
-        startActivity(new Intent(this,faq.class));
+        startActivity(new Intent(this,FAQ.class));
     }
 
     public void openMainSignInStudent(FirebaseUser user){
@@ -242,4 +280,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         builder.setNegativeButton("No", null);
         builder.show();
     }
+
+
+
 }

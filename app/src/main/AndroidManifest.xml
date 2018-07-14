@@ -43,7 +43,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Student_Login_Activity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".courseMaterial"
             android:screenOrientation="portrait" />
@@ -94,7 +95,7 @@
                   android:screenOrientation="portrait"/>
         <activity android:name=".faq_tch" 
                   android:screenOrientation="portrait"/>
-        <activity android:name=".faq"
+        <activity android:name=".FAQ"
                   android:screenOrientation="portrait">
       </activity>
 

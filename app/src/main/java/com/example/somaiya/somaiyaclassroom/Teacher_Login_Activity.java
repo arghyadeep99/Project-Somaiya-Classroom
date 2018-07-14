@@ -25,7 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.crashlytics.android.Crashlytics;
+
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -41,7 +41,11 @@ import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
-import io.fabric.sdk.android.Fabric;
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image_tch;
+
 
 public class Teacher_Login_Activity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -65,6 +69,30 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher__login);
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+
+
+        String email = bundle.getString("EMAIL");
+        NavigationView NavigationView = (NavigationView) findViewById(R.id.nav_view_teacher);
+        View headertch=NavigationView.getHeaderView(0);
+
+        TextView username=(TextView)headertch.findViewById(R.id.username_tch);
+        username.setText(name);
+        TextView Stuname=findViewById(R.id.tch_login);
+        Stuname.setText("Hello "+name);
+        TextView emailid=(TextView)headertch.findViewById(R.id.email_tch);
+        emailid.setText(email);
+
+        String photoURL = bundle.getString("PhotoURL");
+
+        CircleImageView image=headertch.findViewById(profile_image_tch);
+
+        Glide.with(Teacher_Login_Activity.this).load(photoURL).into(image);
+
+
+
+
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id))
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().requestProfile().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
@@ -76,6 +104,8 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         faqs = (CardView) findViewById(R.id.faqs);
         mToolbar = (Toolbar) findViewById(R.id.nav_action_tch);
         Calendar = (CardView) findViewById(R.id.Calendar);
+
+        mToolbar.setTitle("Welcome to Teacher Portal");
         setSupportActionBar(mToolbar);
         /**LayoutInflater inflater= LayoutInflater.from(getApplicationContext());
         View header=inflater.inflate(R.layout.viewprofile,mdrawerlayout,true);
@@ -90,7 +120,9 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+
+
         /**String name=getIntent().getExtras().getString("NAME", "Arghyadeep Das");
         String email=getIntent().getExtras().getString("EMAIL","arghyadeep.d@somaiya.edu");
         String photoURL=getIntent().getExtras().getString("PhotoURL");
