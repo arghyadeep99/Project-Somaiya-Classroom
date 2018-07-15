@@ -45,7 +45,6 @@ import io.fabric.sdk.android.Fabric;
 
 public class Teacher_Login_Activity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
-    private static int backpress = 1;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private CardView mCourse;
@@ -187,7 +186,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
 
 
-    public void openMainSignInProf(FirebaseUser user) {
+    public void openHome(FirebaseUser user) {
         finish();
         startActivity(new Intent(this, HomeActivity.class));
     }
@@ -213,7 +212,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        openMainSignInProf(null);
+                        openHome(null);
 
                     }
                 });
