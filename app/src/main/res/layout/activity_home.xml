@@ -8,7 +8,7 @@
     android:background="@color/colorPrimary"
     android:gravity="center_vertical|center_horizontal|center"
     android:orientation="vertical"
-    tools:context=".Student_Login_Activity"
+    tools:context=".HomeActivity"
     android:backgroundTint="#ffff"
     android:weightSum="2">
 

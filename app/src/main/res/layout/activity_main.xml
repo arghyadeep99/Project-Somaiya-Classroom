@@ -10,7 +10,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@drawable/gradient_color_2"
+    android:background="@drawable/kjsce_entry"
     tools:context=".MainActivity">
 
     <TextView

@@ -35,8 +35,23 @@ public class DownloadFile extends AppCompatActivity {
             case 1:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Syllabus");
                 break;
-            case 2:
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials");
+            case 10:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 1");
+                break;
+            case 11:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 2");
+                break;
+            case 12:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 3");
+                break;
+            case 13:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 4");
+                break;
+            case 14:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 5");
+                break;
+            case 15:
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("Course Materials/Chap 6");
                 break;
             case 4:
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("Easy Solutions");
@@ -54,13 +69,12 @@ public class DownloadFile extends AppCompatActivity {
                 fileName = decodeName(dataSnapshot.getKey());
                 url = dataSnapshot.getValue(String.class);
                 //url = "https" + url.substring(2);
-                //url = "http://" + dataSnapshot.getStorage().get
                 //if syllabus has more than one file present then overwrite it
-                if((recyclerView.getAdapter()).getItemCount()>0 && buttonTracker==1)
+               /* if((recyclerView.getAdapter()).getItemCount()>0 && buttonTracker==1)
                 {
                     ((MyAdapter) recyclerView.getAdapter()).contents.clear();
                     ((MyAdapter) recyclerView.getAdapter()).urls.clear();
-                }
+                }*/
                 ((MyAdapter)recyclerView.getAdapter()).update(fileName,url);
                 //Log.e("url:",url);
             }

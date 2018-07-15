@@ -7,6 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
+import android.net.Uri;
+import android.os.Environment;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -16,11 +19,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
-
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
+import android.view.MenuItem;
+import android.view.View;
+import android.support.v7.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -40,7 +45,6 @@ import com.mahfa.dnswitch.DayNightSwitchListener;
 import com.squareup.picasso.Picasso;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -49,10 +53,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import android.os.StrictMode;
 import de.hdodenhof.circleimageview.CircleImageView;
-
 import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
 import static java.security.AccessController.getContext;
-
 
 public class Student_Login_Activity extends AppCompatActivity {
 
@@ -83,8 +85,6 @@ public class Student_Login_Activity extends AppCompatActivity {
 
         TextView username=(TextView)header.findViewById(R.id.username);
         username.setText(name);
-        TextView Stuname=findViewById(R.id.stu_login);
-        Stuname.setText("Hello "+name);
         TextView emailid=(TextView)header.findViewById(R.id.email);
         emailid.setText(email);
 
@@ -115,10 +115,6 @@ public class Student_Login_Activity extends AppCompatActivity {
                 File f = new File(personPhoto);
 
             }*/
-
-
-
-
 
 
             GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -164,7 +160,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     }
 
@@ -205,7 +201,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         //Intent i = new Intent(Intent.ACTION_VIEW, uri);
         //startActivity(i);
 
-        Intent i = new Intent(Student_Login_Activity.this, calendar.class);
+        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
         startActivity(i);
     }
     public void FAQs(View v) {
@@ -237,9 +233,30 @@ public class Student_Login_Activity extends AppCompatActivity {
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
         startActivity(emailIntent);
     }
-    public void report_bug(MenuItem item){
+    /**public void report_bug(MenuItem item){
+        // save logcat in file
+        File outputFile = new File(Environment.getExternalStorageDirectory(),
+                "logcat.txt");
+        try {
+            Runtime.getRuntime().exec(
+                    "logcat -f " + outputFile.getAbsolutePath());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
-    }
+        //send file using email
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        // Set type to "email"
+        emailIntent.setType("vnd.android.cursor.dir/email");
+        String to[] = {"developer.somaiyaclassroom@gmail.com"};
+        emailIntent .putExtra(Intent.EXTRA_EMAIL, to);
+        // the attachment
+        emailIntent .putExtra(Intent.EXTRA_STREAM, outputFile.getAbsolutePath());
+        // the mail subject
+        emailIntent .putExtra(Intent.EXTRA_SUBJECT, "Bug Report");
+        startActivity(Intent.createChooser(emailIntent , "Send email..."));
+    }**/
 
     private void logout() {
 

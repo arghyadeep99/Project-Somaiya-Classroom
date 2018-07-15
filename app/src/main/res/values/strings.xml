@@ -44,7 +44,7 @@
     <string name="pref_key_pic_url">picUrl</string>
     <string name="display_name">Username</string>
     <string-array name="list">
-        <item>Chapter 1.  Introduction to C</item>
+        <item name="chap1">Chapter 1.  Introduction to C</item>
 
         <item>Chapter 2.  Basic Operators</item>
 
@@ -56,17 +56,6 @@
 
         <item>Chapter 6.  Pointers and Files</item>
 
-        <item>Chapter 7.  Programming Fundamentals</item>
-
-        <item>Chapter 8.  Programming Exercises</item>
-
-        <item>Chapter 9.  Advanced C Problems</item>
-
-        <item>Chapter 10. Algorithms</item>
-        <item>Chapter 11. Problem Definitions</item>
-        <item>Chapter 12. Flowcharts</item>
-        <item>Chapter 13. Dynamic Memory Allocation </item>
-
     </string-array>
     <string-array name="names">
 
@@ -76,7 +65,6 @@
         <item>Bank of Maharashtra</item>
         <item>Bank Of India</item>
         <item>Canara Bank</item>
-
         <item>Dena Bank</item>
         <item>HDFC</item>
         <item>ICICI</item>
@@ -90,21 +78,20 @@
 
         <item><b>What are easy solutions and why do I need to pay for the same?</b>\n\nEasy Solutions are the comprehensive solutions for the past years’ question papers of KJSCE; prepared cohesively by the respective subject faculty. These solutions are “marking-scheme specific” and give an excellent idea about the answer expectations with respect to length of the answers and content of the answers. The weightage of this valuable resource makes it a paid one.\n</item>
 
-        <item><b>\nIs Paypal a secure site for my online transactions?</b>\n\nPaypal is the easiest way to make payments online. While checking out your order, you will be redirected to the Paypal website. Be sure to fill in correct details for fast  hassle-free payment processing. After a successful Paypal payment, a payment advice will be automatically generated to Samplestore.com system for your order. It's fast, easy and secure.\n</item>
+        <item><b>\nIs PayPal a secure site for my online transactions?</b>\n\nPaypal is the easiest way to make payments online. While checking out your order, you will be redirected to the Paypal website. Be sure to fill in correct details for fast  hassle-free payment processing. After a successful Paypal payment, a payment advice will be automatically generated to Samplestore.com system for your order. It's fast, easy and secure.\n</item>
 
         <item><b>\nHow do I cancel my order, under considerate circumstances, after the amount is already paid?</b>\n\nYou may have to confront the KJSCE A/O for the refund, which will strictly be subjected to extreme cases.\n</item>
 
         <item><b>\nHow can I use the “View Events” efficiently?</b>\n\nYou will be able to see the events such as Tests, Viva, Submissions, practicals etc set by your professor. You can prepare yourself accordingly.\n</item>
 
-        <item><b>\nIs “Course Content” chapter specific?</b>\n\nYes, you will be able to see the list of chapters on clicking the download button. You have to press the option that you want to download.\n</item>
+        <item><b>\nIs “Course Content” just list of chapters?</b>\n\nNo no! The list is clickable and you can download content chapter wise.\n</item>
 
+        <item><b>\nAre we allowed offline mode of payment for easy solutions, for necessary reasons if any? </b>\n\nNo.The students should strictly use the online options such as net banking and PayPal that are being provided in the App.\n</item>
 
         <item><b>\nHow do I contact the professor for queries?</b>\n\nThe navigation view has a “Ask a doubt” tab, which will direct you to your default mailing app. You can then mail your concerns to your professor.\n</item>
 
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
 
-        <item><b>\nWhere can I get technical support for glitches, if any?</b>\n\nYou can notify it to the developers under the “Report a bug” section.\n
-
-</item>
     </string-array>
 
 
@@ -112,24 +99,14 @@
 
         <item><b>\nHow do I upload the new updated syllabus?</b>\n\nThe new syllabus uploaded by you will automatically overwrite the old one. Hence no issues.\n</item>
 
-        <item><b>\nDo I get to change the name of the file uploaded?</b>\n\nNo. You have to name the file properly and then upload.\n</item>
+        <item><b>\nDo I get to change the name of the file uploaded?</b>\n\nNo. You have to name the file properly and then upload. Please set an appropriate name before uploading for convenience of the students to understand what is in the file.\n</item>
 
-        <item><b>\nShould the previous year papers be categorised before uploading?</b>\n\nYes. You should upload them separately under the “Term test papers” and “End Sem papers Section”\n</item>
+        <item><b>\nShould the previous year papers be categorised before uploading?</b>\n\nYes. You should upload them separately under the “Term test papers” and “End Sem Papers" Section.\n</item>
 
         <item><b>\nHow does Add Events enhance the flexibility of our interaction with students?</b>\n\nYou can easily add events such as test dates, Viva dates and timings, practical Schedule, etc for convenient conveyance of schedules.\n</item>
 
-        <item><b>\nWhere can I get technical support for glitches, if any?</b>\n\nYou can notify it to the developers under the “Report a bug” section.\n</item>
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
 
-
-        <item><b>\nCan we allow offline mode of payment for easy solutions, for necessary reasons if any? </b>\n\nNo.The students should strictly use the online options such as net banking and paypal that are being provided in the App.
-
-
-\n</item>
-
-
-        <item><b>\nWhere can I get technical support for glitches, if any?</b>\n\nYou can notify it to the developers under the “Report a bug” section.\n
-
-</item>
     </string-array>
 
 
