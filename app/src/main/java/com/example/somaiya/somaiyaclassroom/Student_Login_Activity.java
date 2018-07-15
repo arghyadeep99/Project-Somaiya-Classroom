@@ -121,7 +121,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         //Intent i = new Intent(Intent.ACTION_VIEW, uri);
         //startActivity(i);
 
-        Intent i = new Intent(Student_Login_Activity.this, calendar.class);
+        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
         startActivity(i);
     }
     public void FAQs(View v) {
@@ -153,7 +153,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
         startActivity(emailIntent);
     }
-    public void report_bug(MenuItem item){
+    /**public void report_bug(MenuItem item){
         // save logcat in file
         File outputFile = new File(Environment.getExternalStorageDirectory(),
                 "logcat.txt");
@@ -176,7 +176,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         // the mail subject
         emailIntent .putExtra(Intent.EXTRA_SUBJECT, "Bug Report");
         startActivity(Intent.createChooser(emailIntent , "Send email..."));
-    }
+    }**/
 
     private void logout() {
 
