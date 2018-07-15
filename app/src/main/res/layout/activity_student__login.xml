@@ -37,14 +37,15 @@
 
 
             <TextView
-                android:id="@+id/stu-login"
+                android:id="@+id/stu_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
+                android:gravity="center"
 
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
-                android:text="Welcome to Student Portal"
+
                 android:textColor="#404040"
                 android:textSize="23sp"
                 android:textStyle="bold"

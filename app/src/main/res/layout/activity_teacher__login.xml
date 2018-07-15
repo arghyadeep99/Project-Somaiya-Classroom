@@ -33,18 +33,17 @@
 
 
             <TextView
-                android:id="@+id/tch-login"
+                android:id="@+id/tch_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
 
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:text="Welcome to Professor Portal"
+                android:layout_centerInParent="true"
+
+                android:gravity="center"
+                android:textAlignment="center"
                 android:textColor="#404040"
                 android:textSize="23sp"
                 android:textStyle="bold"
-                android:textAlignment="center"
                 app:fontFamily="@font/roboto_slab" />
         </RelativeLayout>
 
@@ -353,7 +352,7 @@
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
-        app:headerLayout="@layout/viewprofile"
+        app:headerLayout="@layout/viewprofile_tch"
         android:layout_width="wrap_content"
         android:id="@+id/nav_view_teacher"
         android:layout_height="match_parent"
