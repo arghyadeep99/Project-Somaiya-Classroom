@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemes.android.com/tools"
+
+    xmlns:tools2="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".FAQ"
+    android:background="#ffff">
+
+    <ImageView
+        android:id="@+id/faq_pic"
+        android:layout_width="191dp"
+        android:layout_height="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/faqs_head" />
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="342dp"
+        android:layout_height="386dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        android:entries="@array/faq_tch" />
+
+    <TextView
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:onClick="query"
+        android:paddingBottom="20dp"
+        android:text="@string/faq"
+        android:textColor="#008000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginBottom="63dp"
+        android:gravity="center"
+        android:text=" For further queries contact "
+        android:textColor="#01579b"
+
+        android:textSize="20sp" />
+
+</RelativeLayout>

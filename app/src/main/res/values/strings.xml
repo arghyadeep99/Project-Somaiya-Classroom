@@ -23,12 +23,6 @@
     <string name="TEXT3">CLICK HERE TO DOWNLOAD SYLLABUS</string>
     <string name="TEXT4">CONTENTS</string>
     <string name="DWNLD">DOWNLOAD</string>
-    <string name="a">Problem Definition and Algorithms</string>
-    <string name="b">Operators and Expressions</string>
-    <string name="c">Control Structures</string>
-    <string name="d">Functions</string>
-    <string name="e">Arrays and Strings</string>
-    <string name="f">Pointers and Files</string>
     <string name="pay1">NET BANKING</string>
     <string name="pay2">CARD PAYMENT</string>
     <string name="termtest">TERM TEST PAPERS</string>
@@ -40,11 +34,85 @@
     <string name="Quiz">Quiz</string>
     <string name="Tuts">Tutorials</string>
     <string name="lst">LAST YR PAPERS</string>
-    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="Open">OPEN</string>
+    <string name="Close">CLOSE</string>
+    <!--Shared Preference keys-->
+    <string name="USER_INFO">com.example.somaiya.somaiyaclassroom.PREF_USER_INFO</string>
+    <string name="pref_key_name">name</string>
+    <string name="pref_key_svv_mail">svv_mail</string>
+    <string name="pref_key_email">email</string>
+    <string name="pref_key_pic_url">picUrl</string>
+    <string name="display_name">Username</string>
+    <string-array name="list">
+        <item name="chap1">Chapter 1.  Introduction to C</item>
+
+        <item>Chapter 2.  Basic Operators</item>
+
+        <item>Chapter 3.  Control Structures</item>
+
+        <item>Chapter 4.  Arrays and Structures</item>
+
+        <item>Chapter 5.  User Defined Functions</item>
+
+        <item>Chapter 6.  Pointers and Files</item>
+
+    </string-array>
+    <string-array name="names">
+
+        <item>Select Bank</item>
+        <item>Axis Bank</item>
+        <item>Bank Of Baroda</item>
+        <item>Bank of Maharashtra</item>
+        <item>Bank Of India</item>
+        <item>Canara Bank</item>
+        <item>Dena Bank</item>
+        <item>HDFC</item>
+        <item>ICICI</item>
+        <item>State Bank of India</item>
+
+        <item>Yes Bank</item>
+
+    </string-array>
+
+    <string-array name="faq_stu">
+
+        <item><b>What are easy solutions and why do I need to pay for the same?</b>\n\nEasy Solutions are the comprehensive solutions for the past years’ question papers of KJSCE; prepared cohesively by the respective subject faculty. These solutions are “marking-scheme specific” and give an excellent idea about the answer expectations with respect to length of the answers and content of the answers. The weightage of this valuable resource makes it a paid one.\n</item>
+
+        <item><b>\nIs PayPal a secure site for my online transactions?</b>\n\nPaypal is the easiest way to make payments online. While checking out your order, you will be redirected to the Paypal website. Be sure to fill in correct details for fast  hassle-free payment processing. After a successful Paypal payment, a payment advice will be automatically generated to Samplestore.com system for your order. It's fast, easy and secure.\n</item>
+
+        <item><b>\nHow do I cancel my order, under considerate circumstances, after the amount is already paid?</b>\n\nYou may have to confront the KJSCE A/O for the refund, which will strictly be subjected to extreme cases.\n</item>
+
+        <item><b>\nHow can I use the “View Events” efficiently?</b>\n\nYou will be able to see the events such as Tests, Viva, Submissions, practicals etc set by your professor. You can prepare yourself accordingly.\n</item>
+
+        <item><b>\nIs “Course Content” just list of chapters?</b>\n\nNo no! The list is clickable and you can download content chapter wise.\n</item>
+
+        <item><b>\nAre we allowed offline mode of payment for easy solutions, for necessary reasons if any? </b>\n\nNo.The students should strictly use the online options such as net banking and PayPal that are being provided in the App.\n</item>
+
+        <item><b>\nHow do I contact the professor for queries?</b>\n\nThe navigation view has a “Ask a doubt” tab, which will direct you to your default mailing app. You can then mail your concerns to your professor.\n</item>
+
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
+
+    </string-array>
+
+
+    <string-array name="faq_tch">
+
+        <item><b>\nHow do I upload the new updated syllabus?</b>\n\nThe new syllabus uploaded by you will automatically overwrite the old one. Hence no issues.\n</item>
+
+        <item><b>\nDo I get to change the name of the file uploaded?</b>\n\nNo. You have to name the file properly and then upload. Please set an appropriate name before uploading for convenience of the students to understand what is in the file.\n</item>
+
+        <item><b>\nShould the previous year papers be categorised before uploading?</b>\n\nYes. You should upload them separately under the “Term test papers” and “End Sem Papers" Section.\n</item>
+
+        <item><b>\nHow does Add Events enhance the flexibility of our interaction with students?</b>\n\nYou can easily add events such as test dates, Viva dates and timings, practical Schedule, etc for convenient conveyance of schedules.\n</item>
+
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
+
+    </string-array>
+
+
+    <string name="faq"><u>developer.somaiyaclassroom@gmail.com</u></string>
+
+
+
+
 </resources>

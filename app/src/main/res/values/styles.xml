@@ -5,11 +5,42 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>t, noteprepre
+        <item name="cardViewStyle">@style/CardView</item>
+        <item name="drawerArrowStyle">@style/DrawerIcon</item>
+
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- NightMode theme. -->
+    <style name="NightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">#212121</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="cardViewStyle">@style/CardView</item>
+    <item name="drawerArrowStyle">@style/DrawerIcon</item>
+     <item name="android:textColor">#ffff</item>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    </style>
+
+    <style name="CardViewStyle" parent="CardView">
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#000</item>
+    </style>
+    <style name="CustomtextColour" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">#01579b</item>
+    </style>
+    <style name="CustomActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#ffff</item>
+        <item name="android:titleTextStyle">@style/CustomtextColour</item>
+    </style>
+    <style name="TextAppearance">
+        <item name="android:textColor">@color/Maroon</item>
+    </style>
+
 
 </resources>

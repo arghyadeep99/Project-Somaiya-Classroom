@@ -1,138 +1,303 @@
 package com.example.somaiya.somaiyaclassroom;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.net.Uri;
+import android.os.Environment;
+
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import android.view.MenuItem;
+import android.view.View;
+import android.support.v7.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Student_Login_Activity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener{
-    private Button mCourse;
-    private Button mSyllabus;
-    private Button mPrevYears;
-    private Button mEasySol;
-    private Button view_events;
-    private Button Logout;
-    private static int backpress=1;
+import android.support.annotation.NonNull;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.mahfa.dnswitch.DayNightSwitch;
+import com.mahfa.dnswitch.DayNightSwitchListener;
+import com.squareup.picasso.Picasso;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import android.os.StrictMode;
+import de.hdodenhof.circleimageview.CircleImageView;
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
+import static java.security.AccessController.getContext;
+
+public class Student_Login_Activity extends AppCompatActivity {
+
+    MyAdapter.ViewHolder holder;
+    public View background_view;
+    private DrawerLayout mdrawerlayout;
+    private ActionBarDrawerToggle mtoggle;
+    private Toolbar mToolbar;
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
+    DayNightSwitch dayNightSwitch;
+    DrawerLayout.DrawerListener mDrawerListMDrawerL;
+    public FirebaseUser user;
+    GoogleApiClient mGoogleApiClient;
+
+    private Bitmap bitmap;
+    String photoUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student__login);
-        mCourse = (Button) findViewById(R.id.courseContent);
-        mSyllabus = (Button) findViewById(R.id.syllabus);
-        mPrevYears = (Button) findViewById(R.id.prevYears);
-        mEasySol = (Button) findViewById(R.id.easySol);
-        Logout = (Button) findViewById(R.id.logout);
-        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+        String email = bundle.getString("EMAIL");
+        NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_view_student);
+        View header=mNavigationView.getHeaderView(0);
+
+        TextView username=(TextView)header.findViewById(R.id.username);
+        username.setText(name);
+        TextView emailid=(TextView)header.findViewById(R.id.email);
+        emailid.setText(email);
+
+       String photoURL = bundle.getString("PhotoURL");
+
+        CircleImageView image=header.findViewById(profile_image);
+
+        Glide.with(Student_Login_Activity.this).load(photoURL).into(image);
+        /*try {
+            Glide.with(getApplicationContext()).load(photoURL).into(image);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+
+
+           /* GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+            if (acct != null) {
+                String personName = acct.getDisplayName();
+                String personGivenName = acct.getGivenName();
+                String personFamilyName = acct.getFamilyName();
+                String personEmail = acct.getEmail();
+                String personId = acct.getId();
+                String personPhoto = acct.getPhotoUrl().toString();
+
+
+
+                File f = new File(personPhoto);
+
+            }*/
+
+
+            GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
         mAuth = FirebaseAuth.getInstance();
+        mToolbar = (Toolbar) findViewById(R.id.nav_action);
 
-        mCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivitycourseMaterial();
-            }
-        });
-        mSyllabus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivitySyllabus();
-            }
-        });
-        mPrevYears.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityprevYear();
-            }
-        });
-        mEasySol.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivityeasySol();
-            }
-        });
-        view_events = (Button) findViewById(R.id.textView1_stu);
-        view_events.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openCalendar(v);
-            }
-        });
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LogOut();
-            }
-        });
-    }
-    public void openCalendar(View v) {
-        Uri uri = Uri.parse("https://www.google.com/calendar");
-        startActivity(new Intent(Intent.ACTION_VIEW,uri));
-    }
-    public void openActivitycourseMaterial() {
-        Intent main_intent = new Intent(Student_Login_Activity.this,course_act.class);
-        startActivity(main_intent);
-    }
-    public void openActivitySyllabus() {
-        Intent main_intent = new Intent(Student_Login_Activity.this,syl_act.class);
-        startActivity(main_intent);
-    }
-    public void openActivityprevYear() {
-        Intent main_intent = new Intent(Student_Login_Activity.this,lstppr_act.class);
-        startActivity(main_intent);
-    }
-    public void openActivityeasySol() {
-        Intent main_intent = new Intent(Student_Login_Activity.this,esysol_act.class);
-        startActivity(main_intent);
-    }
-    public void LogOut() {
-        //Firebase SignOut
-        mAuth.signOut();
 
-        // Google sign out
-        mGoogleSignInClient.signOut().addOnCompleteListener(this,
-                new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        openMainSignInStudent(null);
+       /*RequestOptions options = new RequestOptions()
+                             .centerCrop()
+                             .placeholder(R.mipmap.ic_launcher_round)
+                             .error(R.mipmap.ic_launcher_round);
+                           Glide.with(this).load(photoURL).apply(options).into(image);*/
+
+        mToolbar.setTitle("Welcome to Student Portal");
+        setSupportActionBar(mToolbar);
+        /**LayoutInflater night= LayoutInflater.from(getApplicationContext());
+        V Glide.with(this).load(image_url).apply(options).into(imageView);iew toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
+        if(dayNightSwitch!=null) {
+            dayNightSwitch = (DayNightSwitch) findViewById(R.id.night);
+            //background_view= findViewById(R.id.background_view);
+
+            dayNightSwitch.setDuration(450);
+            dayNightSwitch.setListener(new DayNightSwitchListener() {
+                @Override
+                public void onSwitch(boolean isNight) {
+                    if (isNight) {
+                        Toast.makeText(Student_Login_Activity.this, "Night Mode On", Toast.LENGTH_SHORT).show();
+                        //background_view.setAlpha(1f);
+                    } else {
+                        Toast.makeText(Student_Login_Activity.this, "Night Mode Off", Toast.LENGTH_SHORT).show();
+                        //background_view.setAlpha(0f);
                     }
-                });
+                }
+            });
+        }
+
+        mdrawerlayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        mtoggle = new ActionBarDrawerToggle(this, mdrawerlayout, R.string.Open, R.string.Close);
+        mdrawerlayout.addDrawerListener(mtoggle);
+        mtoggle.syncState();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
     }
+
+
+
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mtoggle.onOptionsItemSelected(item)) {
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+    public void syllabus(View v) {
+        Intent i = new Intent(this, syl_act.class);
+        startActivity(i);
+    }
+
+    public void CourseMaterials(View v) {
+        Intent i = new Intent(Student_Login_Activity.this, course_act.class);
+        startActivity(i);
+    }
+
+    public void EasySolutions(View v) {
+        Intent i = new Intent(this, esysol_act.class);
+        startActivity(i);
+    }
+
+    public void PreviousPapers(View v) {
+        Intent i = new Intent(this, lstppr_act.class);
+        startActivity(i);
+    }
+
+    public void ViewEvents(View v) {
+        //Uri uri = Uri.parse("https://www.google.com/calendar");
+        //Intent i = new Intent(Intent.ACTION_VIEW, uri);
+        //startActivity(i);
+
+        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
+        startActivity(i);
+    }
+    public void FAQs(View v) {
+        startActivity(new Intent(this,FAQ.class));
+    }
+
     public void openMainSignInStudent(FirebaseUser user){
         finish();
         startActivity(new Intent(this, HomeActivity.class));
     }
 
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    public void SIGNOUT(MenuItem item) {
+        logout();
+    }
+
+    public void notifications(MenuItem item) {
+        Uri uri = Uri.parse("https://www.google.com/calendar");
+        Intent i = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(i);
+    }
+
+    public void chat(MenuItem item) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("text/plain");
+        String aEmailList[] = {"a.chachra@somaiya.edu"};
+        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Query in FCP");
+        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Dear Ma'am,\n\t\tI have a doubt.");
+        startActivity(emailIntent);
+    }
+    /**public void report_bug(MenuItem item){
+        // save logcat in file
+        File outputFile = new File(Environment.getExternalStorageDirectory(),
+                "logcat.txt");
+        try {
+            Runtime.getRuntime().exec(
+                    "logcat -f " + outputFile.getAbsolutePath());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        //send file using email
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        // Set type to "email"
+        emailIntent.setType("vnd.android.cursor.dir/email");
+        String to[] = {"developer.somaiyaclassroom@gmail.com"};
+        emailIntent .putExtra(Intent.EXTRA_EMAIL, to);
+        // the attachment
+        emailIntent .putExtra(Intent.EXTRA_STREAM, outputFile.getAbsolutePath());
+        // the mail subject
+        emailIntent .putExtra(Intent.EXTRA_SUBJECT, "Bug Report");
+        startActivity(Intent.createChooser(emailIntent , "Send email..."));
+    }**/
+
+    private void logout() {
+
+
+        finish();
+        mAuth.signOut();
+        Globals.stu = true;
+        Globals.tea = true;
+        mGoogleSignInClient.signOut().addOnCompleteListener(this,
+                new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        openMainSignInStudent(null);
+
+                    }
+                });
 
     }
+    public void about(MenuItem item){
+        startActivity(new Intent(this, about.class));
+    }
+
     @Override
     public void onBackPressed() {
-
-        backpress = (backpress + 1);
-        Toast.makeText(getApplicationContext(), " Press Back again to Exit ", Toast.LENGTH_SHORT).show();
-
-        if (backpress>1) {
-            finish();
-}
+        Globals.tea = false;
+        Globals.stu = true;
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Are you sure you want to go back to Home Screen?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Globals.stu = true;
+                //Globals.tea = false;
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
+
+
+
 }

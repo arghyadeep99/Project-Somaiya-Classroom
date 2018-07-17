@@ -1,174 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".Syllabus"
-    android:background="@drawable/gradient_color">
+    android:background="#ffff"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
     <TextView
-        android:id="@+id/textView0"
+        android:id="@+id/TEXT_stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/listview"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="Course Material:"
-        android:textSize="25sp"
+        android:fontFamily="@font/roboto_slab"
+        android:gravity="center"
+        android:text="Course Material"
         android:textAlignment="center"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Chapter 1. Overview of C"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
+        android:textColor="#01579b"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button1"
-        android:background="@drawable/button_shape"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        app:fontFamily="@font/roboto_slab"
-        android:onClick="open_upload"
-        android:text="Upload" />
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 2. Operators"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="Upload"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:onClick="open_upload"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 3. Control Structures"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:layout_marginTop="5dp"
-        android:inputType="text"
-        android:onClick="open_upload"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Upload" />
-
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 4. Arrays and Structures"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:layout_marginTop="5dp"
-        android:inputType="text"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:onClick="open_upload"
-        android:text="Upload" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 5. User-defined Functions"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        android:onClick="open_upload"
-        android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Upload" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Chapter 6. Pointers and Files"
-        android:textColor="#404040"
-        app:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
-        android:layout_gravity="center"/>
-
-    <Button
+   <!-- <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_width="159dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:textSize="15sp"
-        android:textColor="#ffff"
-        android:inputType="text"
-        android:layout_marginTop="5dp"
-        android:onClick="open_upload"
         android:background="@drawable/button_shape"
-        app:fontFamily="@font/roboto_slab"
-        android:text="Upload" />
-</LinearLayout>
+        android:inputType="text"
+        android:text="Upload"
+        android:onClick="open_upload"
+        android:textColor="#ffff"
+        android:textSize="20sp"
+        app:fontFamily="@font/roboto_slab" />-->
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:divider="@drawable/divider"
+        android:dividerHeight="35dp"
+        android:paddingTop="70dp" />
+</RelativeLayout>

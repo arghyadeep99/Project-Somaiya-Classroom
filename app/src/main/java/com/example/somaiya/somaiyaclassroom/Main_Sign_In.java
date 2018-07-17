@@ -4,11 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +40,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 
 
-
 public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private SignInButton SignIn;
@@ -45,11 +47,15 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     private static final int REQ_CODE=9001;
     private static final String TAG = "GoogleActivity";
     private FirebaseAuth mAuth;
+    private static final String password="Professor@123";
+    private EditText prof_pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__sign__in);
         SignIn = (SignInButton) findViewById(R.id.SignIn);
+        prof_pass=(EditText) findViewById(R.id.password_prof);
+        SignIn.setEnabled(false);
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
@@ -59,15 +65,41 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             }
         });
         mAuth = FirebaseAuth.getInstance();
+        prof_pass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.toString().equals(password)){
+                    SignIn.setEnabled(true);
+                }
+                else{
+                    SignIn.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Globals.tea = true;
+            Globals.stu = false;
+
+        }
         openProfActivity(currentUser);
     }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
@@ -87,21 +119,27 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         if (requestCode == REQ_CODE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+                Globals.stu = false;
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
+                Globals.stu = true;
+                Globals.tea = true;
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 Toast.makeText(Main_Sign_In.this,"Google Sign In Failed",Toast.LENGTH_SHORT).show();
+                Globals.stu = true;
+                Globals.tea = true;
                 // [START_EXCLUDE]
                 openProfActivity(null);
                 // [END_EXCLUDE]
             }
         }
     }
-    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+
         // [START_EXCLUDE silent]
         //showProgressDialog();
         // [END_EXCLUDE]
@@ -120,7 +158,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            //Snackbar.make(findViewById(R.id.teacher_login), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(Main_Sign_In.this,"Log In Failed",Toast.LENGTH_SHORT).show();
                             openProfActivity(null);
                         }
 
@@ -132,9 +171,18 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void openProfActivity(FirebaseUser user) {
-       // hideProgressDialog();
+        // hideProgressDialog();
         if (user != null) {
-            startActivity(new Intent(this,Teacher_Login_Activity.class));
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            String photoUrl = user.getPhotoUrl().toString();
+            if(Globals.tea) {
+                startActivity(new Intent(this, Teacher_Login_Activity.class)
+                        .putExtra("NAME", name)
+                        .putExtra("EMAIL", email)
+                        .putExtra("PhotoURL", photoUrl));
+            }
+                finish();
         }
     }
 }
