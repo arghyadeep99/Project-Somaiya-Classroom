@@ -4,12 +4,12 @@
 ---
 
 ### Basic Features:
-* Provides Notification alerts for Tutorials and Quizzes conducted by respective faculty for a batch.
-* One can easily view or download the syllabus, course materials and easy solutions.
+* Provides e-mail alerts for Tutorials and Quizzes conducted by respective faculty for a batch.
+* One can easily view and download the syllabus, course materials and easy solutions.
 * Separate Login for Professors and Students.
 * Students can also retrieve Past papers and it`s solutions.
 * Students can set reminders for their Viva, Quizzes and Tutorials.
-* An add-on feature to increase size of text for ill-visioned people.
+* Night mode added for reducing strain on eyes while using the app during night time or in low light environment. 
 ---
 
 #### This project is still under development, so you can also contribute to this Project as follows:
