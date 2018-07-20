@@ -37,7 +37,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 
 
 public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -49,12 +52,24 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
     private FirebaseAuth mAuth;
     private static final String password="Professor@123";
     private EditText prof_pass;
+    private EditText tname;
+    private EditText temail;
+    private String name;
+    private String email;
+    private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__sign__in);
         SignIn = (SignInButton) findViewById(R.id.SignIn);
         prof_pass=(EditText) findViewById(R.id.password_prof);
+
+        tname = (EditText) findViewById(R.id.teacher_name);
+        temail = (EditText) findViewById(R.id.teacher_email);
+
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Professors");
+
         SignIn.setEnabled(false);
         GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
@@ -62,6 +77,20 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         SignIn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 SignIn();
+                name = tname.getText().toString().trim();
+                email = temail.getText().toString().trim();
+                HashMap<String, String > dataMap = new HashMap<String, String>();
+                dataMap.put("Name", name);
+                dataMap.put("Email", email);
+                mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful())
+                            Toast.makeText(Main_Sign_In.this, "Registered.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(Main_Sign_In.this, "No Registration!.", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
         mAuth = FirebaseAuth.getInstance();

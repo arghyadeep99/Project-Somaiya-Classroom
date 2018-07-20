@@ -21,54 +21,80 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="50dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:text="Sign In via SVV or G+"
             android:textAlignment="center"
             android:textColor="#404040"
             android:textSize="30sp"
             android:textStyle="bold"
             app:fontFamily="@font/roboto_slab" />
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
             <ImageView
-                android:src="@drawable/svv"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
-            android:layout_weight="1"
-            />
+                android:layout_weight="1"
+                android:src="@drawable/svv" />
+
             <ImageView
-                android:src="@drawable/g_plus"
-                android:layout_marginTop="10dp"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                />
+                android:src="@drawable/g_plus" />
 
         </LinearLayout>
+
+
+
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/teacher_name"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center"
+            android:hint="Enter your name..."
+            app:fontFamily="@font/roboto_slab"/>
+
+        <EditText
+            android:id="@+id/teacher_email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center"
+            android:hint="Enter your mail..."
+            app:fontFamily="@font/roboto_slab"/>
+
+        <EditText
             android:id="@+id/password_prof"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center"
             android:hint="Passcode"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            app:fontFamily="@font/roboto_slab"/>
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/SignIn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="22dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="0dp"
-            android:textSize="17sp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="70dp"
             android:background="#000"
+            android:textSize="17sp"
             app:fontFamily="@font/roboto_slab" />
-
 
 
     </LinearLayout>
