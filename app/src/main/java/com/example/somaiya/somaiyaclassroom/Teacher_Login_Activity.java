@@ -133,7 +133,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
                 emails_string.append(",");
             }
             String e = emails_string.toString().trim();
-            e = e.substring(0, e.length()-1);
+         //   e = e.substring(0, e.length()-1);
 
              Intent intent = new Intent(ACTION_EDIT)
                      .setType("vnd.android.cursor.item/event")
@@ -142,7 +142,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
                      .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
                      .putExtra(Intent.EXTRA_EMAIL, e);
                 startActivity(intent);
-
+                Log.e("Email List: ", emails.toString());
             }
         });
 
