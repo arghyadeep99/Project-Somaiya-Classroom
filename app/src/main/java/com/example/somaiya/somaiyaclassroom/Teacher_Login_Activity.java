@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,8 +39,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -62,6 +71,9 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     public TextView display_username;
     public TextView display_mail;
     public ImageView display_pic;
+    private DatabaseReference mDatabase;
+    String list_emails [] = {};
+    ArrayList<String> emails = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +112,33 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         faqs = (CardView) findViewById(R.id.faqs);
         mToolbar = (Toolbar) findViewById(R.id.nav_action_tch);
         Calendar = (CardView) findViewById(R.id.Calendar);
+        Calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType("text/plain");
+                String aEmailList[] = list_emails;
+                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Notifications!!!");
+                emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Please, write the note over here...");
+                startActivity(emailIntent);
+            }
+        });
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Students");
+
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                collectEmail((Map<String,Object>) dataSnapshot.getValue());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Like I care about any errors
+            }
+        });
+
 
         setSupportActionBar(mToolbar);
         /**LayoutInflater inflater= LayoutInflater.from(getApplicationContext());
@@ -148,13 +187,37 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
                 FAQs(v);
             }
         });
-        Calendar.setOnClickListener(new View.OnClickListener() {
+      /*  Calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCalendar(v);
             }
-        });
+        }); */
     }
+
+
+    private void collectEmail(Map<String,Object> users) {
+
+
+
+        //iterate through each user, ignoring their UID
+        for (Map.Entry<String, Object> entry : users.entrySet()){
+            Map singleUser = (Map) entry.getValue();
+            emails.add((String) singleUser.get("Email"));
+        }
+
+        /*int i = 0;
+        for(String temp : emails){
+            list_emails[i] = temp;
+            i++;
+        }*/
+
+        list_emails = emails.toArray(new String[0]);
+        Log.e("Emails: ", emails.toString());
+        Log.e("Emails_strings: ", String.valueOf(list_emails));
+    }
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mtoggle.onOptionsItemSelected(item)) {
@@ -170,14 +233,12 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     }
 
 
-    public void openCalendar(View v) {
-        /*Uri uri = Uri.parse("https://www.google.com/calendar");
-        Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(i);
-        */
+  /* public void openCalendar(View v) {
+
         Intent open_calendar = new Intent(Teacher_Login_Activity.this, send_email_teacher.class);
         startActivity(open_calendar);
     }
+    */
 
     public void openActivitycourseMaterial() {
         Intent main_intent = new Intent(Teacher_Login_Activity.this, courseMaterial.class);
