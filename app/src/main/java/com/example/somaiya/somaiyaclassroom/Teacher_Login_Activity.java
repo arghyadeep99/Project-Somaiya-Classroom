@@ -137,8 +137,8 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
 
              Intent intent = new Intent(ACTION_EDIT)
                      .setType("vnd.android.cursor.item/event")
-                     .putExtra(CalendarContract.Events.TITLE, "Yoga")
-                     .putExtra(CalendarContract.Events.DESCRIPTION, "Group class")
+                     .putExtra(CalendarContract.Events.TITLE, "Enter Title...")
+                     .putExtra(CalendarContract.Events.DESCRIPTION, "Enter Description...")
                      .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
                      .putExtra(Intent.EXTRA_EMAIL, e);
                 startActivity(intent);
