@@ -33,18 +33,17 @@
 
 
             <TextView
-                android:id="@+id/tch-login"
+                android:id="@+id/tch_login"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
 
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
+                android:layout_centerInParent="true"
                 android:text="Welcome to Professor Portal"
+                android:gravity="center"
+                android:textAlignment="center"
                 android:textColor="#404040"
                 android:textSize="23sp"
                 android:textStyle="bold"
-                android:textAlignment="center"
                 app:fontFamily="@font/roboto_slab" />
         </RelativeLayout>
 
@@ -97,11 +96,7 @@
                         android:id="@+id/Syllabus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-
                         android:layout_marginTop="10dp"
-
-                        android:clickable="true"
-                        android:inputType="text"
                         android:text="Syllabus"
                         android:textAlignment="center"
                         android:textColor="#000"
@@ -151,9 +146,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-
-                        android:clickable="true"
-                        android:inputType="text"
                         android:text="Course Content"
                         android:textAlignment="center"
                         android:textColor="#000"
@@ -199,8 +191,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:clickable="true"
-                        android:inputType="text"
                         android:text="Easy Solutions"
                         android:textAlignment="center"
                         android:textColor="#000"
@@ -248,8 +238,6 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:clickable="true"
-                        android:inputType="text"
                         android:text="Past Papers"
                         android:textAlignment="center"
                         android:textColor="#000"
@@ -296,14 +284,9 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:autoLink="web"
-                        android:clickable="true"
-                        android:onClick="openCalendar"
-                        android:inputType="text"
                         android:text="Add Events"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textColorLink="#000"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:fontFamily="@font/roboto_slab"
@@ -369,7 +352,7 @@
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
-        app:headerLayout="@layout/viewprofile"
+        app:headerLayout="@layout/viewprofile_tch"
         android:layout_width="wrap_content"
         android:id="@+id/nav_view_teacher"
         android:layout_height="match_parent"

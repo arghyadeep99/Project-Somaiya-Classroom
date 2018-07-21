@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class add_event extends AppCompatActivity implements
         View.OnClickListener {
