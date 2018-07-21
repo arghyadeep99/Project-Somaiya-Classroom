@@ -82,15 +82,13 @@
 
         <item><b>\nHow do I cancel my order, under considerate circumstances, after the amount is already paid?</b>\n\nYou may have to confront the KJSCE A/O for the refund, which will strictly be subjected to extreme cases.\n</item>
 
-        <item><b>\nHow can I use the “View Events” efficiently?</b>\n\nYou will be able to see the events such as Tests, Viva, Submissions, practicals etc set by your professor. You can prepare yourself accordingly.\n</item>
-
         <item><b>\nIs “Course Content” just list of chapters?</b>\n\nNo no! The list is clickable and you can download content chapter wise.\n</item>
 
         <item><b>\nAre we allowed offline mode of payment for easy solutions, for necessary reasons if any? </b>\n\nNo.The students should strictly use the online options such as net banking and PayPal that are being provided in the App.\n</item>
 
         <item><b>\nHow do I contact the professor for queries?</b>\n\nThe navigation view has a “Ask a doubt” tab, which will direct you to your default mailing app. You can then mail your concerns to your professor.\n</item>
 
-        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDo not worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
 
     </string-array>
 
@@ -111,6 +109,8 @@
 
 
     <string name="faq"><u>developer.somaiyaclassroom@gmail.com</u></string>
+
+
 
 
 </resources>

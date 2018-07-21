@@ -1,12 +1,13 @@
 package com.example.somaiya.somaiyaclassroom;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 
 public class Globals extends Application {
 
     public static boolean stu = true;
-    public  static boolean tea = true;
+    public static boolean tea = true;
     public static int year;
     public static  int month;
     public static int day;
@@ -14,6 +15,9 @@ public class Globals extends Application {
     public static  int min;
     public static long mi;
     public static String note;
+    //SharedPreferences sharedPreferences=getSharedPreferences("mypref", 0);
+    //SharedPreferences.Editor editor= sharedPreferences.edit();
+    //public boolean last_status=editor.putBoolean();
    /* private boolean data = true;
     public boolean getData(){
         return this.data;

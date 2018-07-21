@@ -95,7 +95,6 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         if(currentUser != null){
             Globals.tea = true;
             Globals.stu = false;
-
         }
         openProfActivity(currentUser);
     }

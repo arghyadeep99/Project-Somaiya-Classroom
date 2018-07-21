@@ -2,22 +2,36 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.support.design.widget.NavigationView;
 import android.net.Uri;
 import android.os.Environment;
+
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
+import android.view.MenuItem;
+import android.view.View;
+import android.support.v7.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import android.support.annotation.NonNull;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,13 +42,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
-
+import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.io.IOException;
-
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import android.os.StrictMode;
+import de.hdodenhof.circleimageview.CircleImageView;
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
+import static java.security.AccessController.getContext;
 
 public class Student_Login_Activity extends AppCompatActivity {
 
+    MyAdapter.ViewHolder holder;
     public View background_view;
     private DrawerLayout mdrawerlayout;
     private ActionBarDrawerToggle mtoggle;
@@ -46,18 +68,42 @@ public class Student_Login_Activity extends AppCompatActivity {
     public FirebaseUser user;
     GoogleApiClient mGoogleApiClient;
 
+    private Bitmap bitmap;
+    String photoUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student__login);
-        GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+        String email = bundle.getString("EMAIL");
+        NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_view_student);
+        View header=mNavigationView.getHeaderView(0);
+
+        TextView username=(TextView)header.findViewById(R.id.username);
+        username.setText(name);
+        TextView emailid=(TextView)header.findViewById(R.id.email);
+        emailid.setText(email);
+
+       String photoURL = bundle.getString("PhotoURL");
+
+        CircleImageView image=header.findViewById(profile_image);
+
+        Glide.with(Student_Login_Activity.this).load(photoURL).into(image);
+
+            GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
         mAuth = FirebaseAuth.getInstance();
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
+
+
+        mToolbar.setTitle("Welcome to Student Portal");
         setSupportActionBar(mToolbar);
         /**LayoutInflater night= LayoutInflater.from(getApplicationContext());
-        View toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
+         Glide.with(this).load(image_url).apply(options).into(imageView);
+         View toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
         if(dayNightSwitch!=null) {
             dayNightSwitch = (DayNightSwitch) findViewById(R.id.night);
             //background_view= findViewById(R.id.background_view);
@@ -87,6 +133,10 @@ public class Student_Login_Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
     }
+
+
+
+
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mtoggle.onOptionsItemSelected(item)) {
@@ -217,4 +267,7 @@ public class Student_Login_Activity extends AppCompatActivity {
         builder.setNegativeButton("No", null);
         builder.show();
     }
+
+
+
 }
