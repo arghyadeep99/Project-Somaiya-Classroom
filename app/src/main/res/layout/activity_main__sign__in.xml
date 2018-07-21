@@ -52,7 +52,7 @@
 
 
 
-        <EditText
+ <!--       <EditText
             android:id="@+id/teacher_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             android:layout_marginLeft="40dp"
             android:gravity="center"
             android:hint="Enter your mail..."
-            app:fontFamily="@font/roboto_slab"/>
+            app:fontFamily="@font/roboto_slab"/> -->
 
         <EditText
             android:id="@+id/password_prof"

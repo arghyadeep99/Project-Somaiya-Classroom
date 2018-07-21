@@ -111,7 +111,6 @@
         <activity android:name=".AddNoteActivity" />
         <activity android:name=".NotePreviewActivity" />
         <activity android:name=".StudentCalendar" />
-        <activity android:name=".send_email_teacher"></activity>
     </application>
 
 </manifest>

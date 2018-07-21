@@ -119,7 +119,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
                 emailIntent.setType("text/plain");
                 String aEmailList[] = list_emails;
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Notifications!!!");
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Notification: Somaiya Classroom");
                 emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Please, write the note over here...");
                 startActivity(emailIntent);
             }
@@ -214,7 +214,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
 
         list_emails = emails.toArray(new String[0]);
         Log.e("Emails: ", emails.toString());
-        Log.e("Emails_strings: ", String.valueOf(list_emails));
+      //  Log.e("Emails_strings: ", String.valueOf(list_emails));
     }
 
 
