@@ -60,7 +60,6 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="100dp"
             android:textSize="17sp"
-            android:background="#000"
             app:fontFamily="@font/roboto_slab" />
 
         <LinearLayout
