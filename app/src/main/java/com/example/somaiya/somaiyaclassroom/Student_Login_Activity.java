@@ -21,6 +21,8 @@ import android.view.View;
 import android.support.v7.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+
+//import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import android.view.MenuItem;
@@ -43,6 +45,10 @@ import com.google.android.gms.tasks.Task;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
 import com.squareup.picasso.Picasso;
+
+//import com.bumptech.glide.annotation.GlideModule;
+//import com.bumptech.glide.module.AppGlideModule;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
