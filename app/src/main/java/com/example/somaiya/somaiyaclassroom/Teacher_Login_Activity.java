@@ -43,7 +43,6 @@ import org.w3c.dom.Text;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
 import static com.example.somaiya.somaiyaclassroom.R.id.profile_image_tch;
 
 
@@ -78,8 +77,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
 
         TextView username=(TextView)headertch.findViewById(R.id.username_tch);
         username.setText(name);
-        TextView Stuname=findViewById(R.id.tch_login);
-        Stuname.setText("Hello "+name);
         TextView emailid=(TextView)headertch.findViewById(R.id.email_tch);
         emailid.setText(email);
 
@@ -104,7 +101,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         mToolbar = (Toolbar) findViewById(R.id.nav_action_tch);
         Calendar = (CardView) findViewById(R.id.Calendar);
 
-        mToolbar.setTitle("Welcome to Teacher Portal");
         setSupportActionBar(mToolbar);
         /**LayoutInflater inflater= LayoutInflater.from(getApplicationContext());
         View header=inflater.inflate(R.layout.viewprofile,mdrawerlayout,true);
@@ -119,17 +115,8 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
-        /**String name=getIntent().getExtras().getString("NAME", "Arghyadeep Das");
-        String email=getIntent().getExtras().getString("EMAIL","arghyadeep.d@somaiya.edu");
-        String photoURL=getIntent().getExtras().getString("PhotoURL");
-        display_username.setText(name);
-        display_mail.setText(email);
-        display_pic=(ImageView) header.findViewById(R.id.profile_image);
-        Glide.with(this).load(photoURL).into(display_pic);
-**/
         mCourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

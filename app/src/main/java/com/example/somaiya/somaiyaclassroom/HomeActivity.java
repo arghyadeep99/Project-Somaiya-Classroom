@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this, Main_Sign_In_Student.class));
                 }
                 else
-                    Toast.makeText(HomeActivity.this, "You are logged in as Teacher.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HomeActivity.this, "You are logged in as Professor.", Toast.LENGTH_SHORT).show();
 
             }
         });

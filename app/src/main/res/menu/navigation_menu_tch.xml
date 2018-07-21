@@ -14,12 +14,6 @@
         app:actionLayout="@layout/night_toggle"
         />
 
-    <item
-        android:id="@+id/report_bug"
-        android:title="Report a bug"
-        android:icon="@drawable/report_bug"
-        />
-
     <item android:id="@+id/about_app"
         android:title="About"
         android:icon="@drawable/about_icon"

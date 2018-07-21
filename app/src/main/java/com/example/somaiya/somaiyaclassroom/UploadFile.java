@@ -102,10 +102,15 @@ public class UploadFile extends AppCompatActivity {
                 location="Syllabus";
                 break;
             case 10:
-                pathToUpload=storageReference.child("Course Materials/Chap 1").child(fileNameWithExtension);
-                location="Course Materials/Chap 1";
-                break;
             case 11:
+            case 12:
+            case 13:
+            case 14:
+            case 15:
+                pathToUpload=storageReference.child("Course Materials/Chap "+(buttonTracker-9)).child(fileNameWithExtension);
+                location="Course Materials/Chap "+(buttonTracker-9);
+                break;
+            /*case 11:
                 pathToUpload=storageReference.child("Course Materials/Chap 2").child(fileNameWithExtension);
                 location="Course Materials/Chap 2";
                 break;
@@ -124,7 +129,7 @@ public class UploadFile extends AppCompatActivity {
             case 15:
                 pathToUpload=storageReference.child("Course Materials/Chap 6").child(fileNameWithExtension);
                 location="Course Materials/Chap 6";
-                break;
+                break;*/
             case 4:
                 pathToUpload=storageReference.child("Easy Solutions").child(fileNameWithExtension);
                 location="Easy Solutions";
