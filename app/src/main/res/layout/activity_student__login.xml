@@ -38,6 +38,7 @@
 
             <TextView
                 android:id="@+id/stu_login"
+                android:text="Welcome to Student Portal"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:gravity="center"
