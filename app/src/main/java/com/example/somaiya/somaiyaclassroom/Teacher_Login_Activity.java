@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Parcelable;
+import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -52,6 +53,7 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static android.content.Intent.ACTION_EDIT;
 import static com.example.somaiya.somaiyaclassroom.R.id.profile_image_tch;
 
 
@@ -73,6 +75,7 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
     public ImageView display_pic;
     private DatabaseReference mDatabase;
     String list_emails [] = {};
+    StringBuilder emails_string = new StringBuilder();
     ArrayList<String> emails = new ArrayList<String>();
 
     @Override
@@ -115,13 +118,31 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
         Calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+             /*   Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("text/plain");
                 String aEmailList[] = list_emails;
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
                 emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Notification: Somaiya Classroom");
                 emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Please, write the note over here...");
                 startActivity(emailIntent);
+                */
+//             emails_string = list_emails[0];
+
+            for(String temp : emails){
+                emails_string.append(temp);
+                emails_string.append(",");
+            }
+            String e = emails_string.toString().trim();
+         //   e = e.substring(0, e.length()-1);
+
+             Intent intent = new Intent(ACTION_EDIT)
+                     .setType("vnd.android.cursor.item/event")
+                     .putExtra(CalendarContract.Events.TITLE, "Enter Title...")
+                     .putExtra(CalendarContract.Events.DESCRIPTION, "Enter Description...")
+                     .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
+                     .putExtra(Intent.EXTRA_EMAIL, e);
+                startActivity(intent);
+                Log.e("Email List: ", emails.toString());
             }
         });
 
@@ -194,7 +215,6 @@ public class Teacher_Login_Activity extends AppCompatActivity implements GoogleA
             }
         }); */
     }
-
 
     private void collectEmail(Map<String,Object> users) {
 
