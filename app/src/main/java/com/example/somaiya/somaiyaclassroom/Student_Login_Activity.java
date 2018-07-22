@@ -173,12 +173,12 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
     public void ViewEvents(View v) {
-        //Uri uri = Uri.parse("https://www.google.com/calendar");
-        //Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        //startActivity(i);
-
-        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
+        Uri uri = Uri.parse("https://www.google.com/calendar");
+        Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
+
+     //   Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
+    //    startActivity(i);
     }
     public void FAQs(View v) {
         startActivity(new Intent(this,FAQ.class));
