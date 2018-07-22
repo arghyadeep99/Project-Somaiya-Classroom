@@ -38,7 +38,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -53,6 +57,11 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     public static Boolean isZoom;
     private float zoomFactor = 1.25f;
     Magnify mag = new Magnify();
+    private EditText sname;
+    private EditText semail;
+    private String name;
+    private String email;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,21 +73,36 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail().build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
+
+
+
+        Bundle bundle = getIntent().getExtras();
+        //final String _name = bundle.getString("NAME");
+        //final String _email = bundle.getString("EMAIL");
+
+        //sname = (EditText) findViewById(R.id.student_name);
+        //semail = (EditText) findViewById(R.id.student_email);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child("Students");
+
         SignIn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 SignIn();
+
             }
         });
         mAuthStu = FirebaseAuth.getInstance();
 
-        isEnlarged = findViewById(R.id.switch1);
+        /**isEnlarged = findViewById(R.id.switch1);
         isEnlarged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mag.enlarge(isEnlarged.isChecked(),findViewById(android.R.id.content),zoomFactor);
             }
-        });
+        });**/
     }
+
+
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
@@ -89,12 +113,11 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuthStu.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null && mDatabase.toString().equals("Students")) {
             Globals.tea = false;
             Globals.stu = true;
         }
-
-        openStudActivity(currentUser);
+            openStudActivity(currentUser);
     }
 
     private void SignIn(){
@@ -131,7 +154,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         // [START_EXCLUDE silent]
-        //showProgressDialog();
+        showProgressDialog();
         // [END_EXCLUDE]
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
@@ -170,9 +193,6 @@ private void updateUI(FirebaseUser user){
         String personEmail = acct.getEmail();
         String personId = acct.getId();
         Uri personPhoto = acct.getPhotoUrl();
-
-
-
         }
     }
     private void openStudActivity(FirebaseUser user) {
@@ -182,6 +202,18 @@ private void updateUI(FirebaseUser user){
             String email = user.getEmail();
             String photoUrl = user.getPhotoUrl().toString();
 
+            HashMap<String, String> dataMap = new HashMap<String, String>();
+            dataMap.put("Name", name);
+            dataMap.put("Email", email);
+            mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful())
+                        Toast.makeText(Main_Sign_In_Student.this, "Registered.", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(Main_Sign_In_Student.this, "No Registration!.", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             if (Globals.stu) {
                 startActivity(new Intent(this, Student_Login_Activity.class)
@@ -192,4 +224,12 @@ private void updateUI(FirebaseUser user){
                 finish();
             }
         }
-}}
+    }
+    public void showProgressDialog(){
+        ProgressDialog progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Logging in...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
+    }
+}

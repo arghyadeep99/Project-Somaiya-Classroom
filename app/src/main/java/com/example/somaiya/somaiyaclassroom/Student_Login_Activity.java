@@ -19,8 +19,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.Toolbar;
+
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+
+//import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
 import android.view.MenuItem;
@@ -43,8 +45,10 @@ import com.google.android.gms.tasks.Task;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
 import com.squareup.picasso.Picasso;
-import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
+
+//import com.bumptech.glide.annotation.GlideModule;
+//import com.bumptech.glide.module.AppGlideModule;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -93,29 +97,6 @@ public class Student_Login_Activity extends AppCompatActivity {
         CircleImageView image=header.findViewById(profile_image);
 
         Glide.with(Student_Login_Activity.this).load(photoURL).into(image);
-        /*try {
-            Glide.with(getApplicationContext()).load(photoURL).into(image);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-
-
-
-           /* GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-            if (acct != null) {
-                String personName = acct.getDisplayName();
-                String personGivenName = acct.getGivenName();
-                String personFamilyName = acct.getFamilyName();
-                String personEmail = acct.getEmail();
-                String personId = acct.getId();
-                String personPhoto = acct.getPhotoUrl().toString();
-
-
-
-                File f = new File(personPhoto);
-
-            }*/
-
 
             GoogleSignInOptions googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
@@ -124,16 +105,11 @@ public class Student_Login_Activity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
 
 
-       /*RequestOptions options = new RequestOptions()
-                             .centerCrop()
-                             .placeholder(R.mipmap.ic_launcher_round)
-                             .error(R.mipmap.ic_launcher_round);
-                           Glide.with(this).load(photoURL).apply(options).into(image);*/
-
         mToolbar.setTitle("Welcome to Student Portal");
         setSupportActionBar(mToolbar);
         /**LayoutInflater night= LayoutInflater.from(getApplicationContext());
-        V Glide.with(this).load(image_url).apply(options).into(imageView);iew toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
+         Glide.with(this).load(image_url).apply(options).into(imageView);
+         View toggle=night.inflate(R.layout.night_toggle,mdrawerlayout,true);**/
         if(dayNightSwitch!=null) {
             dayNightSwitch = (DayNightSwitch) findViewById(R.id.night);
             //background_view= findViewById(R.id.background_view);
@@ -197,12 +173,12 @@ public class Student_Login_Activity extends AppCompatActivity {
     }
 
     public void ViewEvents(View v) {
-        //Uri uri = Uri.parse("https://www.google.com/calendar");
-        //Intent i = new Intent(Intent.ACTION_VIEW, uri);
-        //startActivity(i);
-
-        Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
+        Uri uri = Uri.parse("https://www.google.com/calendar");
+        Intent i = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(i);
+
+     //   Intent i = new Intent(Student_Login_Activity.this, StudentCalendar.class);
+    //    startActivity(i);
     }
     public void FAQs(View v) {
         startActivity(new Intent(this,FAQ.class));
@@ -297,7 +273,4 @@ public class Student_Login_Activity extends AppCompatActivity {
         builder.setNegativeButton("No", null);
         builder.show();
     }
-
-
-
 }

@@ -38,7 +38,7 @@
                 android:layout_height="55dp"
 
                 android:layout_centerInParent="true"
-
+                android:text="Welcome to Professor Portal"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="#404040"
@@ -261,8 +261,7 @@
                 app:cardBackgroundColor="#80DEEA"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="8dp"
-
-                >
+                android:clickable="true">
 
                 <LinearLayout
                     android:layout_width="wrap_content"

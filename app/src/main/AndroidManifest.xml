@@ -41,8 +41,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Student_Login_Activity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".courseMaterial"
             android:screenOrientation="portrait" />
@@ -85,10 +84,12 @@
         <activity
             android:name=".about"
             android:screenOrientation="portrait" />
-        <activity android:name=".calendar" 
-                  android:screenOrientation="portrait"/>
-        <activity android:name=".add_event"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".calendar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".add_event"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".net_banking"
             android:screenOrientation="portrait" />
@@ -109,8 +110,7 @@
         <activity android:name=".CalEvent" />
         <activity android:name=".AddNoteActivity" />
         <activity android:name=".NotePreviewActivity" />
-        <activity android:name=".StudentCalendar"></activity>
-
+        <activity android:name=".StudentCalendar" />
     </application>
 
 </manifest>
