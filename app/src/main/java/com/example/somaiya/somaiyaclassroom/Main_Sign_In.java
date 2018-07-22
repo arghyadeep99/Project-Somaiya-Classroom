@@ -82,23 +82,14 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 SignIn();
                 //name = tname.getText().toString().trim();
                 //email = temail.getText().toString().trim();
-//                String name = user.getDisplayName();
-  //              String email = user.getEmail();
+   //       String name = user.getDisplayName();
+  //         String email = user.getEmail();
     //            String photoUrl = user.getPhotoUrl().toString();
 
                 HashMap<String, String > dataMap = new HashMap<String, String>();
                 dataMap.put("Name", name);
                 dataMap.put("Email", email);
-                mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                            Toast.makeText(Main_Sign_In.this, "Registered.", Toast.LENGTH_SHORT).show();
-                        else
-                            Toast.makeText(Main_Sign_In.this, "No Registration!.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
+                mDatabase.push().setValue(dataMap);
 
             }
         });
@@ -217,16 +208,8 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             HashMap<String, String > dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
-            mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful())
-                        Toast.makeText(Main_Sign_In.this, "Registered.", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(Main_Sign_In.this, "No Registration!.", Toast.LENGTH_SHORT).show();
-                }
-            });
-
+            mDatabase.push().setValue(dataMap);
+            //mDatabase.child(name).setValue(email);
             if(Globals.tea) {
                 startActivity(new Intent(this, Teacher_Login_Activity.class)
                         .putExtra("NAME", name)
