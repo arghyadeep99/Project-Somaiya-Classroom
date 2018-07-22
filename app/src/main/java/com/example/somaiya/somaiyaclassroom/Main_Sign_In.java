@@ -88,20 +88,6 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
   //              String email = user.getEmail();
     //            String photoUrl = user.getPhotoUrl().toString();
 
-                HashMap<String, String > dataMap = new HashMap<String, String>();
-                dataMap.put("Name", name);
-                dataMap.put("Email", email);
-                mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful())
-                            Toast.makeText(Main_Sign_In.this, "Registered.", Toast.LENGTH_SHORT).show();
-                        else
-                            Toast.makeText(Main_Sign_In.this, "No Registration!.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -132,7 +118,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null && mDatabase.toString().equals("Professors")) {
+        if (currentUser != null) {
             Globals.tea = true;
             Globals.stu = false;
         }
@@ -225,7 +211,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                     if(task.isSuccessful())
                         Toast.makeText(Main_Sign_In.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
                     else
-                        Toast.makeText(Main_Sign_In.this, "Registration Unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In.this, "Registration unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
 

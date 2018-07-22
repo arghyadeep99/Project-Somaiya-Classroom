@@ -209,9 +209,9 @@ private void updateUI(FirebaseUser user){
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful())
-                        Toast.makeText(Main_Sign_In_Student.this, "Registered.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                     else
-                        Toast.makeText(Main_Sign_In_Student.this, "No Registration!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
 
