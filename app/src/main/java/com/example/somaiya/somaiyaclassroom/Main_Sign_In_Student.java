@@ -93,13 +93,13 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         });
         mAuthStu = FirebaseAuth.getInstance();
 
-        isEnlarged = findViewById(R.id.switch1);
+        /**isEnlarged = findViewById(R.id.switch1);
         isEnlarged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mag.enlarge(isEnlarged.isChecked(),findViewById(android.R.id.content),zoomFactor);
             }
-        });
+        });**/
     }
 
 
@@ -113,12 +113,11 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuthStu.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null && mDatabase.toString().equals("Students")) {
             Globals.tea = false;
             Globals.stu = true;
         }
-
-        openStudActivity(currentUser);
+            openStudActivity(currentUser);
     }
 
     private void SignIn(){
@@ -155,7 +154,7 @@ public class Main_Sign_In_Student extends AppCompatActivity implements GoogleApi
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         // [START_EXCLUDE silent]
-        //showProgressDialog();
+        showProgressDialog();
         // [END_EXCLUDE]
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
@@ -194,9 +193,6 @@ private void updateUI(FirebaseUser user){
         String personEmail = acct.getEmail();
         String personId = acct.getId();
         Uri personPhoto = acct.getPhotoUrl();
-
-
-
         }
     }
     private void openStudActivity(FirebaseUser user) {
@@ -206,10 +202,20 @@ private void updateUI(FirebaseUser user){
             String email = user.getEmail();
             String photoUrl = user.getPhotoUrl().toString();
 
-            HashMap<String, String > dataMap = new HashMap<String, String>();
+            HashMap<String, String> dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
-            mDatabase.push().setValue(dataMap);
+
+            
+            mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful())
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             if (Globals.stu) {
                 startActivity(new Intent(this, Student_Login_Activity.class)
@@ -220,4 +226,12 @@ private void updateUI(FirebaseUser user){
                 finish();
             }
         }
-}}
+    }
+    public void showProgressDialog(){
+        ProgressDialog progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Logging in...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
+    }
+}

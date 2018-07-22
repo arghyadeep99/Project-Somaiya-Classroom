@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -85,12 +87,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
    //       String name = user.getDisplayName();
   //         String email = user.getEmail();
     //            String photoUrl = user.getPhotoUrl().toString();
-
-                HashMap<String, String > dataMap = new HashMap<String, String>();
-                dataMap.put("Name", name);
-                dataMap.put("Email", email);
-                mDatabase.push().setValue(dataMap);
-
+              
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -121,11 +118,11 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if (currentUser != null) {
             Globals.tea = true;
             Globals.stu = false;
         }
-        openProfActivity(currentUser);
+            openProfActivity(currentUser);
     }
 
     @Override
@@ -169,7 +166,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
         // [START_EXCLUDE silent]
-        //showProgressDialog();
+        showProgressDialog();
         // [END_EXCLUDE]
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
@@ -208,8 +205,17 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             HashMap<String, String > dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
-            mDatabase.push().setValue(dataMap);
-            //mDatabase.child(name).setValue(email);
+           
+            mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful())
+                        Toast.makeText(Main_Sign_In.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(Main_Sign_In.this, "Registration unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
             if(Globals.tea) {
                 startActivity(new Intent(this, Teacher_Login_Activity.class)
                         .putExtra("NAME", name)
@@ -218,5 +224,12 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             }
                 finish();
         }
+    }
+    public void showProgressDialog(){
+        ProgressDialog progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Logging in...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
     }
 }

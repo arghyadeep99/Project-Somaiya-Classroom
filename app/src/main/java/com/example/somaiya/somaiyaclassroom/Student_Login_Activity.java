@@ -273,7 +273,4 @@ public class Student_Login_Activity extends AppCompatActivity {
         builder.setNegativeButton("No", null);
         builder.show();
     }
-
-
-
 }
