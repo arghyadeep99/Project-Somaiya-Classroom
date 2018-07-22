@@ -203,9 +203,9 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful())
-                        Toast.makeText(Main_Sign_In.this, "Registered.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
                     else
-                        Toast.makeText(Main_Sign_In.this, "No Registration!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In.this, "Registration Unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
 
