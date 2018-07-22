@@ -84,10 +84,10 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
                 SignIn();
                 //name = tname.getText().toString().trim();
                 //email = temail.getText().toString().trim();
-//                String name = user.getDisplayName();
-  //              String email = user.getEmail();
+   //       String name = user.getDisplayName();
+  //         String email = user.getEmail();
     //            String photoUrl = user.getPhotoUrl().toString();
-
+              
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -205,6 +205,7 @@ public class Main_Sign_In extends AppCompatActivity implements GoogleApiClient.O
             HashMap<String, String > dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
+           
             mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {

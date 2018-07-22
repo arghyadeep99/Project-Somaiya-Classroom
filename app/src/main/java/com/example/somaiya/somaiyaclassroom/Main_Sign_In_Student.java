@@ -205,6 +205,8 @@ private void updateUI(FirebaseUser user){
             HashMap<String, String> dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
+
+            
             mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
