@@ -66,8 +66,8 @@
         <item>Bank Of India</item>
         <item>Canara Bank</item>
         <item>Dena Bank</item>
-        <item>HDFC</item>
-        <item>ICICI</item>
+        <item>HDFC Bank</item>
+        <item>ICICI Bank</item>
         <item>State Bank of India</item>
 
         <item>Yes Bank</item>
@@ -80,15 +80,15 @@
 
         <item><b>\nIs PayPal a secure site for my online transactions?</b>\n\nPaypal is the easiest way to make payments online. While checking out your order, you will be redirected to the Paypal website. Be sure to fill in correct details for fast  hassle-free payment processing. After a successful Paypal payment, a payment advice will be automatically generated to Samplestore.com system for your order. It's fast, easy and secure.\n</item>
 
-        <item><b>\nHow do I cancel my order, under considerate circumstances, after the amount is already paid?</b>\n\nYou may have to confront the KJSCE A/O for the refund, which will strictly be subjected to extreme cases.\n</item>
-
-        <item><b>\nIs “Course Content” just list of chapters?</b>\n\nNo no! The list is clickable and you can download content chapter wise.\n</item>
+        <item><b>\nHow do I cancel my order, under considerate circumstances, after the amount is already paid?</b>\n\nYou may have to confront the A/O for the refund, which will strictly be subjected to extreme cases.\n</item>
 
         <item><b>\nAre we allowed offline mode of payment for easy solutions, for necessary reasons if any? </b>\n\nNo.The students should strictly use the online options such as net banking and PayPal that are being provided in the App.\n</item>
 
+       <item><b>\nI click on a card to download but nothing happens. Why is it so?</b>\n\n1.Go to app settings of your phone and then go to Google Drive.\n2.Set Open Link to \"Always Ask\" and then retry downloading.\nIf it still does not download, write to us at the e-mail address below.\nIt is recommended that you choose Google Chrome to download different file formats (PDFs, JPEGs,DOCX, PPTX, XLSX).\n </item>
+
         <item><b>\nHow do I contact the professor for queries?</b>\n\nThe navigation view has a “Ask a doubt” tab, which will direct you to your default mailing app. You can then mail your concerns to your professor.\n</item>
 
-        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDo not worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDo not worry. We have set up Crashlytics, which sends us real time force crash issues, so that user does not have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
 
     </string-array>
 
@@ -99,11 +99,11 @@
 
         <item><b>\nDo I get to change the name of the file uploaded?</b>\n\nNo. You have to name the file properly and then upload. Please set an appropriate name before uploading for convenience of the students to understand what is in the file.\n</item>
 
-        <item><b>\nShould the previous year papers be categorised before uploading?</b>\n\nYes. You should upload them separately under the “Term test papers” and “End Sem Papers" Section.\n</item>
+        <item><b>\nShould the previous year papers be categorised before uploading?</b>\n\nYes. You should upload them separately under the “Term test papers” and “End Sem Papers\" Section.\n</item>
 
-        <item><b>\nHow does Add Events enhance the flexibility of our interaction with students?</b>\n\nYou can easily add events such as test dates, Viva dates and timings, practical Schedule, etc for convenient conveyance of schedules.\n</item>
+        <item><b>\nHow does Add Events enhance the flexibility of our interaction with students?</b>\n\nYou can easily add events for tests, viva, practical schedule, quiz, lecture cancellation etc. and the students will be notified about the same.\n</item>
 
-        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDon't worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn't have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
+        <item><b>\nHow do I notify developers about force crash, if any?</b>\n\nDo not worry. We have set up Crashlytics, which sends us real time force crash issues and sends us the relevant logs to work upon, so that user doesn\'t have to take the initiative of finding logcats and then mailing it to us separately.\n</item>
 
     </string-array>
 
