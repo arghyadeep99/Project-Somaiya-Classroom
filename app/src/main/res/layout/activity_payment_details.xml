@@ -23,29 +23,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment Id:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="100dp"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/txtAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment Amount:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="100dp"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/txtStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Payment Status:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="100dp"
+            android:textAlignment="center"/>
 
-        <Button
+        <!--<Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_shape"
             android:text="DOWNLOAD"
             android:onClick="open_download"    
-            app:fontFamily="@font/roboto_slab" />
+            app:fontFamily="@font/roboto_slab" />-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="\nKindly collect your easy solutions copy from the accounts office by flashing your Payment ID shown above." />
+
     </LinearLayout>
 </RelativeLayout>
