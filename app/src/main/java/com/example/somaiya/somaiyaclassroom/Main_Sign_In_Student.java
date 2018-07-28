@@ -205,13 +205,15 @@ private void updateUI(FirebaseUser user){
             HashMap<String, String> dataMap = new HashMap<String, String>();
             dataMap.put("Name", name);
             dataMap.put("Email", email);
+
+            
             mDatabase.push().setValue(dataMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful())
-                        Toast.makeText(Main_Sign_In_Student.this, "Registered.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                     else
-                        Toast.makeText(Main_Sign_In_Student.this, "No Registration!.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main_Sign_In_Student.this, "Registration unsuccessful. Please try again.", Toast.LENGTH_SHORT).show();
                 }
             });
 
