@@ -22,6 +22,14 @@
 ---
 **Happy Coding!** :smile:
 
+*Love from the Devs* :heart:
+
+*Arghyadeep Das*
+
+*Kaustubh Damania*
+
+*Kunal Sonawane*
+
 _KJSCE Logo_ &copy; _is a proprietary of Somaiya Trust and K. J. Somaiya College of Engineering._
 
 _GitHub Logo_ &copy; _is a proprietary of www.github.com and it is used for a show of love towards GitHub for it's support in our project._
