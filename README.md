@@ -1,6 +1,9 @@
 # Project Somaiya Classroom
 
-### Hall of Fame (aka top contributors):     [![HitCount](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom.svg)](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom) [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![HitCount](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom.svg)](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)  [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
+### Hall of Fame (aka top contributors):     
+
 [![0](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/0)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/0)
 [![1](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/1)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/1)
 [![2](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/2)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/2)
