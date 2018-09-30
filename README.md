@@ -1,6 +1,6 @@
 # Project Somaiya Classroom
 
-### Hall of Fame (aka top contributors):
+### Hall of Fame (aka top contributors):     [![HitCount](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom.svg)](http://hits.dwyl.io/arghyadeep99/Project-Somaiya-Classroom)
 
 [![0](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/0)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/0)
 [![1](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/1)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/1)
@@ -9,7 +9,7 @@
 [![5](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/5)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/5)
 [![6](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/6)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/6)
 [![7](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/7)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/7)
-
+---
 #### An interactive platform for both Professors and Students!
 ![Somaiya Classroom](/app/src/main/res/drawable/kjsce.png)
 ---
