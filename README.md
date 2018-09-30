@@ -6,7 +6,6 @@
 [![1](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/1)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/1)
 [![2](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/2)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/2)
 [![3](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/3)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/3)
-[![4](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/4)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/4)
 [![5](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/5)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/5)
 [![6](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/6)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/6)
 [![7](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/images/7)](https://sourcerer.io/fame/arghyadeep99/arghyadeep99/Project-Somaiya-Classroom/links/7)
