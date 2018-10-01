@@ -20,7 +20,10 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
+        //welcome message
+        Toast toast=Toast.makeText(getApplicationContext(),"Helloo",Toast.LENGTH_SHORT).show();
 
         assertEquals("com.example.somaiya.somaiyaclassroom", appContext.getPackageName());
     }
 }
+o Javatpoint
