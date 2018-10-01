@@ -1,7 +1,7 @@
 package com.example.somaiya.somaiyaclassroom;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class about extends AppCompatActivity {
 

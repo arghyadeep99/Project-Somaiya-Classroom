@@ -3,9 +3,9 @@ package com.example.somaiya.somaiyaclassroom;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.TextView;
 
 import com.applandeo.materialcalendarview.EventDay;
@@ -13,9 +13,6 @@ import com.applandeo.materialcalendarview.EventDay;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Objects;
-
-import static java.util.Objects.*;
 
 public class NotePreviewActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.KITKAT)

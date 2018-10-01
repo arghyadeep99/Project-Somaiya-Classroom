@@ -2,63 +2,40 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.net.Uri;
-import android.os.Environment;
-
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.v7.widget.Toolbar;
-
-import com.bumptech.glide.Glide;
-
-//import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-
-import android.view.MenuItem;
-import android.view.View;
-import android.support.v7.widget.Toolbar;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import android.support.annotation.NonNull;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
-import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
+
+//import com.bumptech.glide.request.RequestOptions;
 //import com.bumptech.glide.annotation.GlideModule;
 //import com.bumptech.glide.module.AppGlideModule;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import android.os.StrictMode;
-import de.hdodenhof.circleimageview.CircleImageView;
-import static com.example.somaiya.somaiyaclassroom.R.id.profile_image;
-import static java.security.AccessController.getContext;
 
 public class Student_Login_Activity extends AppCompatActivity {
 
