@@ -1,7 +1,5 @@
 package com.example.somaiya.somaiyaclassroom;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 public class Magnify{
     public static boolean data;

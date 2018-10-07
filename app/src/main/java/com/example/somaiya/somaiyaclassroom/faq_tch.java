@@ -2,9 +2,8 @@ package com.example.somaiya.somaiyaclassroom;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class faq_tch extends AppCompatActivity {

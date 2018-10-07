@@ -1,18 +1,19 @@
 package com.example.somaiya.somaiyaclassroom;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
-//import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 
 public class CalEvent extends AppCompatActivity {
     public static final String RESULT = "result";
